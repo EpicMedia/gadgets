@@ -9,6 +9,8 @@
 		author_location="Minneapolis, MN"
 		author_affiliation="EpicMedia"
 		author_email="sjwalter+GoogleGadget@gmail.com"
+		author_photo="http://epicmedia-gadgets.googlecode.com/svn/trunk/photo.png"
+		author_link="http://www.epicmedia.com/"
 		description="Calculate your biorhythm color for the day"
 		screenshot="http://epicmedia-gadgets.googlecode.com/svn/trunk/biorhythm/biorhythm.png"
 		thumbnail="http://epicmedia-gadgets.googlecode.com/svn/trunk/biorhythm/Biorhythm_tn.png"
