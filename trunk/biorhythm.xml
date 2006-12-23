@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+	<ModulePrefs
+		title="Today's Biorythm"
+		title_url="http://en.wikipedia.org/wiki/Biorhythm"
+		directory_title="Today's Biorythm"
+		height="120"
+		author="Scott Walter"
+		author_location="Minneapolis, MN"
+		author_affiliation="EpicMedia"
+		author_email="sjwalter+GoogleGadget@gmail.com"
+		description="Calculate your biorhythm color for the day"
+		screenshot="http://sjwalter.googlepages.com/biorhythm.png"
+		thumbnail="http://sjwalter.googlepages.com/Biorhythm_tn.png"
+	    />
+	<UserPref
+		name="birth_month"
+	    display_name="Birth month"
+	    datatype="enum"
+	    required="true"
+	    >
+	    <EnumValue value="1" display_value="January" />
+	    <EnumValue value="2" display_value="February" />
+	    <EnumValue value="3" display_value="March" />
+	    <EnumValue value="4" display_value="April" />
+	    <EnumValue value="5" display_value="May" />
+	    <EnumValue value="6" display_value="June" />
+	    <EnumValue value="7" display_value="July" />
+	    <EnumValue value="8" display_value="August" />
+	    <EnumValue value="9" display_value="September" />
+	    <EnumValue value="10" display_value="October" />
+	    <EnumValue value="11" display_value="November" />
+	    <EnumValue value="12" display_value="December" />
+	</UserPref>
+	<UserPref
+		name="birth_day"
+	    display_name="Birth day"
+	    datatype="enum"
+	    required="true"
+	    >
+	    <EnumValue value="1" display_value="1" />
+	    <EnumValue value="2" display_value="2" />
+	    <EnumValue value="3" display_value="3" />
+	    <EnumValue value="4" display_value="4" />
+	    <EnumValue value="5" display_value="5" />
+	    <EnumValue value="6" display_value="6" />
+	    <EnumValue value="7" display_value="7" />
+	    <EnumValue value="8" display_value="8" />
+	    <EnumValue value="9" display_value="9" />
+	    <EnumValue value="10" display_value="10" />
+	    <EnumValue value="11" display_value="11" />
+	    <EnumValue value="12" display_value="12" />
+	    <EnumValue value="13" display_value="13" />
+	    <EnumValue value="14" display_value="14" />
+	    <EnumValue value="15" display_value="15" />
+	    <EnumValue value="16" display_value="16" />
+	    <EnumValue value="17" display_value="17" />
+	    <EnumValue value="18" display_value="18" />
+	    <EnumValue value="19" display_value="19" />
+	    <EnumValue value="20" display_value="20" />
+	    <EnumValue value="21" display_value="21" />
+	    <EnumValue value="22" display_value="22" />
+	    <EnumValue value="23" display_value="23" />
+	    <EnumValue value="24" display_value="24" />
+	    <EnumValue value="25" display_value="25" />
+	    <EnumValue value="26" display_value="26" />
+	    <EnumValue value="27" display_value="27" />
+	    <EnumValue value="28" display_value="28" />
+	    <EnumValue value="29" display_value="29" />
+	    <EnumValue value="30" display_value="30" />
+	    <EnumValue value="31" display_value="31" />
+	</UserPref>
+	<UserPref
+		name="birth_year"
+	    display_name="Birth year"
+	    datatype="enum"
+	    required="true"
+	    >
+	    <EnumValue value="2006" display_value="2006" />
+	    <EnumValue value="2005" display_value="2005" />
+	    <EnumValue value="2004" display_value="2004" />
+	    <EnumValue value="2003" display_value="2003" />
+	    <EnumValue value="2002" display_value="2002" />
+	    <EnumValue value="2001" display_value="2001" />
+	    <EnumValue value="2000" display_value="2000" />
+	    <EnumValue value="1999" display_value="1999" />
+	    <EnumValue value="1998" display_value="1998" />
+	    <EnumValue value="1997" display_value="1997" />
+	    <EnumValue value="1996" display_value="1996" />
+	    <EnumValue value="1995" display_value="1995" />
+	    <EnumValue value="1994" display_value="1994" />
+	    <EnumValue value="1993" display_value="1993" />
+	    <EnumValue value="1992" display_value="1992" />
+	    <EnumValue value="1991" display_value="1991" />
+	    <EnumValue value="1990" display_value="1990" />
+	    <EnumValue value="1989" display_value="1989" />
+	    <EnumValue value="1988" display_value="1988" />
+	    <EnumValue value="1987" display_value="1987" />
+	    <EnumValue value="1986" display_value="1986" />
+	    <EnumValue value="1985" display_value="1985" />
+	    <EnumValue value="1984" display_value="1984" />
+	    <EnumValue value="1983" display_value="1983" />
+	    <EnumValue value="1982" display_value="1982" />
+	    <EnumValue value="1981" display_value="1981" />
+	    <EnumValue value="1980" display_value="1980" />
+	    <EnumValue value="1979" display_value="1979" />
+	    <EnumValue value="1978" display_value="1978" />
+	    <EnumValue value="1977" display_value="1977" />
+	    <EnumValue value="1976" display_value="1976" />
+	    <EnumValue value="1975" display_value="1975" />
+	    <EnumValue value="1974" display_value="1974" />
+	    <EnumValue value="1973" display_value="1973" />
+	    <EnumValue value="1972" display_value="1972" />
+	    <EnumValue value="1971" display_value="1971" />
+	    <EnumValue value="1970" display_value="1970" />
+	    <EnumValue value="1969" display_value="1969" />
+	    <EnumValue value="1968" display_value="1968" />
+	    <EnumValue value="1967" display_value="1967" />
+	    <EnumValue value="1966" display_value="1966" />
+	    <EnumValue value="1965" display_value="1965" />
+	    <EnumValue value="1964" display_value="1964" />
+	    <EnumValue value="1963" display_value="1963" />
+	    <EnumValue value="1962" display_value="1962" />
+	    <EnumValue value="1961" display_value="1961" />
+	    <EnumValue value="1960" display_value="1960" />
+	    <EnumValue value="1959" display_value="1959" />
+	    <EnumValue value="1958" display_value="1958" />
+	    <EnumValue value="1957" display_value="1957" />
+	    <EnumValue value="1956" display_value="1956" />
+	    <EnumValue value="1955" display_value="1955" />
+	    <EnumValue value="1954" display_value="1954" />
+	    <EnumValue value="1953" display_value="1953" />
+	    <EnumValue value="1952" display_value="1952" />
+	    <EnumValue value="1951" display_value="1951" />
+	    <EnumValue value="1950" display_value="1950" />
+	    <EnumValue value="1949" display_value="1949" />
+	    <EnumValue value="1948" display_value="1948" />
+	    <EnumValue value="1947" display_value="1947" />
+	    <EnumValue value="1946" display_value="1946" />
+	    <EnumValue value="1945" display_value="1945" />
+	    <EnumValue value="1944" display_value="1944" />
+	    <EnumValue value="1943" display_value="1943" />
+	    <EnumValue value="1942" display_value="1942" />
+	    <EnumValue value="1941" display_value="1941" />
+	    <EnumValue value="1940" display_value="1940" />
+	    <EnumValue value="1939" display_value="1939" />
+	    <EnumValue value="1938" display_value="1938" />
+	    <EnumValue value="1937" display_value="1937" />
+	    <EnumValue value="1936" display_value="1936" />
+	    <EnumValue value="1935" display_value="1935" />
+	    <EnumValue value="1934" display_value="1934" />
+	    <EnumValue value="1933" display_value="1933" />
+	    <EnumValue value="1932" display_value="1932" />
+	    <EnumValue value="1931" display_value="1931" />
+	    <EnumValue value="1930" display_value="1930" />
+	    <EnumValue value="1929" display_value="1929" />
+	    <EnumValue value="1928" display_value="1928" />
+	    <EnumValue value="1927" display_value="1927" />
+	    <EnumValue value="1926" display_value="1926" />
+	    <EnumValue value="1925" display_value="1925" />
+	    <EnumValue value="1924" display_value="1924" />
+	    <EnumValue value="1923" display_value="1923" />
+	    <EnumValue value="1922" display_value="1922" />
+	    <EnumValue value="1921" display_value="1921" />
+	    <EnumValue value="1920" display_value="1920" />
+	    <EnumValue value="1919" display_value="1919" />
+	    <EnumValue value="1918" display_value="1918" />
+	    <EnumValue value="1917" display_value="1917" />
+	    <EnumValue value="1916" display_value="1916" />
+	    <EnumValue value="1915" display_value="1915" />
+	    <EnumValue value="1914" display_value="1914" />
+	    <EnumValue value="1913" display_value="1913" />
+	    <EnumValue value="1912" display_value="1912" />
+	    <EnumValue value="1911" display_value="1911" />
+	    <EnumValue value="1910" display_value="1910" />
+	    <EnumValue value="1909" display_value="1909" />
+	    <EnumValue value="1908" display_value="1908" />
+	    <EnumValue value="1907" display_value="1907" />
+	    <EnumValue value="1906" display_value="1906" />
+	    <EnumValue value="1905" display_value="1905" />
+	    <EnumValue value="1904" display_value="1904" />
+	    <EnumValue value="1903" display_value="1903" />
+	    <EnumValue value="1902" display_value="1902" />
+	    <EnumValue value="1901" display_value="1901" />
+	    <EnumValue value="1900" display_value="1900" />
+	</UserPref>
+	<Content type="html"><![CDATA[
+		<div id="content__MODULE_ID__"></div>
+	    <script type="text/javascript">
+			function y2k__MODULE_ID__(number) {
+				return (number < 1000) ? number + 1900 : number;
+			}
+
+			function daysElapsed__MODULE_ID__(date1,date2) {
+				var	difference	=	Date.UTC(y2k__MODULE_ID__(date1.getYear()), date1.getMonth(), date1.getDate(), 0, 0, 0)
+								-	Date.UTC(y2k__MODULE_ID__(date2.getYear()), date2.getMonth(), date2.getDate(), 0, 0, 0);
+
+				return	difference/1000/60/60/24;
+			}
+
+			function main__MODULE_ID__() {
+			    var prefs = new _IG_Prefs(__MODULE_ID__);
+
+			    var	birth_year		=	prefs.getInt("birth_year");
+			    var	birth_month		=	prefs.getInt("birth_month");
+			    var	birth_day		=	prefs.getInt("birth_day");
+
+				var	days_elapsed	=	daysElapsed__MODULE_ID__(new Date(), new Date(birth_year, birth_month - 1, birth_day));
+				var physical		=	Math.round((Math.sin(2.0 * Math.PI * days_elapsed / 23.0) + 1.0) * 255.0 / 2.0);
+				var intellectual	=	Math.round((Math.sin(2.0 * Math.PI * days_elapsed / 33.0) + 1.0) * 255.0 / 2.0);
+				var emotional		=	Math.round((Math.sin(2.0 * Math.PI * days_elapsed / 28.0) + 1.0) * 255.0 / 2.0);
+
+				var	html			=	"<center><table border='0' width='75%'>"
+									+		"<tr><td style='color:red;font-weight:bold;' width='50%'>Physical</td><td  width='50%' style='background-color:rgb("
+									+ 			physical + ", 0, 0);'>&nbsp;</td></tr>"
+									+		"<tr><td style='color:green;font-weight:bold;'>Intellectual</td><td style='background-color:rgb("
+									+ 			"0, " + intellectual + ", 0);'>&nbsp;</td></tr>"
+									+		"<tr><td style='color:blue;font-weight:bold;'>Emotional</td><td style='background-color:rgb("
+									+ 			"0, 0, " + emotional + ");'>&nbsp;</td></tr>"
+									+		"<tr><td>&nbsp;</td></tr>"
+									+		"<tr><td>Overall</td><td style='background-color:rgb("
+									+		physical + "," + intellectual + "," + emotional + ");'></td></tr>"
+									+	"</table></center>"
+									;
+
+			    _gel('content__MODULE_ID__').innerHTML = html;
+			}
+
+			_IG_RegisterOnloadHandler(main__MODULE_ID__);
+	    </script>
+	]]></Content>
+</Module>
