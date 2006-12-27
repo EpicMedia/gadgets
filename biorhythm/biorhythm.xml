@@ -190,7 +190,7 @@
     </UserPref>
     <Content type="html"><![CDATA[
         <div id="content__MODULE_ID__"></div>
-        <div id="messageBox__MODULE_ID__"></div>
+        <div id="messageBox">What's all this mean?  Click here!</div>
         <script type="text/javascript">
             function y2k__MODULE_ID__(number) {
                 return (number < 1000) ? number + 1900 : number;
@@ -230,9 +230,9 @@
 
                 _gel('content__MODULE_ID__').innerHTML = html;
 
-                var msg = new _IG_MiniMessage(__MODULE_ID__, _gel('messageBox__MODULE_ID__'));
+                var msg = new _IG_MiniMessage(__MODULE_ID__);
 
-                msg.createDismissibleMessage("What does this mean?  Click here!");
+                msg.createDismissibleMessage(_gel('messageBox'));
             }
 
             _IG_RegisterOnloadHandler(main__MODULE_ID__);
