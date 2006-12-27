@@ -14,7 +14,9 @@
 		description="Calculate your biorhythm color for the day"
 		screenshot="http://epicmedia-gadgets.googlecode.com/svn/trunk/biorhythm/biorhythm.png"
 		thumbnail="http://epicmedia-gadgets.googlecode.com/svn/trunk/biorhythm/Biorhythm_tn.png"
-	    />
+	    >
+	    <Require feature="minimessage" />
+	</ModulePrefs>
 	<UserPref
 		name="birth_month"
 	    display_name="Birth month"
@@ -188,6 +190,7 @@
 	</UserPref>
 	<Content type="html"><![CDATA[
 		<div id="content__MODULE_ID__"></div>
+		<div id="messageBox__MODULE_ID__"></div>
 	    <script type="text/javascript">
 			function y2k__MODULE_ID__(number) {
 				return (number < 1000) ? number + 1900 : number;
@@ -226,6 +229,10 @@
 									;
 
 			    _gel('content__MODULE_ID__').innerHTML = html;
+
+    	        var msg = new _IG_MiniMessage(__MODULE_ID__, _gel("messageBox__MODULE_ID__"));
+
+			    msg.createDismissibleMessage("What does this mean?  Click here!");
 			}
 
 			_IG_RegisterOnloadHandler(main__MODULE_ID__);
