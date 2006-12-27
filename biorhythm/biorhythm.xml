@@ -16,6 +16,7 @@
         >
         <Require feature="minimessage" />
         <Require feature="dynamic-height" />
+        <Require feature="setprefs" />
     </ModulePrefs>
     <UserPref
         name="birth_month"
