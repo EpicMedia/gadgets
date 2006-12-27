@@ -188,7 +188,6 @@
         <EnumValue value="1900" display_value="1900" />
     </UserPref>
     <Content type="html"><![CDATA[
-        <div id="messageBox__MODULE_ID__">What's all this mean?  Click here!</div>
         <div id="content__MODULE_ID__"></div>
         <script type="text/javascript">
             function y2k__MODULE_ID__(number) {
@@ -231,7 +230,7 @@
 
                 var msg = new _IG_MiniMessage(__MODULE_ID__);
 
-                msg.createDismissibleMessage(_gel('messageBox__MODULE_ID__'));
+                msg.createDismissibleMessage("What's all this mean?  Click here!");
             }
 
             _IG_RegisterOnloadHandler(main__MODULE_ID__);
