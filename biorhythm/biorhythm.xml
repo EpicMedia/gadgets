@@ -189,6 +189,7 @@
         <EnumValue value="1900" display_value="1900" />
     </UserPref>
     <Content type="html"><![CDATA[
+        <div id="messages__MODULE_ID__"></div>
         <div id="content__MODULE_ID__"></div>
         <script type="text/javascript">
             function y2k__MODULE_ID__(number) {
@@ -203,9 +204,12 @@
             }
 
             function main__MODULE_ID__() {
-                var msg     = new _IG_MiniMessage(__MODULE_ID__);
-                var prefs   = new _IG_Prefs(__MODULE_ID__);
+                var msg             =   new _IG_MiniMessage(__MODULE_ID__, _gel('messages__MODULE_ID__'));
+                var prefs           =   new _IG_Prefs(__MODULE_ID__);
 
+                var loadMsg         =   msg.createStaticMessage("Computing Biorhythm Color...");
+
+                _IG_AdjustIFrameHeight();
 
                 var birth_year      =   prefs.getInt("birth_year");
                 var birth_month     =   prefs.getInt("birth_month");
@@ -228,6 +232,8 @@
                                     +       physical + "," + intellectual + "," + emotional + ");'></td></tr>"
                                     +   "</table></center>"
                                     ;
+
+                msg.dismissMessage(loadMsg);
 
                 _gel('content__MODULE_ID__').innerHTML = html;
 
