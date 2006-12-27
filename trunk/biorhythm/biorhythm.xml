@@ -193,6 +193,8 @@
         <div id="messages__MODULE_ID__"></div>
         <div id="content__MODULE_ID__"></div>
         <script type="text/javascript">
+            var msg     =   new _IG_MiniMessage(__MODULE_ID__, _gel('messages__MODULE_ID__'));
+
             function y2k__MODULE_ID__(number) {
                 return (number < 1000) ? number + 1900 : number;
             }
@@ -204,8 +206,11 @@
                 return  difference/1000/60/60/24;
             }
 
+            function msg__MODULE_ID__() {
+                // msg.createDismissibleMessage("What's all this mean?  Click here!", _IG_AdjustIFrameHeight);
+            }
+
             function main__MODULE_ID__() {
-                var msg             =   new _IG_MiniMessage(__MODULE_ID__, _gel('messages__MODULE_ID__'));
                 var prefs           =   new _IG_Prefs(__MODULE_ID__);
 
                 var loadMsg         =   msg.createStaticMessage("Computing Biorhythm Color...");
@@ -238,7 +243,7 @@
 
                 _gel('content__MODULE_ID__').innerHTML = html;
 
-                msg.createDismissibleMessage("What's all this mean?  Click here!", _IG_AdjustIFrameHeight);
+                msg__MODULE_ID__();
 
                 _IG_AdjustIFrameHeight();
             }
