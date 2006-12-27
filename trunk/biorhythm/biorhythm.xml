@@ -203,7 +203,9 @@
             }
 
             function main__MODULE_ID__() {
-                var prefs = new _IG_Prefs(__MODULE_ID__);
+                var msg     = new _IG_MiniMessage(__MODULE_ID__);
+                var prefs   = new _IG_Prefs(__MODULE_ID__);
+
 
                 var birth_year      =   prefs.getInt("birth_year");
                 var birth_month     =   prefs.getInt("birth_month");
@@ -229,9 +231,9 @@
 
                 _gel('content__MODULE_ID__').innerHTML = html;
 
-                var msg = new _IG_MiniMessage(__MODULE_ID__);
-
                 msg.createDismissibleMessage("What's all this mean?  Click here!", _IG_AdjustIFrameHeight);
+
+                _IG_AdjustIFrameHeight();
             }
 
             _IG_RegisterOnloadHandler(main__MODULE_ID__);
