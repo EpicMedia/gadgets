@@ -15,6 +15,7 @@
         thumbnail="http://epicmedia-gadgets.googlecode.com/svn/trunk/biorhythm/Biorhythm_tn.png"
         >
         <Require feature="minimessage" />
+        <Require feature="dynamic-height" />
     </ModulePrefs>
     <UserPref
         name="birth_month"
@@ -231,6 +232,8 @@
                 var msg = new _IG_MiniMessage(__MODULE_ID__);
 
                 msg.createDismissibleMessage("What's all this mean?  Click here!");
+
+                _IG_AdjustIFrameHeight();
             }
 
             _IG_RegisterOnloadHandler(main__MODULE_ID__);
