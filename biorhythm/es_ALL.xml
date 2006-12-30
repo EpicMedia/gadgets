@@ -1,5 +1,6 @@
 <messagebundle>
     <msg name="title">Hoy Biorhythm Color</msg>
+    <msg name="description">Calcular su biorhythm color por lo d&#237;a</msg>
     <msg name="birth_month">Nacimiento mes</msg>
     <msg name="birth_day">Nacimiento d&#237;a</msg>
     <msg name="birth_year">Nacimiento a&#241;o</msg>

@@ -1,5 +1,6 @@
 <messagebundle>
     <msg name="title">Aujourd'hui Biorhythm Couleur</msg>
+    <msg name="description">Supputer votre biorhythm couleur pour un jour</msg>
     <msg name="birth_month">Naissance Le mois</msg>
     <msg name="birth_day">Naissance Le jour</msg>
     <msg name="birth_year">Naissance L'ann&#233;e</msg>
