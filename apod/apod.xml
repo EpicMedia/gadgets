@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-	<ModulePrefs
-		title="Astronomy Picture of the Day"
-		title_url="http://antwrp.gsfc.nasa.gov/apod/astropix.html"
-		directory_title="Astronomy Picture of the Day"
+    <ModulePrefs
+        title="Astronomy Picture of the Day"
+        title_url="http://antwrp.gsfc.nasa.gov/apod/astropix.html"
+        directory_title="Astronomy Picture of the Day"
         screenshot="http://epicmedia-gadgets.googlecode.com/svn/trunk/apod/apod_screenshot.png"
         thumbnail="http://epicmedia-gadgets.googlecode.com/svn/trunk/apod/apod_thumbnail.png"
         author="Scott J. Walter"
@@ -12,108 +12,108 @@
         author_email="sjwalter+GoogleGadget@gmail.com"
         author_photo="http://epicmedia-gadgets.googlecode.com/svn/trunk/photo.png"
         author_link="http://www.epicmedia.com/"
-		description="Display the image of the Day from the APOD Web Site"
-		render_inline="never"
-		scrolling="true"
+        description="Display the image of the Day from the APOD Web Site"
+        render_inline="never"
+        scrolling="true"
         >
         <Require feature="setprefs" />
     </ModulePrefs>
-	<UserPref
-	    name="caption"
-	    display_name="Caption ?"
-	    datatype="bool"
-	    default_value="true"
-	    />
-	<Content type="html"><![CDATA[
-		<div id="apod__MODULE_ID__"></div>
-		<style type="text/css">
-			#apod__MODULE_ID__ {
-			}
+    <UserPref
+        name="caption"
+        display_name="Caption ?"
+        datatype="bool"
+        default_value="true"
+        />
+    <Content type="html"><![CDATA[
+        <div id="apod__MODULE_ID__"></div>
+        <style type="text/css">
+            #apod__MODULE_ID__ {
+            }
 
-			#apod_box__MODULE_ID__ {
-				text-align	:	center;
-				margin		:	2px;
-			}
+            #apod_box__MODULE_ID__ {
+                text-align  :   center;
+                margin      :   2px;
+            }
 
-			#apod_box__MODULE_ID__ a {
-				text-decoration	:	none;
-			}
+            #apod_box__MODULE_ID__ a {
+                text-decoration :   none;
+            }
 
-			#apod_box__MODULE_ID__ a img {
-				width	:	240px;
-				height	:	178px;
-				border	:	1px outset black;
-			}
+            #apod_box__MODULE_ID__ a img {
+                width   :   240px;
+                height  :   178px;
+                border  :   1px outset black;
+            }
 
-			#apod_box__MODULE_ID__ p {
-				font-size	:	12px;
-				margin		:	0px;
-			}
-		</style>
-		<script>
-			var	apod_url__MODULE_ID__	=	"http://antwrp.gsfc.nasa.gov/apod/";
-			var	apod_page__MODULE_ID__	=	apod_url__MODULE_ID__ + "astropix.html";
+            #apod_box__MODULE_ID__ p {
+                font-size   :   12px;
+                margin      :   0px;
+            }
+        </style>
+        <script>
+            var apod_url__MODULE_ID__   =   "http://antwrp.gsfc.nasa.gov/apod/";
+            var apod_page__MODULE_ID__  =   apod_url__MODULE_ID__ + "astropix.html";
 
-			String.prototype.trim__MODULE_ID__	=	function(){
-			    return this.replace(/^\s*|\s*$/g,'');
-			}
+            String.prototype.trim__MODULE_ID__  =   function(){
+                return this.replace(/^\s*|\s*$/g,'');
+            }
 
-			String.prototype.ltrim__MODULE_ID__	=	function(){
-			    return this.replace(/^\s*/g,'');
-			}
+            String.prototype.ltrim__MODULE_ID__ =   function(){
+                return this.replace(/^\s*/g,'');
+            }
 
-			String.prototype.rtrim__MODULE_ID__	=	function(){
-			    return this.replace(/\s*$/g,'');
-			}
+            String.prototype.rtrim__MODULE_ID__ =   function(){
+                return this.replace(/\s*$/g,'');
+            }
 
-			function apod__MODULE_ID__() {
-				this.get_apod = function() {
-    				_gel('apod__MODULE_ID__').innerHTML	=	"Retrieving image...";
+            function apod__MODULE_ID__() {
+                this.get_apod = function() {
+                    _gel('apod__MODULE_ID__').innerHTML =   "Retrieving image...";
 
-					_IG_FetchContent(	apod_page__MODULE_ID__
-									,	function (response) {
-											if (response == "") {
-												_gel('apod__MODULE_ID__').innerHTML	=	"Sorry, APOD is temporarily unavailable...Try later!";
-										  	} else {
-												prefs		=	new _IG_Prefs(__MODULE_ID__);
-												description	=	(prefs.getString('caption')) ? prefs.getString('caption') : false;
+                    _IG_FetchContent(   apod_page__MODULE_ID__
+                                    ,   function (response) {
+                                            if (response == "") {
+                                                _gel('apod__MODULE_ID__').innerHTML =   "Sorry, APOD is temporarily unavailable...Try later!";
+                                            } else {
+                                                prefs       =   new _IG_Prefs(__MODULE_ID__);
+                                                description =   (prefs.getString('caption')) ? prefs.getString('caption') : false;
 
-												image_url	=	apod_url__MODULE_ID__
-															+	getTextBetween__MODULE_ID__(getTextBetween__MODULE_ID__(response, "<center>", "</center>"), '<IMG SRC="', '"\n');
-												image_title	=	getTextBetween__MODULE_ID__(response, '<b>', '</b>').trim__MODULE_ID__();
+                                                image_url   =   apod_url__MODULE_ID__
+                                                            +   getTextBetween__MODULE_ID__(getTextBetween__MODULE_ID__(response, "<center>", "</center>"), '<IMG SRC="', '"\n');
+                                                image_title =   getTextBetween__MODULE_ID__(response, '<b>', '</b>').trim__MODULE_ID__();
 
-												_gel('apod__MODULE_ID__').innerHTML	=	'<div id="apod_box__MODULE_ID__">'
-																					+	'<a href="' + apod_page__MODULE_ID__ + '" target="_blank" title="' + image_title + '">'
-																					+	'<img src="' + image_url + '" alt="' + image_title + '"'
-																					+	'/></a>'
-																					+	(description == false	?	''
-																												:	'<p style="margin-left:15px;margin-right:15px;">'
-																												+	image_title
-																												+	'</p>'
-																						)
-																					+	'</div>'
-																					;
-											}
-										}
-									);
-				}
-			}
+                                                _gel('apod__MODULE_ID__').innerHTML =   '<div id="apod_box__MODULE_ID__">'
+                                                                                    +   '<a href="' + apod_page__MODULE_ID__ + '" target="_blank" title="' + image_title + '">'
+                                                                                    +   '<img src="' + image_url + '" alt="' + image_title + '"'
+                                                                                    +   '/></a>'
+                                                                                    +   (description == false   ?   ''
+                                                                                                                :   '<p style="margin-left:15px;margin-right:15px;">'
+                                                                                                                +   image_title
+                                                                                                                +   '</p>'
+                                                                                        )
+                                                                                    +   '</div>'
+                                                                                    ;
+                                            }
+                                        }
+                                    );
+                }
+            }
 
-			function getTextBetween__MODULE_ID__(sAll, sFrom, sTo) {
-			    var sPart	=	"";
-			    var iFrom	=	sAll.indexOf(sFrom);
-			    var iTo		=	sAll.indexOf(sTo, iFrom);
+            function getTextBetween__MODULE_ID__(sAll, sFrom, sTo) {
+                var sPart   =   "";
+                var iFrom   =   sAll.indexOf(sFrom);
+                var iTo     =   sAll.indexOf(sTo, iFrom);
 
-			    iFrom		+=	sFrom.length;
-			    if (iTo > iFrom) {
-			        sPart	=	sAll.substring(iFrom, iTo);
-			    }
+                iFrom       +=  sFrom.length;
+                if (iTo > iFrom) {
+                    sPart   =   sAll.substring(iFrom, iTo);
+                }
 
-			    return sPart;
-			}
+                return sPart;
+            }
 
-			var apod	=	new apod__MODULE_ID__();
-			_IG_RegisterOnloadHandler(apod.get_apod());
-		</script>
-	]]></Content>
+            var apod    =   new apod__MODULE_ID__();
+            _IG_RegisterOnloadHandler(apod.get_apod());
+        </script>
+    ]]></Content>
 </Module>
