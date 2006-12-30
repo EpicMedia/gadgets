@@ -243,7 +243,7 @@
             }
 
             function main__MODULE_ID__() {
-                loadMsg__MODULE_ID__    =   msg.createStaticMessage("Computing Biorhythm Color...");
+                loadMsg__MODULE_ID__    =   msg__MODULE_ID__.createStaticMessage("Computing Biorhythm Color...");
 
                 _IG_AdjustIFrameHeight();
 
