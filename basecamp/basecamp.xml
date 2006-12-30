@@ -97,7 +97,7 @@
                                                 if (showdate__MODULE_ID__) {
                                                     var arDate = _trim((new Date((feed.Entry[i].Date) * 1000)).toLocaleString()).split(" ");
 
-                                                    html    +=  "<td class='content__MODULE_ID_'>";
+                                                    html    +=  "<td style='font-size:10pt;'>";
 
                                                     for (var j = 0; j < arDate.length; j++) {
                                                         html    +=  (j > 0 ? " " : "")
