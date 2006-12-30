@@ -54,29 +54,18 @@
         <div id="content_div__MODULE_ID__"></div>
         <script type="text/javascript">
             // Get userprefs
-            var prefs       = new _IG_Prefs(__MODULE_ID__);
-            var showdate    = prefs.getBool("show_date");
-            var summary     = prefs.getBool("show_summ");
-            var entries     = prefs.getInt("num_entries");
-
-            // If user wants to display more than 10 entries, display an error
-            // and set the value to 10, the max allowed.
-            if (entries > 10)
-            {
-                alert("You cannot display more than 10 entries.");
-                entries = 10;
-            }
-
-            var feed_url    =   prefs.getString("http_proxy")
-                            +   "?n=" + _esc(prefs.getString("bc_username"))
-                            +   "&p=" + _esc(prefs.getString("bc_password"))
-                            +   "&u=" + _esc(prefs.getString("bc_url"))
-                            ;
+            var prefs__MODULE_ID__       = new _IG_Prefs(__MODULE_ID__);
+            var showdate__MODULE_ID__    = prefs__MODULE_ID__.getBool("show_date");
+            var summary__MODULE_ID__     = prefs__MODULE_ID__.getBool("show_summ");
+            var entries__MODULE_ID__     = prefs__MODULE_ID__.getInt("num_entries");
 
             // Use the _IG_FetchFeedAsJSON() function to retrieve core feed data from
             // the specified URL. Then combine the data with HTML markup for display in
             // the gadget.
-            _IG_FetchFeedAsJSON(feed_url
+            _IG_FetchFeedAsJSON(prefs__MODULE_ID__.getString("http_proxy")
+                            +   "?n=" + _esc(prefs__MODULE_ID__.getString("bc_username"))
+                            +   "&p=" + _esc(prefs__MODULE_ID__.getString("bc_password"))
+                            +   "&u=" + _esc(prefs__MODULE_ID__.getString("bc_url"))
                             ,   function(feed) {
                                     if (feed == null){
                                         alert("There is no data.");
@@ -99,7 +88,7 @@
                                                     +   "</a> "
                                                     ;
 
-                                            if (showdate) {
+                                            if (showdate__MODULE_ID__) {
                                                 // The feed entry Date field contains the timestamp in seconds
                                                 // since Jan. 1, 1970. To convert it to the milliseconds needed
                                                 // to initialize the JavaScript Date object with the correct date,
@@ -111,7 +100,7 @@
                                                 html += date.toLocaleTimeString();
                                             }
 
-                                            if (summary==true) {
+                                            if (summary__MODULE_ID__) {
                                                 html += "<br><i>" + feed.Entry[i].Summary + "</i>";
                                             }
 
@@ -119,13 +108,13 @@
                                         }
                                     }
 
-                                    _gel("content_div").innerHTML = html;
+                                    _gel("content_div__MODULE_ID__").innerHTML = html;
 
                                     // The rest of the function parameters, which are optional: the number
                                     // of entries to return, and whether to return summaries.
                                 }
-                            ,   entries
-                            ,   summary
+                            ,   entries__MODULE_ID__
+                            ,   summary__MODULE_ID__
                             );
 
         </script>
