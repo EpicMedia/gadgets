@@ -2,7 +2,7 @@
     <msg name="title">Hoy Biorhythm Color</msg>
     <msg name="birth_month">Nacimiento mes</msg>
     <msg name="birth_day">Nacimiento día</msg>
-    <msg name="birth_year">Nacimiento a&ntilde;o</msg>
+    <msg name="birth_year">Nacimiento año</msg>
     <msg name="january"   >Enero</msg>
     <msg name="february"  >Febrero</msg>
     <msg name="march"     >Marcha</msg>

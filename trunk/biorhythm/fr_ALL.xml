@@ -1,23 +1,23 @@
 <messagebundle>
-    <msg name="title">Aujourd&squot;hui Biorhythm Couleur</msg>
+    <msg name="title">Aujourd'hui Biorhythm Couleur</msg>
     <msg name="birth_month">Naissance Le mois</msg>
     <msg name="birth_day">Naissance Le jour</msg>
-    <msg name="birth_year">Naissance L&squot;ann&eacute;e</msg>
+    <msg name="birth_year">Naissance L'année</msg>
     <msg name="january"   >January</msg>
-    <msg name="february"  >F&eacute;vrier</msg>
+    <msg name="february"  >Février</msg>
     <msg name="march"     >Mars</msg>
     <msg name="april"     >Avril</msg>
     <msg name="may"       >Mai</msg>
     <msg name="june"      >Juin</msg>
     <msg name="july"      >Juillet</msg>
-    <msg name="august"    >Ao&ucirc;t</msg>
+    <msg name="august"    >Août</msg>
     <msg name="september" >Septembre</msg>
     <msg name="october"   >Octobre</msg>
     <msg name="november"  >Novembre</msg>
-    <msg name="december"  >D&eacute;cembre</msg>
-    <msg name="computing">Calculant Aujourd&squot;hui Couleur</msg>
+    <msg name="december"  >Décembre</msg>
+    <msg name="computing">Calculant Aujourd'hui Couleur</msg>
     <msg name="physical">Physique</msg>
-    <msg name="intellectual">intellectuelle</msg>
+    <msg name="intellectual">Intellectuelle</msg>
     <msg name="emotional">Affective</msg>
     <msg name="overall">Total</msg>
 </messagebundle>
