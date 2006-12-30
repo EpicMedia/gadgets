@@ -88,13 +88,13 @@
                                             for (var i = 0; i < feed.Entry.length; i++) {
                                                 var arTitle =   _trim(feed.Entry[i].Title).split(" ");
 
-                                                html    +=  "<li>"
-                                                        +       "<img width='10' height='9' "
+                                                html    +=  "<tr>"
+                                                        +       "<td width='10'><img width='10' height='9' "
                                                         +           "src='" + gfx_url__MODULE_ID__ + arTitle[0].toLowerCase() + "_bug-full.png' "
     							                        +           "alt='" + arTitle[0].substr(0, 1).toUpperCase() + ": ' "
     							                        +           "title='" + arTitle[0] + "' "
-    							                        +           "/>"
-    							                        +       "<a target='_blank' "
+    							                        +           "/></td>"
+    							                        +       "<td><a target='_blank' "
     							                        +           "href='" + feed.Entry[i].Link + "' "
     							                        +           "title='" + arTitle[0] + "' "
     							                        +           ">"
@@ -104,10 +104,12 @@
                                                     html    +=  (j > 2 ? " " : "") + arTitle[j];
                                                 }
 
-                                                html    +=          "</a>";
+                                                html    +=          "</a></td>";
 
                                                 if (showdate__MODULE_ID__) {
                                                     var arDate = _trim((new Date((feed.Entry[i].Date) * 1000)).toLocaleString()).split(" ");
+
+                                                    html    +=  "<td>";
 
                                                     for (var j = 0; j < arDate.length; j++) {
                                                         html    +=  (j > 0 ? " " : "")
@@ -115,16 +117,19 @@
                                                                     ?   arDate[j].trimAlpha__MODULE_ID__(3)
                                                                     :   arDate[j]
                                                                     )
-                                                                +   " "
                                                                 ;
                                                     }
+
+                                                    html    +=  "</td>";
                                                 }
 
-                                                html    +=  "</li>";
+                                                html    +=  "</tr>";
                                             }
                                         }
 
-                                        _gel("content__MODULE_ID__").innerHTML = "<ul>" + _trim(html) + "</ul>";
+                                        _gel("content__MODULE_ID__").innerHTML  =   "<table border='0'>"
+                                                                                +       html
+                                                                                +   "</table>";
 
                                         _IG_AdjustIFrameHeight();
                                     }
