@@ -29,25 +29,12 @@
             #content_div__MODULE_ID__ {
                 font-size: 80%;
                 margin: 5px;
-                background-color: #ffffbf;
             }
-        	#content_div__MODULE_ID__ h3 {
-        		font-family: arial, sans-serif;
-        		font-size: 14px;
-        		background-color:#e5ecf9;
-        	}
-        	#content_div__MODULE_ID__ h3 i {
-        		font-family: arial, sans-serif;
-        		font-size: 10px;
-        	}
-        	#content_div__MODULE_ID__ ul,li {
+        	#content_div__MODULE_ID__ table tr td {
         		font-family: arial, sans-serif;
         		font-size: 12px;
         		list-style-type: none;
         		padding: 0px;
-        		margin: 0px;
-        	}
-        	#content_div__MODULE_ID__ li {
         		margin: 5px 0 0 0;
         	}
         </style>
