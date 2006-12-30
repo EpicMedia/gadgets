@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
     <ModulePrefs
-        title="BaseCamp"
-        title_url="http://www.basecamphq.com/"
+        title="__UP_title__"
+        title_url="__UP_title_url__"
         directory_title="BaseCamp Viewer"
         description="Displays information from your basecamp projects."
         author="Scott J. Walter"
@@ -12,17 +12,17 @@
         author_photo="http://epicmedia-gadgets.googlecode.com/svn/trunk/photo.png"
         author_link="http://www.epicmedia.com/"
         scrolling="true"
-        render_inline="optional"
-        scaling="false"
         >
+        <Require feature="dynamic-height" />
         <Require feature="setprefs" />
     </ModulePrefs>
     <UserPref name="http_proxy"     display_name="HTTP Proxy"   required="true" />
     <UserPref name="bc_url"         display_name="Feed URL"     required="true" />
     <UserPref name="bc_username"    display_name="Username"     required="true" />
     <UserPref name="bc_password"    display_name="Password"     required="true" />
-    <UserPref name="show_date"      display_name="Dates?"                       default_value="false" datatype="bool" />
-    <UserPref name="show_summ"      display_name="Summaries?"                   default_value="false" datatype="bool" />
+    <UserPref name="title"                                                      default_value="BaseCamp"                    datatype="hidden" />
+    <UserPref name="title_url"                                                  default_value="http://www.basecamphq.com/"  datatype="hidden" />
+    <UserPref name="show_dates"     display_name="Show Dates?"                  default_value="false"                       datatype="bool" />
     <UserPref name="num_entries"    display_name="# of Entries:"                default_value="10" />
     <Content type="html"><![CDATA[
         <style>
@@ -51,70 +51,77 @@
         		margin: 5px 0 0 0;
         	}
         </style>
-        <div id="content_div__MODULE_ID__"></div>
+        <div id="content__MODULE_ID__"><p style='text-align:center;color:#cccccc;'><i>Contacting Basecamp...</i></p></div>
         <script type="text/javascript">
-            // Get userprefs
-            var prefs__MODULE_ID__       = new _IG_Prefs(__MODULE_ID__);
-            var showdate__MODULE_ID__    = prefs__MODULE_ID__.getBool("show_date");
-            var summary__MODULE_ID__     = prefs__MODULE_ID__.getBool("show_summ");
-            var entries__MODULE_ID__     = prefs__MODULE_ID__.getInt("num_entries");
+            var gfx_url__MODULE_ID__    = "http://epicmedia-gadgets.googlecode.com/svn/trunk/basecamp/";
+            var prefs__MODULE_ID__      = new _IG_Prefs(__MODULE_ID__);
+            var entries__MODULE_ID__    = prefs__MODULE_ID__.getInt("num_entries");
+            var showdate__MODULE_ID__   = prefs__MODULE_ID__.getBool("show_dates");
 
-            // Use the _IG_FetchFeedAsJSON() function to retrieve core feed data from
-            // the specified URL. Then combine the data with HTML markup for display in
-            // the gadget.
+            String.prototype.alphaStart__MODULE_ID__  =   function() {
+                return /^([a-zA-Z])$/.test(this.substring(0, 1));
+            }
+
+            String.prototype.trimAlpha__MODULE_ID__  =   function(len) {
+                return this.replace(new RegExp("/^(.{" + len + "})([a-zA-Z]*)(.*)$/", "$1$3");
+            }
+
             _IG_FetchFeedAsJSON(prefs__MODULE_ID__.getString("http_proxy")
                             +   "?n=" + _esc(prefs__MODULE_ID__.getString("bc_username"))
                             +   "&p=" + _esc(prefs__MODULE_ID__.getString("bc_password"))
                             +   "&u=" + _esc(prefs__MODULE_ID__.getString("bc_url"))
                             ,   function(feed) {
                                     if (feed == null){
-                                        alert("There is no data.");
+                                        _gel("content__MODULE_ID__").innerHTML = "<p style='text-align:center;color:#999999;'><i>There is no data.</i></p>";
                                         return;
                                     }
 
-                                    // Start building HTML string that will be displayed in gadget.
-                                    var html = "";
+                                    prefs__MODULE_ID__.set("title", "BaseCamp (" + feed.Title + ")");
+                                    prefs__MODULE_ID__.set("title_url", feed.Link);
 
-                                    // Access the fields in the feed
-                                    html += "<div><b>" + feed.Title + "</b></div>";
-                                    html += "<div>" + feed.Description + "</div><br>";
+                                    var html    =   "";
 
-                                    // Access the data for a given entry
                                     if (feed.Entry) {
                                         for (var i = 0; i < feed.Entry.length; i++) {
-                                            html    +=  "<div>"
-                                                    +   "<a target='_blank' href='" + feed.Entry[i].Link + "'>"
-                                                    +   feed.Entry[i].Title
-                                                    +   "</a> "
-                                                    ;
+                                            var arTitle =   _trim(feed.Entry[i].Title.split(" ", 3));
+
+                                            html    +=  "<li>"
+                                                    +       "<img "width='10' height='9' "
+                                                    +           "src='" + gfx_url__MODULE_ID__ + arTitle[0].toLowerCase() + "_bug.gif' "
+							                        +           "alt='" . arTitle[0].substr(0, 1).toUpperCase() + ": ' "
+							                        +           "title='" + arTitle[0] + "' "
+							                        +           "/>"
+							                        +       "<a target='_blank' "
+							                        +           "href='" + feed.Entry[i].Link + "' "
+							                        +           "title='" + arTitle[0] + "' "
+							                        +           ">"
+							                        +           arTitle[2]
+							                        +           "</a>"
+							                        ;
 
                                             if (showdate__MODULE_ID__) {
-                                                // The feed entry Date field contains the timestamp in seconds
-                                                // since Jan. 1, 1970. To convert it to the milliseconds needed
-                                                // to initialize the JavaScript Date object with the correct date,
-                                                // multiply by 1000.
-                                                var milliseconds = (feed.Entry[i].Date) * 1000;
-                                                var date = new Date(milliseconds);
-                                                html += date.toLocaleDateString();
-                                                html += " ";
-                                                html += date.toLocaleTimeString();
+                                                var arDate = _trim(new Date((feed.Entry[i].Date) * 1000)).toLocaleString()).split(" ");
+
+                                                for (var j = 0; j < arDate.length; j++) {
+                                                    html    +=  (j > 0 ? " " : "")
+                                                            +   (   (arDate[j].alphaStart__MODULE_ID__() && arDate[j].length > 3)
+                                                                ?   arDate[j].trimAlpha__MODULE_ID__(3)
+                                                                :   arDate[j]
+                                                                )
+                                                            +   " ";
+                                                }
                                             }
 
-                                            if (summary__MODULE_ID__) {
-                                                html += "<br><i>" + feed.Entry[i].Summary + "</i>";
-                                            }
-
-                                            html += "</div>";
+                                            html    +=  "</li>";
                                         }
                                     }
 
-                                    _gel("content_div__MODULE_ID__").innerHTML = html;
+                                    _gel("content__MODULE_ID__").innerHTML = "<ul>" + _trim(html) + "</ul>";
 
-                                    // The rest of the function parameters, which are optional: the number
-                                    // of entries to return, and whether to return summaries.
+                                    _IG_AdjustIFrameHeight();
                                 }
                             ,   entries__MODULE_ID__
-                            ,   summary__MODULE_ID__
+                            ,   false
                             );
 
         </script>
