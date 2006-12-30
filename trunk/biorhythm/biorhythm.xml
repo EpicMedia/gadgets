@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
     <ModulePrefs
-        title="Today's Biorythm Color"
+        title="__MSG_title__"
         title_url="http://en.wikipedia.org/wiki/Biorhythm"
-        directory_title="Today's Biorythm"
+        directory_title="Today's Biorythm Color"
         author="Scott Walter"
         author_location="Minneapolis, MN"
         author_affiliation="EpicMedia"
@@ -15,31 +15,36 @@
         thumbnail="http://epicmedia-gadgets.googlecode.com/svn/trunk/biorhythm/Biorhythm_tn.png"
         height="120"
         >
+        <Locale             messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/biorhythm/ALL_ALL.xml"/>
+        <Locale lang="de"   messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/biorhythm/de_ALL.xml" />
+        <Locale lang="fr"   messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/biorhythm/fr_ALL.xml" />
+        <Locale lang="es"   messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/biorhythm/es_ALL.xml" />
+        <Locale lang="it"   messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/biorhythm/it_ALL.xml" />
         <Require feature="dynamic-height" />
         <Require feature="setprefs" />
     </ModulePrefs>
     <UserPref
         name="birth_month"
-        display_name="Birth month"
+        display_name="__MSG_birth_month__"
         datatype="enum"
         required="true"
         >
-        <EnumValue value="1" display_value="January" />
-        <EnumValue value="2" display_value="February" />
-        <EnumValue value="3" display_value="March" />
-        <EnumValue value="4" display_value="April" />
-        <EnumValue value="5" display_value="May" />
-        <EnumValue value="6" display_value="June" />
-        <EnumValue value="7" display_value="July" />
-        <EnumValue value="8" display_value="August" />
-        <EnumValue value="9" display_value="September" />
-        <EnumValue value="10" display_value="October" />
-        <EnumValue value="11" display_value="November" />
-        <EnumValue value="12" display_value="December" />
+        <EnumValue value="1" display_value="__MSG_january__" />
+        <EnumValue value="2" display_value="__MSG_february__" />
+        <EnumValue value="3" display_value="__MSG_march__" />
+        <EnumValue value="4" display_value="__MSG_april__" />
+        <EnumValue value="5" display_value="__MSG_may__" />
+        <EnumValue value="6" display_value="__MSG_june__" />
+        <EnumValue value="7" display_value="__MSG_july__" />
+        <EnumValue value="8" display_value="__MSG_august__" />
+        <EnumValue value="9" display_value="__MSG_september__" />
+        <EnumValue value="10" display_value="__MSG_october__" />
+        <EnumValue value="11" display_value="__MSG_november__" />
+        <EnumValue value="12" display_value="__MSG_december__" />
     </UserPref>
     <UserPref
         name="birth_day"
-        display_name="Birth day"
+        display_name="__MSG_birth_day__"
         datatype="enum"
         required="true"
         >
@@ -77,7 +82,7 @@
     </UserPref>
     <UserPref
         name="birth_year"
-        display_name="Birth year"
+        display_name="__MSG_birth_year__"
         datatype="enum"
         required="true"
         >
@@ -190,7 +195,7 @@
         <EnumValue value="1900" display_value="1900" />
     </UserPref>
     <Content type="html"><![CDATA[
-        <div id="content__MODULE_ID__"><p style='text-align:center;color:#cccccc;'><i>Computing Today's Color...</i></p></div>
+        <div id="content__MODULE_ID__"></div>
         <script type="text/javascript">
             var t__MODULE_ID__      =   null;
 
@@ -238,14 +243,14 @@
                 var t_emotional     =   trendArrow__MODULE_ID__(a_emotional    - b_emotional);
 
                 var html            =   "<center><table border='0' width='75%'>"
-                                    +       "<tr><td style='color:red;font-weight:bold;' width='47%'>Physical</td><td  width='47%' style='background-color:rgb("
+                                    +       "<tr><td style='color:red;font-weight:bold;' width='47%'>" + prefs.getMsg('physical') + "</td><td  width='47%' style='background-color:rgb("
                                     +           physical + ", 0, 0);'>&nbsp;</td><td style='text-align:center;' width='6%'>" + t_physical + "</td></tr>"
-                                    +       "<tr><td style='color:green;font-weight:bold;'>Intellectual</td><td style='background-color:rgb("
+                                    +       "<tr><td style='color:green;font-weight:bold;'>" + prefs.getMsg('intellectual') + "</td><td style='background-color:rgb("
                                     +           "0, " + intellectual + ", 0);'>&nbsp;</td><td style='text-align:center;' >" + t_intellectual + "</td></tr>"
-                                    +       "<tr><td style='color:blue;font-weight:bold;'>Emotional</td><td style='background-color:rgb("
+                                    +       "<tr><td style='color:blue;font-weight:bold;'>" + prefs.getMsg('emotional') + "</td><td style='background-color:rgb("
                                     +           "0, 0, " + emotional + ");'>&nbsp;</td><td style='text-align:center;' >" + t_emotional + "</td></tr>"
                                     +       "<tr><td>&nbsp;</td></tr>"
-                                    +       "<tr><td style='font-weight:bold;'>Overall</td><td style='background-color:rgb("
+                                    +       "<tr><td style='font-weight:bold;'>" + prefs.getMsg('overall') + "</td><td style='background-color:rgb("
                                     +       physical + "," + intellectual + "," + emotional + ");'></td><td>&nbsp;</td></tr>"
                                     +   "</table></center>"
                                     ;
@@ -256,6 +261,10 @@
             }
 
             function main__MODULE_ID__() {
+                var prefs       =   new _IG_Prefs(__MODULE_ID__);
+
+                _gel('content__MODULE_ID__').innerHTML = "<p style='text-align:center;color:#cccccc;'><i>" + prefs.getMsg('computing') + "</i></p>";
+
                 t__MODULE_ID__  =   setTimeout("run__MODULE_ID__()", 1000);
             }
 
