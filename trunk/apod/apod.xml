@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
     <ModulePrefs
-        title="Astronomy Picture of the Day"
+        title="__MSG_title__"
         title_url="http://antwrp.gsfc.nasa.gov/apod/astropix.html"
-        directory_title="Astronomy Picture of the Day"
+        directory_title="__MSG_title__"
         screenshot="http://epicmedia-gadgets.googlecode.com/svn/trunk/apod/apod_screenshot.png"
         thumbnail="http://epicmedia-gadgets.googlecode.com/svn/trunk/apod/apod_thumbnail.png"
         author="Scott J. Walter"
@@ -12,15 +12,20 @@
         author_email="sjwalter+GoogleGadget@gmail.com"
         author_photo="http://epicmedia-gadgets.googlecode.com/svn/trunk/photo.png"
         author_link="http://www.epicmedia.com/"
-        description="Display the image of the Day from the APOD Web Site"
+        description="__MSG_description__"
         render_inline="never"
         scrolling="true"
         >
+        <Locale             messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/apod/ALL_ALL.xml" />
+        <Locale lang="de"   messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/apod/de_ALL.xml" />
+        <Locale lang="fr"   messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/apod/fr_ALL.xml" />
+        <Locale lang="es"   messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/apod/es_ALL.xml" />
+        <Locale lang="it"   messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/apod/it_ALL.xml" />
         <Require feature="setprefs" />
     </ModulePrefs>
     <UserPref
         name="caption"
-        display_name="Caption ?"
+        display_name="__MSG_caption__"
         datatype="bool"
         default_value="true"
         />
@@ -68,12 +73,14 @@
 
             function apod__MODULE_ID__() {
                 this.get_apod = function() {
-                    _gel('apod__MODULE_ID__').innerHTML =   "Retrieving image...";
+                    var prefs   =   new _IG_Prefs(__MODULE_ID__);
+
+                    _gel('apod__MODULE_ID__').innerHTML =   prefs.getMsg('loading');
 
                     _IG_FetchContent(   apod_page__MODULE_ID__
                                     ,   function (response) {
                                             if (response == "") {
-                                                _gel('apod__MODULE_ID__').innerHTML =   "Sorry, APOD is temporarily unavailable...Try later!";
+                                                _gel('apod__MODULE_ID__').innerHTML =   prefs.getMsg('unavailable');
                                             } else {
                                                 prefs       =   new _IG_Prefs(__MODULE_ID__);
                                                 description =   (prefs.getString('caption')) ? prefs.getString('caption') : false;

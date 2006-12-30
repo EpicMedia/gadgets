@@ -1,0 +1,7 @@
+<messagebundle>
+    <msg name="title">Allt&#228;glich Astronomie Konterfei</msg>
+    <msg name="description">Aufwand die Abbild des label vom APOD Gewebe</msg>
+    <msg name="caption">Aufwand Kopfzeile?</msg>
+    <msg name="loading">Rettend Abbild...</msg>
+    <msg name="unavailable">Bedauernd APOD ist einstweilen unbrauchbar. Bitte versuchen sp&#228;ter.</msg>
+</messagebundle>

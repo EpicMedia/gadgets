@@ -1,0 +1,7 @@
+<messagebundle>
+    <msg name="title">Astronomy Picture of the Day</msg>
+    <msg name="description">Display the image of the day from the APOD Web Site</msg>
+    <msg name="caption">Display caption?</msg>
+    <msg name="loading">Retrieving image...</msg>
+    <msg name="unavailable">Sorry, APOD is temporarily unavailable. Please try later.</msg>
+</messagebundle>
