@@ -205,8 +205,8 @@
                 return  difference/1000/60/60/24;
             }
 
-            function sgn__MODULE_ID__(number) {
-                return (number < 0) ? -1 : (number > 0 ? 1 : 0);
+            function trendArrow__MODULE_ID__(number) {
+                return (number < 0) ? '&darr;' : (number > 0 ? '&uarr;' : '&harr;');
             }
 
             function run__MODULE_ID__() {
@@ -233,13 +233,13 @@
                 var a_intellectual  =   Math.round((Math.sin(2.0 * Math.PI * (days_elapsed + 0.5) / 33.0) + 1.0) * 255.0 / 2.0);
                 var a_emotional     =   Math.round((Math.sin(2.0 * Math.PI * (days_elapsed + 0.5) / 28.0) + 1.0) * 255.0 / 2.0);
 
-                var t_physical      =   sgn__MODULE_ID__(a_physical     - b_physical);
-                var t_intellectual  =   sgn__MODULE_ID__(a_intellectual - b_intellectual);
-                var t_emotional     =   sgn__MODULE_ID__(a_emotional    - b_emotional);
+                var t_physical      =   trendArrow__MODULE_ID__(a_physical     - b_physical);
+                var t_intellectual  =   trendArrow__MODULE_ID__(a_intellectual - b_intellectual);
+                var t_emotional     =   trendArrow__MODULE_ID__(a_emotional    - b_emotional);
 
                 var html            =   "<center><table border='0' width='75%'>"
                                     +       "<tr><td style='color:red;font-weight:bold;' width='45%'>Physical</td><td  width='45%' style='background-color:rgb("
-                                    +           physical + ", 0, 0);'>&nbsp;</td><td style='font-weight:bold;' width='10%'>" + t_physical + "</td></tr>"
+                                    +           physical + ", 0, 0);'>&nbsp;</td><td width='10%'>" + t_physical + "</td></tr>"
                                     +       "<tr><td style='color:green;font-weight:bold;'>Intellectual</td><td style='background-color:rgb("
                                     +           "0, " + intellectual + ", 0);'>&nbsp;</td><td>" + t_intellectual + "</td></tr>"
                                     +       "<tr><td style='color:blue;font-weight:bold;'>Emotional</td><td style='background-color:rgb("
