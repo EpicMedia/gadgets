@@ -26,13 +26,9 @@
     <UserPref name="num_entries"    display_name="# of Entries:"                default_value="10" />
     <Content type="html"><![CDATA[
         <style>
-            #content_div__MODULE_ID__ {
-                font-size: 80%;
-                margin: 5px;
-            }
-        	#content_div__MODULE_ID__ table tr td {
+        	.content__MODULE_ID__ {
         		font-family: arial, sans-serif;
-        		font-size: 12px;
+                font-size: 80%;
         		list-style-type: none;
         		padding: 0px;
         		margin: 5px 0 0 0;
@@ -81,7 +77,7 @@
     							                        +           "alt='" + arTitle[0].substr(0, 1).toUpperCase() + ": ' "
     							                        +           "title='" + arTitle[0] + "' "
     							                        +           "/></td>"
-    							                        +       "<td><a target='_blank' "
+    							                        +       "<td class='content__MODULE_ID_'><a target='_blank' "
     							                        +           "href='" + feed.Entry[i].Link + "' "
     							                        +           "title='" + arTitle[0] + "' "
     							                        +           ">"
@@ -96,7 +92,7 @@
                                                 if (showdate__MODULE_ID__) {
                                                     var arDate = _trim((new Date((feed.Entry[i].Date) * 1000)).toLocaleString()).split(" ");
 
-                                                    html    +=  "<td>";
+                                                    html    +=  "<td class='content__MODULE_ID_'>";
 
                                                     for (var j = 0; j < arDate.length; j++) {
                                                         html    +=  (j > 0 ? " " : "")
