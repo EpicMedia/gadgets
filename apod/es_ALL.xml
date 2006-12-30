@@ -1,0 +1,7 @@
+<messagebundle>
+    <msg name="title">Diaria Astronom&#237;a Cuadro</msg>
+    <msg name="description">Exhibir el imagen de la d&#237;a del APOD Website</msg>
+    <msg name="caption">Exhibir subt&#237;tulo?</msg>
+    <msg name="loading">Recobrable imagen...</msg>
+    <msg name="unavailable">Afligido APOD es temporalmente no disponible. Por favor probar posterior.</msg>
+</messagebundle>

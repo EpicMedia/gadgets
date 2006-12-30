@@ -1,0 +1,7 @@
+<messagebundle>
+    <msg name="title">Giornalmente Astronomia Figura</msg>
+    <msg name="description">Mostrare il immagine del giorno dal APOD Fotoricettori</msg>
+    <msg name="caption">Mostrare leggenda?</msg>
+    <msg name="loading">Recuperabile immagine...</msg>
+    <msg name="unavailable">Spiacente APOD &#x0178; temporaneamente non disponibile. Pregare tentativo posteriore.</msg>
+</messagebundle>

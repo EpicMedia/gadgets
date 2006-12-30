@@ -1,0 +1,7 @@
+<messagebundle>
+    <msg name="title">Quotidiennement Astronomie Tableau</msg>
+    <msg name="description">&#201;taler l'image de les le jour de les APOD Website</msg>
+    <msg name="caption">&#201;taler l&#233;gende?</msg>
+    <msg name="loading">R&#233;paration picture...</msg>
+    <msg name="unavailable">Pardon APOD c'est temporairement unavailable. S'il vous pla&#238;t t&#226;cher ult&#233;rieur.</msg>
+</messagebundle>
