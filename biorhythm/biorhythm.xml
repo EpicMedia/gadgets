@@ -238,8 +238,8 @@
                 var t_emotional     =   trendArrow__MODULE_ID__(a_emotional    - b_emotional);
 
                 var html            =   "<center><table border='0' width='75%'>"
-                                    +       "<tr><td style='color:red;font-weight:bold;' width='45%'>Physical</td><td  width='45%' style='background-color:rgb("
-                                    +           physical + ", 0, 0);'>&nbsp;</td><td style='text-align:center;' width='10%'>" + t_physical + "</td></tr>"
+                                    +       "<tr><td style='color:red;font-weight:bold;' width='47%'>Physical</td><td  width='47%' style='background-color:rgb("
+                                    +           physical + ", 0, 0);'>&nbsp;</td><td style='text-align:center;' width='6%'>" + t_physical + "</td></tr>"
                                     +       "<tr><td style='color:green;font-weight:bold;'>Intellectual</td><td style='background-color:rgb("
                                     +           "0, " + intellectual + ", 0);'>&nbsp;</td><td style='text-align:center;' >" + t_intellectual + "</td></tr>"
                                     +       "<tr><td style='color:blue;font-weight:bold;'>Emotional</td><td style='background-color:rgb("
