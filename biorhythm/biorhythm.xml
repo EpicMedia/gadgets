@@ -13,6 +13,7 @@
         description="Calculate your biorhythm color for the day"
         screenshot="http://epicmedia-gadgets.googlecode.com/svn/trunk/biorhythm/biorhythm.png"
         thumbnail="http://epicmedia-gadgets.googlecode.com/svn/trunk/biorhythm/Biorhythm_tn.png"
+        height="120"
         >
         <Require feature="dynamic-height" />
         <Require feature="setprefs" />
@@ -237,7 +238,7 @@
             }
 
             function main__MODULE_ID__() {
-                _gel('content__MODULE_ID__').innerHTML  =   "<p style='text-align:center;'><i>Computing Today's Color...</i></p>";
+                _gel('content__MODULE_ID__').innerHTML  =   "<p style='text-align:center;color:#cccccc;'><i>Computing Today's Color...</i></p>";
 
                 _IG_AdjustIFrameHeight();
 
