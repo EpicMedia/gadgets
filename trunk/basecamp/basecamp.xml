@@ -63,7 +63,7 @@
             }
 
             String.prototype.trimAlpha__MODULE_ID__  =   function(len) {
-                return this.replace(new RegExp("/^(.{" + len + "})([a-zA-Z]*)(.*)$/", "$1$3");
+                return this.replace(new RegExp("/^(.{" + len + "})([a-zA-Z]*)(.*)$/"), "$1$3");
             }
 
             _IG_FetchFeedAsJSON(prefs__MODULE_ID__.getString("http_proxy")
