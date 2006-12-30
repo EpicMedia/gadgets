@@ -1,7 +1,7 @@
 <messagebundle>
     <msg name="title">Hoy Biorhythm Color</msg>
     <msg name="birth_month">Nacimiento mes</msg>
-    <msg name="birth_day">Nacimiento día</msg>
+    <msg name="birth_day">Nacimiento d&#237;a</msg>
     <msg name="birth_year">Nacimiento a&#241;o</msg>
     <msg name="january"   >Enero</msg>
     <msg name="february"  >Febrero</msg>
