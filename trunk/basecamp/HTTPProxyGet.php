@@ -22,5 +22,5 @@
 
 	header('Content-Type: application/xml');
 
-	echo $response;
+	echo strlen($response) > 0 ? $response : "<NoData />";
 ?>
