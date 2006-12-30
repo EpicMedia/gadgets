@@ -76,15 +76,12 @@
                                         return;
                                     }
 
-                                    prefs__MODULE_ID__.set("title", "BaseCamp (" + feed.Title + ")");
+                                    prefs__MODULE_ID__.set("title", "BaseCamp (" + feed.Title + " - " + feed.Entry.length + ")");
                                     prefs__MODULE_ID__.set("title_url", feed.Link);
 
                                     var html    =   "";
 
                                     if (feed.Entry) {
-
-                                    prefs__MODULE_ID__.set("title", "BaseCamp (" + feed.Title + " - " + feed.Entry.length + ")");
-
                                         for (var i = 0; i < feed.Entry.length; i++) {
                                             var arTitle =   _trim(feed.Entry[i].Title).split(" ");
 
