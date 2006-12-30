@@ -193,7 +193,9 @@
         <div id="messages__MODULE_ID__"></div>
         <div id="content__MODULE_ID__"></div>
         <script type="text/javascript">
-            var msg     =   new _IG_MiniMessage(__MODULE_ID__, _gel('messages__MODULE_ID__'));
+            var msg__MODULE_ID__        =   new _IG_MiniMessage(__MODULE_ID__, _gel('messages__MODULE_ID__'));
+            var t__MODULE_ID__          =   null;
+            var loadMsg__MODULE_ID__    =   null;
 
             function y2k__MODULE_ID__(number) {
                 return (number < 1000) ? number + 1900 : number;
@@ -206,16 +208,10 @@
                 return  difference/1000/60/60/24;
             }
 
-            function msg__MODULE_ID__() {
-                // msg.createDismissibleMessage("What's all this mean?  Click here!", _IG_AdjustIFrameHeight);
-            }
+            function run__MODULE_ID__() {
+                clearTimeout(t__MODULE_ID__);
 
-            function main__MODULE_ID__() {
                 var prefs           =   new _IG_Prefs(__MODULE_ID__);
-
-                var loadMsg         =   msg.createStaticMessage("Computing Biorhythm Color...");
-
-                _IG_AdjustIFrameHeight();
 
                 var birth_year      =   prefs.getInt("birth_year");
                 var birth_month     =   prefs.getInt("birth_month");
@@ -239,13 +235,19 @@
                                     +   "</table></center>"
                                     ;
 
-                msg.dismissMessage(loadMsg);
-
                 _gel('content__MODULE_ID__').innerHTML = html;
 
-                msg__MODULE_ID__();
+                msg__MODULE_ID__.dismissMessage(loadMsg__MODULE_ID__);
 
                 _IG_AdjustIFrameHeight();
+            }
+
+            function main__MODULE_ID__() {
+                loadMsg__MODULE_ID__    =   msg.createStaticMessage("Computing Biorhythm Color...");
+
+                _IG_AdjustIFrameHeight();
+
+                t__MODULE_ID__  =   setTimeout("run__MODULE_ID__()", 1000);
             }
 
             _IG_RegisterOnloadHandler(main__MODULE_ID__);
