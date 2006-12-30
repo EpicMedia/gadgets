@@ -15,14 +15,15 @@
         <Require feature="dynamic-height" />
         <Require feature="setprefs" />
     </ModulePrefs>
+    <UserPref name="title"                                                      datatype="hidden"   default_value="BaseCamp" />
+    <UserPref name="title_url"                                                  datatype="hidden"   default_value="http://www.basecamphq.com/" />
+    <UserPref name="gfx_url"                                                    datatype="hidden"   default_value="http://epicmedia-gadgets.googlecode.com/svn/trunk/basecamp/" />
     <UserPref name="http_proxy"     display_name="HTTP Proxy"   required="true" />
     <UserPref name="bc_url"         display_name="Feed URL"     required="true" />
     <UserPref name="bc_username"    display_name="Username"     required="true" />
     <UserPref name="bc_password"    display_name="Password"     required="true" />
-    <UserPref name="title"                                                      default_value="BaseCamp"                    datatype="hidden" />
-    <UserPref name="title_url"                                                  default_value="http://www.basecamphq.com/"  datatype="hidden" />
-    <UserPref name="show_dates"     display_name="Show Dates?"                  default_value="false"                       datatype="bool" />
-    <UserPref name="num_entries"    display_name="# of Entries:"                default_value="10" />
+    <UserPref name="show_dates"     display_name="Show Dates?"                  datatype="bool"     default_value="false" />
+    <UserPref name="num_entries"    display_name="# of Entries:"                                    default_value="10" />
     <Content type="html"><![CDATA[
         <style>
         	#content__MODULE_ID__ {
@@ -34,10 +35,10 @@
         </style>
         <div id="content__MODULE_ID__"><p style='text-align:center;color:#cccccc;'><i>Contacting Basecamp...</i></p></div>
         <script type="text/javascript">
-            var gfx_url__MODULE_ID__    = "http://epicmedia-gadgets.googlecode.com/svn/trunk/basecamp/";
             var prefs__MODULE_ID__      = new _IG_Prefs(__MODULE_ID__);
+            var gfx_url__MODULE_ID__    = prefs__MODULE_ID__.getString("gfx_url");
             var showdate__MODULE_ID__   = prefs__MODULE_ID__.getBool("show_dates");
-            var entries__MODULE_ID__    = prefs__MODULE_ID__.getInt("num_entries")
+            var entries__MODULE_ID__    = prefs__MODULE_ID__.getInt("num_entries");
 
             String.prototype.alphaStart__MODULE_ID__  =   function() {
                 return /^([a-zA-Z])$/.test(this.substring(0, 1));
