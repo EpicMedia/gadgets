@@ -26,10 +26,15 @@
     <UserPref name="num_entries"    display_name="# of Entries:"                default_value="10" />
     <Content type="html"><![CDATA[
         <style>
+        	#content__MODULE_ID__ table tr td {
+        		font-family: arial, sans-serif;
+                font-size: 12pt;
+        		padding: 0px;
+        		margin: 5px 0 0 0;
+        	}
         	.content__MODULE_ID__ {
         		font-family: arial, sans-serif;
-                font-size: 80%;
-        		list-style-type: none;
+                font-size: 12pt;
         		padding: 0px;
         		margin: 5px 0 0 0;
         	}
