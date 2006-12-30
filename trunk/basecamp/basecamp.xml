@@ -11,7 +11,6 @@
         author_affiliation="EpicMedia"
         author_photo="http://epicmedia-gadgets.googlecode.com/svn/trunk/photo.png"
         author_link="http://www.epicmedia.com/"
-        scrolling="true"
         >
         <Require feature="dynamic-height" />
         <Require feature="setprefs" />
@@ -109,7 +108,7 @@
                                             }
                                         }
 
-                                        _gel("content__MODULE_ID__").innerHTML  =   "<table border='0'>"
+                                        _gel("content__MODULE_ID__").innerHTML  =   "<table border='0' width='100%'>"
                                                                                 +       html
                                                                                 +   "</table>";
 
