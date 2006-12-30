@@ -56,78 +56,82 @@
             var gfx_url__MODULE_ID__    = "http://epicmedia-gadgets.googlecode.com/svn/trunk/basecamp/";
             var prefs__MODULE_ID__      = new _IG_Prefs(__MODULE_ID__);
             var showdate__MODULE_ID__   = prefs__MODULE_ID__.getBool("show_dates");
+            var entries__MODULE_ID__    = prefs__MODULE_ID__.getInt("num_entries")
 
             String.prototype.alphaStart__MODULE_ID__  =   function() {
                 return /^([a-zA-Z])$/.test(this.substring(0, 1));
             }
 
             String.prototype.trimAlpha__MODULE_ID__  =   function(len) {
-                return this.replace(new RegExp("/^(.{" + len + "})([a-zA-Z]*)(.*)$/"), "$1$3");
+                return this.replace(new RegExp("^(.{" + len + "})([a-zA-Z]*)(.*)$"), "$1$3");
             }
 
-            _IG_FetchFeedAsJSON(prefs__MODULE_ID__.getString("http_proxy")
-                            +   "?n=" + _esc(prefs__MODULE_ID__.getString("bc_username"))
-                            +   "&p=" + _esc(prefs__MODULE_ID__.getString("bc_password"))
-                            +   "&u=" + _esc(prefs__MODULE_ID__.getString("bc_url"))
-                            ,   function(feed) {
-                                    if (feed == null){
-                                        _gel("content__MODULE_ID__").innerHTML = "<p style='text-align:center;color:#999999;'><i>There is no data.</i></p>";
-                                        return;
-                                    }
-
-                                    prefs__MODULE_ID__.set("title", "BaseCamp (" + feed.Title + " - " + feed.Entry.length + ")");
-                                    prefs__MODULE_ID__.set("title_url", feed.Link);
-
-                                    var html    =   "";
-
-                                    if (feed.Entry) {
-                                        for (var i = 0; i < feed.Entry.length; i++) {
-                                            var arTitle =   _trim(feed.Entry[i].Title).split(" ");
-
-                                            html    +=  "<li>"
-                                                    +       "<img width='10' height='9' "
-                                                    +           "src='" + gfx_url__MODULE_ID__ + arTitle[0].toLowerCase() + "_bug-full.png' "
-							                        +           "alt='" + arTitle[0].substr(0, 1).toUpperCase() + ": ' "
-							                        +           "title='" + arTitle[0] + "' "
-							                        +           "/>"
-							                        +       "<a target='_blank' "
-							                        +           "href='" + feed.Entry[i].Link + "' "
-							                        +           "title='" + arTitle[0] + "' "
-							                        +           ">"
-							                        ;
-
-                                            for (var j = 2; j < arTitle.length; j++) {
-                                                html    +=  (j > 2 ? " " : "") + arTitle[j];
-                                            }
-
-                                            html    +=          "</a>";
-
-                                            if (showdate__MODULE_ID__) {
-                                                var arDate = _trim((new Date((feed.Entry[i].Date) * 1000)).toLocaleString()).split(" ");
-
-                                                for (var j = 0; j < arDate.length; j++) {
-                                                    html    +=  (j > 0 ? " " : "")
-                                                            +   (   (arDate[j].alphaStart__MODULE_ID__() && arDate[j].length > 3)
-                                                                ?   arDate[j].trimAlpha__MODULE_ID__(3)
-                                                                :   arDate[j]
-                                                                )
-                                                            +   " "
-                                                            ;
-                                                }
-                                            }
-
-                                            html    +=  "</li>";
+            if (entries__MODULE_ID__ < 1 || entries__MODULE_ID__ > 9) {
+                _gel("content__MODULE_ID__").innerHTML = "<p style='text-align:center;color:#660000;'><i>Please specify between 1 and 9 entries.</i></p>";
+            } else {
+                _IG_FetchFeedAsJSON(prefs__MODULE_ID__.getString("http_proxy")
+                                +   "?n=" + _esc(prefs__MODULE_ID__.getString("bc_username"))
+                                +   "&p=" + _esc(prefs__MODULE_ID__.getString("bc_password"))
+                                +   "&u=" + _esc(prefs__MODULE_ID__.getString("bc_url"))
+                                ,   function(feed) {
+                                        if (feed == null){
+                                            _gel("content__MODULE_ID__").innerHTML = "<p style='text-align:center;color:#999999;'><i>There is no data.</i></p>";
+                                            return;
                                         }
+
+                                        prefs__MODULE_ID__.set("title", "BaseCamp (" + feed.Title + " - " + feed.Entry.length + ")");
+                                        prefs__MODULE_ID__.set("title_url", feed.Link);
+
+                                        var html    =   "";
+
+                                        if (feed.Entry) {
+                                            for (var i = 0; i < feed.Entry.length; i++) {
+                                                var arTitle =   _trim(feed.Entry[i].Title).split(" ");
+
+                                                html    +=  "<li>"
+                                                        +       "<img width='10' height='9' "
+                                                        +           "src='" + gfx_url__MODULE_ID__ + arTitle[0].toLowerCase() + "_bug-full.png' "
+    							                        +           "alt='" + arTitle[0].substr(0, 1).toUpperCase() + ": ' "
+    							                        +           "title='" + arTitle[0] + "' "
+    							                        +           "/>"
+    							                        +       "<a target='_blank' "
+    							                        +           "href='" + feed.Entry[i].Link + "' "
+    							                        +           "title='" + arTitle[0] + "' "
+    							                        +           ">"
+    							                        ;
+
+                                                for (var j = 2; j < arTitle.length; j++) {
+                                                    html    +=  (j > 2 ? " " : "") + arTitle[j];
+                                                }
+
+                                                html    +=          "</a>";
+
+                                                if (showdate__MODULE_ID__) {
+                                                    var arDate = _trim((new Date((feed.Entry[i].Date) * 1000)).toLocaleString()).split(" ");
+
+                                                    for (var j = 0; j < arDate.length; j++) {
+                                                        html    +=  (j > 0 ? " " : "")
+                                                                +   (   (arDate[j].alphaStart__MODULE_ID__() && arDate[j].length > 3)
+                                                                    ?   arDate[j].trimAlpha__MODULE_ID__(3)
+                                                                    :   arDate[j]
+                                                                    )
+                                                                +   " "
+                                                                ;
+                                                    }
+                                                }
+
+                                                html    +=  "</li>";
+                                            }
+                                        }
+
+                                        _gel("content__MODULE_ID__").innerHTML = "<ul>" + _trim(html) + "</ul>";
+
+                                        _IG_AdjustIFrameHeight();
                                     }
-
-                                    _gel("content__MODULE_ID__").innerHTML = "<ul>" + _trim(html) + "</ul>";
-
-                                    _IG_AdjustIFrameHeight();
-                                }
-                            ,   prefs__MODULE_ID__.getInt("num_entries")
-                            ,   false
-                            );
-
+                                ,   entries__MODULE_ID__
+                                ,   false
+                                );
+            }
         </script>
     ]]></Content>
 </Module>
