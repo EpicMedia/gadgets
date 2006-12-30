@@ -125,7 +125,7 @@
                                     _IG_AdjustIFrameHeight();
                                 }
                             ,   prefs__MODULE_ID__.getInt("num_entries")
-                            ,   true
+                            ,   false
                             );
 
         </script>
