@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+    <ModulePrefs
+        title="BaseCamp"
+        title_url="http://www.basecamphq.com/"
+        directory_title="BaseCamp Viewer"
+        description="Displays information from your basecamp projects."
+        author="Scott J. Walter"
+        author_location="Minneapolis, MN"
+        author_email="sjwalter+GoogleGadget@gmail.com"
+        author_affiliation="EpicMedia"
+        author_photo="http://epicmedia-gadgets.googlecode.com/svn/trunk/photo.png"
+        author_link="http://www.epicmedia.com/"
+        scrolling="true"
+        render_inline="optional"
+        scaling="false"
+        >
+        <Require feature="setprefs" />
+    </ModulePrefs>
+    <UserPref name="http_proxy"     display_name="HTTP Proxy"   required="true" />
+    <UserPref name="bc_url"         display_name="Feed URL"     required="true" />
+    <UserPref name="bc_username"    display_name="Username"     required="true" />
+    <UserPref name="bc_password"    display_name="Password"     required="true" />
+    <UserPref name="show_date"      display_name="Dates?"                       default_value="false" datatype="bool" />
+    <UserPref name="show_summ"      display_name="Summaries?"                   default_value="false" datatype="bool" />
+    <UserPref name="num_entries"    display_name="# of Entries:"                default_value="10" />
+    <Content type="html"><![CDATA[
+        <style>
+            #content_div__MODULE_ID__ {
+                font-size: 80%;
+                margin: 5px;
+                background-color: #ffffbf;
+            }
+        	#content_div__MODULE_ID__ h3 {
+        		font-family: arial, sans-serif;
+        		font-size: 14px;
+        		background-color:#e5ecf9;
+        	}
+        	#content_div__MODULE_ID__ h3 i {
+        		font-family: arial, sans-serif;
+        		font-size: 10px;
+        	}
+        	#content_div__MODULE_ID__ ul,li {
+        		font-family: arial, sans-serif;
+        		font-size: 12px;
+        		list-style-type: none;
+        		padding: 0px;
+        		margin: 0px;
+        	}
+        	#content_div__MODULE_ID__ li {
+        		margin: 5px 0 0 0;
+        	}
+        </style>
+        <div id="content_div__MODULE_ID__"></div>
+        <script type="text/javascript">
+            // Get userprefs
+            var prefs       = new _IG_Prefs(__MODULE_ID__);
+            var showdate    = prefs.getBool("show_date");
+            var summary     = prefs.getBool("show_summ");
+            var entries     = prefs.getInt("num_entries");
+
+            // If user wants to display more than 10 entries, display an error
+            // and set the value to 10, the max allowed.
+            if (entries > 10)
+            {
+                alert("You cannot display more than 10 entries.");
+                entries = 10;
+            }
+
+            var feed_url    =   prefs.getString("http_proxy")
+                            +   "?u=" + _esc(prefs.getString("bc_url"));
+                            +   "&n=" + _esc(prefs.getString("bc_username"));
+                            +   "&p=" + _esc(prefs.getString("bc_password"));
+
+            // Use the _IG_FetchFeedAsJSON() function to retrieve core feed data from
+            // the specified URL. Then combine the data with HTML markup for display in
+            // the gadget.
+            _IG_FetchFeedAsJSON(
+                            ,   function(feed) {
+                                    if (feed == null){
+                                        alert("There is no data.");
+                                        return;
+                                    }
+
+                                    // Start building HTML string that will be displayed in gadget.
+                                    var html = "";
+
+                                    // Access the fields in the feed
+                                    html += "<div><b>" + feed.Title + "</b></div>";
+                                    html += "<div>" + feed.Description + "</div><br>";
+
+                                    // Access the data for a given entry
+                                    if (feed.Entry) {
+                                        for (var i = 0; i < feed.Entry.length; i++) {
+                                            html    +=  "<div>"
+                                                    +   "<a target='_blank' href='" + feed.Entry[i].Link + "'>"
+                                                    +   feed.Entry[i].Title
+                                                    +   "</a> "
+                                                    ;
+
+                                            if (showdate) {
+                                                // The feed entry Date field contains the timestamp in seconds
+                                                // since Jan. 1, 1970. To convert it to the milliseconds needed
+                                                // to initialize the JavaScript Date object with the correct date,
+                                                // multiply by 1000.
+                                                var milliseconds = (feed.Entry[i].Date) * 1000;
+                                                var date = new Date(milliseconds);
+                                                html += date.toLocaleDateString();
+                                                html += " ";
+                                                html += date.toLocaleTimeString();
+                                            }
+
+                                            if (summary==true) {
+                                                html += "<br><i>" + feed.Entry[i].Summary + "</i>";
+                                            }
+
+                                            html += "</div>";
+                                        }
+                                    }
+
+                                    _gel("content_div").innerHTML = html;
+
+                                    // The rest of the function parameters, which are optional: the number
+                                    // of entries to return, and whether to return summaries.
+                                }
+                            ,   entries
+                            ,   summary
+                            );
+
+        </script>
+    ]]></Content>
+</Module>
