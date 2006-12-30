@@ -68,14 +68,15 @@
             }
 
             var feed_url    =   prefs.getString("http_proxy")
-                            +   "?u=" + _esc(prefs.getString("bc_url"));
-                            +   "&n=" + _esc(prefs.getString("bc_username"));
-                            +   "&p=" + _esc(prefs.getString("bc_password"));
+                            +   "?n=" + _esc(prefs.getString("bc_username"))
+                            +   "&p=" + _esc(prefs.getString("bc_password"))
+                            +   "&u=" + _esc(prefs.getString("bc_url"))
+                            ;
 
             // Use the _IG_FetchFeedAsJSON() function to retrieve core feed data from
             // the specified URL. Then combine the data with HTML markup for display in
             // the gadget.
-            _IG_FetchFeedAsJSON(
+            _IG_FetchFeedAsJSON(feed_url
                             ,   function(feed) {
                                     if (feed == null){
                                         alert("There is no data.");
