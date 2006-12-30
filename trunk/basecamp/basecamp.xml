@@ -55,7 +55,6 @@
         <script type="text/javascript">
             var gfx_url__MODULE_ID__    = "http://epicmedia-gadgets.googlecode.com/svn/trunk/basecamp/";
             var prefs__MODULE_ID__      = new _IG_Prefs(__MODULE_ID__);
-            var entries__MODULE_ID__    = prefs__MODULE_ID__.getInt("num_entries");
             var showdate__MODULE_ID__   = prefs__MODULE_ID__.getBool("show_dates");
 
             String.prototype.alphaStart__MODULE_ID__  =   function() {
@@ -125,8 +124,8 @@
 
                                     _IG_AdjustIFrameHeight();
                                 }
-                            ,   entries__MODULE_ID__
-                            ,   false
+                            ,   prefs__MODULE_ID__.getInt("num_entries")
+                            ,   true
                             );
 
         </script>
