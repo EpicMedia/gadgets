@@ -1,5 +1,6 @@
 <messagebundle>
     <msg name="title">Heutig Biorhythm K&#246;ln</msg>
+    <msg name="description">Ausrechnen ihrer biorhythm K&#246;ln f&#252;rs label</msg>
     <msg name="birth_month">Geburt Monat</msg>
     <msg name="birth_day">Geburt Tag</msg>
     <msg name="birth_year">Geburt Jahreszahl</msg>
