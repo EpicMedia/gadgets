@@ -206,7 +206,9 @@
             }
 
             function run__MODULE_ID__() {
-                clearTimeout(t__MODULE_ID__);
+                if (t__MODULE_ID__) {
+                    clearTimeout(t__MODULE_ID__);
+                }
 
                 var prefs           =   new _IG_Prefs(__MODULE_ID__);
 
@@ -238,7 +240,7 @@
             }
 
             function main__MODULE_ID__() {
-                t__MODULE_ID__  =   setTimeout("run__MODULE_ID__()", 500);
+                t__MODULE_ID__  =   setTimeout("run__MODULE_ID__()", 1000);
             }
 
             _IG_RegisterOnloadHandler(main__MODULE_ID__);
