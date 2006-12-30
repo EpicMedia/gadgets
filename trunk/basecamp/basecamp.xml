@@ -83,7 +83,7 @@
 
                                     if (feed.Entry) {
                                         for (var i = 0; i < feed.Entry.length; i++) {
-                                            var arTitle =   _trim(feed.Entry[i].Title).split(" ", 3);
+                                            var arTitle =   _trim(feed.Entry[i].Title).split(" ");
 
                                             html    +=  "<li>"
                                                     +       "<img width='10' height='9' "
@@ -95,22 +95,26 @@
 							                        +           "href='" + feed.Entry[i].Link + "' "
 							                        +           "title='" + arTitle[0] + "' "
 							                        +           ">"
-							                        +           arTitle[2]
-							                        +           "</a>"
 							                        ;
 
-                                            if (showdate__MODULE_ID__) {
-                                                var arDate = _trim((new Date((feed.Entry[i].Date) * 1000)).toLocaleString()).split(" ");
+                                            for (var j = 2; j < arTitle.length; j++) {
+                                                html    +=  (j > 2 ? " " : "") + arTitle[j];
+                                            }
 
-                                                for (var j = 0; j < arDate.length; j++) {
-                                                    html    +=  (j > 0 ? " " : "")
-                                                            +   (   (arDate[j].alphaStart__MODULE_ID__() && arDate[j].length > 3)
-                                                                ?   arDate[j].trimAlpha__MODULE_ID__(3)
-                                                                :   arDate[j]
-                                                                )
-                                                            +   " "
-                                                            ;
-                                                }
+                                            html    +=          "</a>";
+
+//                                            if (showdate__MODULE_ID__) {
+//                                                var arDate = _trim((new Date((feed.Entry[i].Date) * 1000)).toLocaleString()).split(" ");
+//
+//                                                for (var j = 0; j < arDate.length; j++) {
+//                                                    html    +=  (j > 0 ? " " : "")
+//                                                            +   (   (arDate[j].alphaStart__MODULE_ID__() && arDate[j].length > 3)
+//                                                                ?   arDate[j].trimAlpha__MODULE_ID__(3)
+//                                                                :   arDate[j]
+//                                                                )
+//                                                            +   " "
+//                                                            ;
+//                                                }
                                             }
 
                                             html    +=  "</li>";
