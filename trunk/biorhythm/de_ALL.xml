@@ -1,11 +1,11 @@
 <messagebundle>
-    <msg name="title">Heutig Biorhythm Köln</msg>
+    <msg name="title">Heutig Biorhythm K&#246;ln</msg>
     <msg name="birth_month">Geburt Monat</msg>
     <msg name="birth_day">Geburt Tag</msg>
     <msg name="birth_year">Geburt Jahreszahl</msg>
     <msg name="january"   >Januar</msg>
     <msg name="february"  >Februar</msg>
-    <msg name="march"     >März</msg>
+    <msg name="march"     >M&#228;rz</msg>
     <msg name="april"     >April</msg>
     <msg name="may"       >Mai</msg>
     <msg name="june"      >Juni</msg>
@@ -15,9 +15,9 @@
     <msg name="october"   >Oktober</msg>
     <msg name="november"  >November</msg>
     <msg name="december"  >Dezember</msg>
-    <msg name="computing">Berechnend Heutig Köln...</msg>
+    <msg name="computing">Berechnend Heutig K&#246;ln...</msg>
     <msg name="physical">Physisch</msg>
     <msg name="intellectual">Durchgeistigt</msg>
-    <msg name="emotional">Gefühlsmäßig</msg>
+    <msg name="emotional">Gef&#252;hlsm&#228;&#223;ig</msg>
     <msg name="overall">Kittel</msg>
 </messagebundle>
