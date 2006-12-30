@@ -245,7 +245,7 @@
                                     +       "<tr><td style='color:blue;font-weight:bold;'>Emotional</td><td style='background-color:rgb("
                                     +           "0, 0, " + emotional + ");'>&nbsp;</td><td>" + t_emotional + "</td></tr>"
                                     +       "<tr><td>&nbsp;</td></tr>"
-                                    +       "<tr><td>Overall</td><td style='background-color:rgb("
+                                    +       "<tr><td style='font-weight:bold;'>Overall</td><td style='background-color:rgb("
                                     +       physical + "," + intellectual + "," + emotional + ");'></td><td>&nbsp;</td></tr>"
                                     +   "</table></center>"
                                     ;
