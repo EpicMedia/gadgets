@@ -195,7 +195,7 @@
         <EnumValue value="1900" display_value="1900" />
     </UserPref>
     <Content type="html"><![CDATA[
-        <div id="content__MODULE_ID__"></div>
+        <div id="content__MODULE_ID__"><p style='text-align:center;color:#cccccc;'><i>__MSG_computing__</i></p></div>
         <script type="text/javascript">
             var t__MODULE_ID__      =   null;
 
@@ -261,10 +261,6 @@
             }
 
             function main__MODULE_ID__() {
-                var prefs       =   new _IG_Prefs(__MODULE_ID__);
-
-                _gel('content__MODULE_ID__').innerHTML = "<p style='text-align:center;color:#cccccc;'><i>" + prefs.getMsg('computing') + "</i></p>";
-
                 t__MODULE_ID__  =   setTimeout("run__MODULE_ID__()", 1000);
             }
 
