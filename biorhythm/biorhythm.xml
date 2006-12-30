@@ -3,7 +3,7 @@
     <ModulePrefs
         title="__MSG_title__"
         title_url="http://en.wikipedia.org/wiki/Biorhythm"
-        directory_title="Today's Biorythm Color"
+        directory_title="__MSG_title__"
         author="Scott Walter"
         author_location="Minneapolis, MN"
         author_affiliation="EpicMedia"
