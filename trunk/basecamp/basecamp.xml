@@ -103,18 +103,18 @@
 
                                             html    +=          "</a>";
 
-//                                            if (showdate__MODULE_ID__) {
-//                                                var arDate = _trim((new Date((feed.Entry[i].Date) * 1000)).toLocaleString()).split(" ");
-//
-//                                                for (var j = 0; j < arDate.length; j++) {
-//                                                    html    +=  (j > 0 ? " " : "")
-//                                                            +   (   (arDate[j].alphaStart__MODULE_ID__() && arDate[j].length > 3)
-//                                                                ?   arDate[j].trimAlpha__MODULE_ID__(3)
-//                                                                :   arDate[j]
-//                                                                )
-//                                                            +   " "
-//                                                            ;
-//                                                }
+                                            if (showdate__MODULE_ID__) {
+                                                var arDate = _trim((new Date((feed.Entry[i].Date) * 1000)).toLocaleString()).split(" ");
+
+                                                for (var j = 0; j < arDate.length; j++) {
+                                                    html    +=  (j > 0 ? " " : "")
+                                                            +   (   (arDate[j].alphaStart__MODULE_ID__() && arDate[j].length > 3)
+                                                                ?   arDate[j].trimAlpha__MODULE_ID__(3)
+                                                                :   arDate[j]
+                                                                )
+                                                            +   " "
+                                                            ;
+                                                }
                                             }
 
                                             html    +=  "</li>";
