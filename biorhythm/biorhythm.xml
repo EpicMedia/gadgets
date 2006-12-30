@@ -240,9 +240,7 @@
             function main__MODULE_ID__() {
                 _gel('content__MODULE_ID__').innerHTML  =   "<p style='text-align:center;color:#cccccc;'><i>Computing Today's Color...</i></p>";
 
-                _IG_AdjustIFrameHeight();
-
-                t__MODULE_ID__  =   setTimeout("run__MODULE_ID__()", 1000);
+                t__MODULE_ID__  =   setTimeout("run__MODULE_ID__()", 500);
             }
 
             _IG_RegisterOnloadHandler(main__MODULE_ID__);
