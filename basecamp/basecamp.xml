@@ -83,7 +83,7 @@
 
                                     if (feed.Entry) {
                                         for (var i = 0; i < feed.Entry.length; i++) {
-                                            var arTitle =   _trim(feed.Entry[i].Title.split(" ", 3));
+                                            var arTitle =   _trim(feed.Entry[i].Title).split(" ", 3);
 
                                             html    +=  "<li>"
                                                     +       "<img "width='10' height='9' "
