@@ -1,0 +1,7 @@
+#summary A gadget that pulls the daily picture from NASA's APOD website.
+
+= Installation =
+
+To add this to your Google personalized homepage, click here:
+
+[http://fusion.google.com/add?moduleurl=http://epicmedia-gadgets.googlecode.com/svn/trunk/apod/apod.xml http://buttons.googlesyndication.com/fusion/add.gif]
