@@ -1,0 +1,47 @@
+#summary A gadget that generates a color based on your daily biorhythm.
+#labels Featured
+
+= Introduction =
+
+Biorhythms are based on the interactions of three different cycles:  
+
+  * Physical, a 23-day cycle
+  * Emotional, a 28-day cycle
+  * Intellectual, a 33-day cycle
+
+Most programs that represent these cycles today assign one of the three primary colors (red, green, and blue) to each cycle when rendering them.  Thus:
+
+http://epicmedia-gadgets.googlecode.com/svn/trunk/biorhythm/biorhythm-cycle.png
+
+I've taken this one step farther and asked the question "What would the 'color of the day' look like, if I treated each cycle as the amount of a single primary color, and combined them?"
+
+= Installation =
+
+To add this to your Google personalized homepage, click here:
+
+[http://fusion.google.com/add?moduleurl=http://epicmedia-gadgets.googlecode.com/svn/trunk/biorhythm/biorhythm.xml http://buttons.googlesyndication.com/fusion/add.gif]
+
+= Details =
+
+To calculate the biorhythm color for the day:
+
+  * Compute today's value for each cycle.  This results in a number between -1 and +1
+  * Shift the scale of each value to between 0 and 255
+  * Compute a single color by assigning:
+    ** red to the physical cycle
+    ** green to the emotional cycle
+    ** blue to the intellectual cycle
+
+So, if P, E, and I represent the scaled values for the physical, emotional, and intellectual cycles (respectively), then:
+
+Today's Color = RGB(P, E, I)
+
+For example, here's the previous graphic of the cycles and the corresponding combined color:
+
+http://epicmedia-gadgets.googlecode.com/svn/trunk/biorhythm/biorhythm-cycle.png
+
+http://epicmedia-gadgets.googlecode.com/svn/trunk/biorhythm/color-spectrum.png
+
+= What Do the Colors Mean? =
+
+To be honest, I'm not certain.  It really depends on you and how or what you are feeling during a particular day.  One of these days, I'll do some comparative analysis of historical figures to see what their "color for the day" was during particular events in their lives.
