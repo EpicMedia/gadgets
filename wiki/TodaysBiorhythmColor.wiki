@@ -1,5 +1,4 @@
 #summary A gadget that generates a color based on your daily biorhythm.
-#labels Featured
 
 = Introduction =
 
