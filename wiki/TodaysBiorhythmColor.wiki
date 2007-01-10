@@ -20,6 +20,11 @@ To add this to your Google personalized homepage, click here:
 
 [http://fusion.google.com/add?moduleurl=http://epicmedia-gadgets.googlecode.com/svn/trunk/biorhythm/biorhythm.xml http://buttons.googlesyndication.com/fusion/add.gif]
 
+If you originally added this gadget from sjwalter.googlepages.com, please replace that copy with the one being served here out of Google Code.  There have been several enhancements to the gadget, including:
+
+  * "trending" arrows, indicating the direction each of the three cycles is heading
+  * i18n support (currently for English, Spanish, French, and Italian)
+
 = Details =
 
 To calculate the biorhythm color for the day:
