@@ -2,7 +2,7 @@
 <Module>
     <ModulePrefs
         title="__MSG_title__"
-        title_url="http://antwrp.gsfc.nasa.gov/apod/astropix.html"
+        title_url="http://code.google.com/p/epicmedia-gadgets/wiki/AstronomyPictureOfTheDay"
         directory_title="__MSG_title__"
         screenshot="http://epicmedia-gadgets.googlecode.com/svn/trunk/apod/apod_screenshot.png"
         thumbnail="http://epicmedia-gadgets.googlecode.com/svn/trunk/apod/apod_thumbnail.png"
