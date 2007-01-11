@@ -1,0 +1,28 @@
+<messagebundle>
+    <msg name="title">Daily Biorhythm Graph</msg>
+    <msg name="description">
+    	Generates a visual graph of your biorhythm cycles, centered around today
+    </msg>
+    <msg name="birth_month">Birth month</msg>
+    <msg name="birth_day">Birth day</msg>
+    <msg name="birth_year">Birth year</msg>
+    <msg name="january"   >January</msg>
+    <msg name="february"  >February</msg>
+    <msg name="march"     >March</msg>
+    <msg name="april"     >April</msg>
+    <msg name="may"       >May</msg>
+    <msg name="june"      >June</msg>
+    <msg name="july"      >July</msg>
+    <msg name="august"    >August</msg>
+    <msg name="september" >September</msg>
+    <msg name="october"   >October</msg>
+    <msg name="november"  >November</msg>
+    <msg name="december"  >December</msg>
+    <msg name="computing">Computing Today's Color...</msg>
+    <msg name="physical">Physical</msg>
+    <msg name="intellectual">Intellectual</msg>
+    <msg name="emotional">Emotional</msg>
+    <msg name="overall">Overall</msg>
+</messagebundle>
+
+

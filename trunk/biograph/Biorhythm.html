@@ -1,0 +1,103 @@
+<html>
+<head>Biorhythm Spectrum Generator</head>
+<body>
+<script type="text/javascript">
+	var	screenx	=	500;
+	var	screeny	=	60;
+	var	offset	=	10;
+
+	function init() {
+		//	Initialize the sine wave DIVs
+		//
+		var ar	=	new Array(3);
+
+		for (var i = 0; i < 3; i++) {
+			ar[i]	=	new Array(2);
+		}
+
+		ar[0][0]	=	"r";
+		ar[1][0]	=	"g";
+		ar[2][0]	=	"b";
+		ar[0][1]	=	"#ff0000";
+		ar[1][1]	=	"#00ff00";
+		ar[2][1]	=	"#0000ff";
+
+		for (var j = 0; j < 3; j++) {
+		  	for (var i = 0; i < screenx; i++)	{
+			  	var	x	=	i + offset;
+				document.write("<div id=\'" + ar[j][0] + i + "\' style=\'position:absolute; top:1px; left:"+x+"px; width:2px; height:2px; font-size=1; background-color:" + ar[j][1] + "\'></div>");
+			}
+		}
+
+		//	Initialize the spectrum DIVs
+		//
+	  	for (var i = 0; i < screenx; i++)	{
+		  	var	x	=	i + offset;
+			document.write("<div id=\'spec" + i + "\' style=\'position:absolute; top:90px; left:"+x+"px; width:2px; height:10px; font-size=1; background-color:#ffffff\'></div>");
+		}
+	}
+
+	function abs(val) {
+		return val > 0 ? val : -val;
+	}
+
+	function minmax(y, ymin, ymax) {
+		return	(y > ymax) ? ymax : ((y < ymin) ? ymin : y);
+	}
+
+	function setColor(func, pre, i, yf, y, ymin, offset) {
+		with (Math) {
+		  	var obj		=	(document.getElementById(pre + i)).style;
+		  	var color	=	round((func + 1.0) * 255.0 / 2.0);
+
+		  	switch (pre) {
+		  		case "r" :	color = "RGB(" + color + ",0,0)";
+		  					break;
+
+		  		case "g" :	color = "RGB(0," + color + ",0)";
+		  					break;
+
+		  		case "b" :	color = "RGB(0,0," + color + ")";
+		  					break;
+		  	}
+
+		  	obj.top				=	screeny - (y-ymin)*yf + offset;
+		  	obj.backgroundColor	=	color;
+		}
+	}
+
+	function plot() {
+		var xmin	=	0;
+		var xmax	=	250;
+		var ymin	=	-1.0;
+		var ymax	=	+1.0;
+		var xf		=	(xmax - xmin) / screenx;
+		var yf		=	screeny / (ymax - ymin);
+
+	  	with (Math) {
+		  	for (var i = 0; i < screenx; i++) {
+			   	var	x	=	i * xf + xmin;
+			   	var yP	=	sin(x / 23.0 * PI);
+			   	var yI	=	sin(x / 33.0 * PI);
+			   	var yE	=	sin(x / 28.0 * PI);
+
+			  	setColor(yP, "r", i, yf, minmax(yP, ymin, ymax), ymin, offset);
+			  	setColor(yI, "g", i, yf, minmax(yI, ymin, ymax), ymin, offset);
+			  	setColor(yE, "b", i, yf, minmax(yE, ymin, ymax), ymin, offset);
+
+		  		(document.getElementById("spec" + i)).style.backgroundColor	=	"RGB("
+		  																	+	round((yP + 1.0) * 255.0 / 2.0)
+		  																	+	","
+		  																	+	round((yI + 1.0) * 255.0 / 2.0)
+		  																	+	","
+		  																	+	Math.round((yE + 1.0) * 255.0 / 2.0)
+		  																	+	")"
+		  																	;
+			}
+		}
+	}
+
+	init();
+	plot();
+</script>
+</body>
