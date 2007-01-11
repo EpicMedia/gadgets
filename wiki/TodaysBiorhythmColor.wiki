@@ -12,6 +12,8 @@ Most programs that represent these cycles today assign one of the three primary 
 
 http://epicmedia-gadgets.googlecode.com/svn/trunk/biorhythm/biorhythm-cycle.png
 
+As typically represented, the cycles swing from -1 (maximum "bad") to +1 (maximum "good") for each attribute.  When looking at your status for a particular day and time, you look at both where you are in each cycle and the direction that cycle is heading (e.g. you're at +0.5 physical on the rising edge, meaning you're half way to your physical peak and are only going to get better over the next few days ... but you're +0.8 intellectual on the falling edge, meaning you're near your intellectual peak but starting to swing down).
+
 I've taken this one step farther and asked the question "What would the 'color of the day' look like, if I treated each cycle as the amount of a single primary color, and combined them?"
 
 = Installation =
@@ -27,7 +29,7 @@ If you originally added this gadget from sjwalter.googlepages.com, please replac
 
 = Details =
 
-To calculate the biorhythm color for the day:
+First off, this was really an experiment in gadget creation, color manipulation, and trying to remember my JavaScript programming (it's been awhile).  To calculate the biorhythm color for the day:
 
   * Compute today's value for each cycle.  This results in a number between -1 and +1
   * Shift the scale of each value to between 0 and 255
