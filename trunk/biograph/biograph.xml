@@ -13,7 +13,7 @@
         description="__MSG_description__"
         screenshot="http://epicmedia-gadgets.googlecode.com/svn/trunk/biograph/biograph.png"
         thumbnail="http://epicmedia-gadgets.googlecode.com/svn/trunk/biograph/biograph_tn.png"
-        height="120"
+        height="170"
         >
         <Locale             messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/biograph/ALL_ALL.xml" />
         <Locale lang="de"   messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/biograph/de_ALL.xml" />
