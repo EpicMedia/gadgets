@@ -246,16 +246,6 @@
 				  			;
                 }
 
-                for (var i = 0; i < 3; i++) {
-				  	html	+=	"<div style=\'position:absolute;"
-				  			+		"top:" + (i * yf + offset__MODULE_ID__) + "px;"
-				  			+		"width:" + screenx__MODULE_ID__ + "px;"
-				  			+		"left:" + offset__MODULE_ID__ + "px;"
-				  			+		"height:1px;font-size=1;"
-				  			+		"background-color:#cccccc\'></div>"
-				  			;
-                }
-
 			  	for (var i = 0; i < screenx__MODULE_ID__; i++) {
 				   	var	x	=	xmin + i * xf;
 				   	var yP	=	Math.sin(x / 23.0 * Math.PI);
