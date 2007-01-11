@@ -242,17 +242,17 @@
 				   	var yE	=	Math.sin(x / 28.0 * Math.PI);
 				   	var yI	=	Math.sin(x / 33.0 * Math.PI);
 
-				  	html	+=	"<div style=\'position:relative;"
+				  	html	+=	"<div style=\'position:absolute;"
 				  			+		"top:" + (screeny__MODULE_ID__ + offset__MODULE_ID__ - (minmax__MODULE_ID__(yP) + 1.0) * yf) + "px;"
 				  			+		"left:"+ (i + offset__MODULE_ID__) + "px;"
 				  			+		"width:2px;height:2px;font-size=1;"
 				  			+		"background-color:#ff0000\'></div>"
-				  			+	"<div style=\'position:relative; "
+				  			+	"<div style=\'position:absolute; "
 				  			+		"top:" + (screeny__MODULE_ID__ + offset__MODULE_ID__ - (minmax__MODULE_ID__(yE) + 1.0) * yf) + "px;"
 				  			+		"left:"+ (i + offset__MODULE_ID__) + "px; "
 				  			+		"width:2px;height:2px;font-size=1;"
 				  			+		"background-color:#00ff00\'></div>"
-				  			+	"<div style=\'position:relative;"
+				  			+	"<div style=\'position:absolute;"
 				  			+		"top:" + (screeny__MODULE_ID__ + offset__MODULE_ID__ - (minmax__MODULE_ID__(yI) + 1.0) * yf) + "px;"
 				  			+		"left:"+ (i + offset__MODULE_ID__) + "px;"
 				  			+		"width:2px;height:2px;font-size=1;"
