@@ -235,7 +235,7 @@
                 var yf				=	screeny__MODULE_ID__ / 2.0;
                 var html			=	"";
 
-                for (var i = 0; i < screenx__MODULE_ID__; i += (screenx__MODULE_ID__ / (xmax - xmin)) {
+                for (var i = 0; i < screenx__MODULE_ID__; i += (screenx__MODULE_ID__ / (xmax - xmin))) {
 				  	html	+=	"<div style=\'position:absolute;"
 				  			+		"height:" + screeny__MODULE_ID__ + "px;"
 				  			+		"left:" + i + "px;"
