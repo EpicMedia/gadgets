@@ -1,6 +1,9 @@
 <messagebundle>
     <msg name="title">Oggi Biorhythm Colore</msg>
-    <msg name="description">Calcolare tuo biorhythm colore poich, il giorno</msg>
+    <msg name="description">
+    	Calcoli il vostro colore del biorhythm per il giorno, unendo il fisico medica (rosso),
+    	impressionabile (verde), e cicli (blu) intellettuali insieme in un singolo valore di colore.
+    </msg>
     <msg name="birth_month">Nascita mese</msg>
     <msg name="birth_day">Nascita giorno</msg>
     <msg name="birth_year">Nascita anno</msg>

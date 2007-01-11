@@ -1,6 +1,9 @@
 <messagebundle>
     <msg name="title">Today's Biorythm Color</msg>
-    <msg name="description">Calculate your biorhythm color for the day</msg>
+    <msg name="description">
+    	Calculate your biorhythm color for the day, by combining the physical (red), emotional (green),
+    	and intellectual (blue) cycles together into a single color value.
+    </msg>
     <msg name="birth_month">Birth month</msg>
     <msg name="birth_day">Birth day</msg>
     <msg name="birth_year">Birth year</msg>
