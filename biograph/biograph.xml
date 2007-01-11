@@ -197,7 +197,7 @@
         <div id="content__MODULE_ID__"><p style='text-align:center;color:#cccccc;'><i>__MSG_computing__...</i></p></div>
         <script type="text/javascript">
             var t__MODULE_ID__			=   null;
-            var screenx__MODULE_ID__	=	_gel('content__MODULE_ID__').style.width;
+            var screenx__MODULE_ID__	=	200;
             var screeny__MODULE_ID__	=	60;
             var offset__MODULE_ID__		=	10;
 
