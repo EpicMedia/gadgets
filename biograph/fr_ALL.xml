@@ -1,0 +1,27 @@
+<messagebundle>
+    <msg name="title">Aujourd'hui Biorhythm Couleur</msg>
+    <msg name="description">
+    	Calculez votre couleur de biorhythm pour le jour, en combinant l'examen m&#233;dical (rouge), &#233;motif (vert),
+    	et cycles (bleus) intellectuels ensemble dans une valeur simple de couleur.
+    </msg>
+    <msg name="birth_month">Naissance Le mois</msg>
+    <msg name="birth_day">Naissance Le jour</msg>
+    <msg name="birth_year">Naissance L'ann&#233;e</msg>
+    <msg name="january"   >January</msg>
+    <msg name="february"  >F&#233;vrier</msg>
+    <msg name="march"     >Mars</msg>
+    <msg name="april"     >Avril</msg>
+    <msg name="may"       >Mai</msg>
+    <msg name="june"      >Juin</msg>
+    <msg name="july"      >Juillet</msg>
+    <msg name="august"    >Ao&#251;t</msg>
+    <msg name="september" >Septembre</msg>
+    <msg name="october"   >Octobre</msg>
+    <msg name="november"  >Novembre</msg>
+    <msg name="december"  >D&#233;cembre</msg>
+    <msg name="computing">Calculant Aujourd'hui Couleur</msg>
+    <msg name="physical">Physique</msg>
+    <msg name="intellectual">Intellectuelle</msg>
+    <msg name="emotional">Affective</msg>
+    <msg name="overall">Total</msg>
+</messagebundle>
