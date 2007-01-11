@@ -197,8 +197,8 @@
         <div id="content__MODULE_ID__" style="width:370px;height:160px;border:1px solid #cccccc;"><p style='text-align:center;color:#cccccc;'><i>__MSG_computing__...</i></p></div>
         <script type="text/javascript">
             var t__MODULE_ID__			=   null;
-            var screenx__MODULE_ID__	=	350;
-            var screeny__MODULE_ID__	=	140;
+            var screenx__MODULE_ID__	=	_gel('content__MODULE_ID__').style.width;
+            var screeny__MODULE_ID__	=	_gel('content__MODULE_ID__').style.height;
 
 			function minmax__MODULE_ID__(y) {
 				return	(y > +1.0) ? +1.0 : ((y < -1.0) ? -1.0 : y);
