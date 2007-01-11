@@ -231,9 +231,18 @@
                 var xmin			=	days_elapsed - 7;
                 var xmax			=	days_elapsed + 7;
 
-                var xf				=	1.0 * (xmax - xmin) / screenx__MODULE_ID__;
+                var xf				=	(xmax - xmin) / screenx__MODULE_ID__;
                 var yf				=	screeny__MODULE_ID__ / 2.0;
                 var html			=	"";
+
+                for (var i = 0; i < screenx__MODULE_ID__; i += (screenx__MODULE_ID__ / (xmax - xmin)) {
+				  	html	+=	"<div style=\'position:absolute;"
+				  			+		"height:" + screeny__MODULE_ID__ + "px;"
+				  			+		"left:" + i + "px;"
+				  			+		"top:0px;width:1px;font-size=1;"
+				  			+		"background-color:#cccccc\'></div>"
+				  			;
+                }
 
 			  	for (var i = 0; i < screenx__MODULE_ID__; i++) {
 				   	var	x	=	xmin + i * xf;
