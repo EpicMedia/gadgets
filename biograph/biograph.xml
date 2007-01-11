@@ -199,7 +199,6 @@
             var t__MODULE_ID__			=   null;
             var screenx__MODULE_ID__	=	200;
             var screeny__MODULE_ID__	=	120;
-            var offset__MODULE_ID__		=	10;
 
 			function minmax__MODULE_ID__(y) {
 				return	(y > +1.0) ? +1.0 : ((y < -1.0) ? -1.0 : y);
@@ -238,10 +237,18 @@
 
                 for (var i = 0; i < screenx__MODULE_ID__; i += (screenx__MODULE_ID__ / (xmax - xmin))) {
 				  	html	+=	"<div style=\'position:absolute;"
-				  			+		"top:" + (screeny__MODULE_ID__ + offset__MODULE_ID__) + "px;"
 				  			+		"height:" + screeny__MODULE_ID__ + "px;"
-				  			+		"left:" + (i + offset__MODULE_ID__) + "px;"
-				  			+		"width:1px;font-size=1;"
+				  			+		"left:" + i + "px;"
+				  			+		"top:0px;width:1px;font-size=1;"
+				  			+		"background-color:#cccccc\'></div>"
+				  			;
+                }
+
+                for (var i = 0; i < 3; i++) {
+				  	html	+=	"<div style=\'position:absolute;"
+				  			+		"top:" + (i * yf) + "px;"
+				  			+		"width:" + screenx__MODULE_ID__ + "px;"
+				  			+		"left:0px;height:1px;font-size=1;"
 				  			+		"background-color:#cccccc\'></div>"
 				  			;
                 }
@@ -253,18 +260,18 @@
 				   	var yI	=	Math.sin(x / 33.0 * Math.PI);
 
 				  	html	+=	"<div style=\'position:absolute;"
-				  			+		"top:" + (screeny__MODULE_ID__ + offset__MODULE_ID__ - (minmax__MODULE_ID__(yP) + 1.0) * yf) + "px;"
-				  			+		"left:" + (i + offset__MODULE_ID__) + "px;"
+				  			+		"top:" + (screeny__MODULE_ID__ - (minmax__MODULE_ID__(yP) + 1.0) * yf) + "px;"
+				  			+		"left:" + i + "px;"
 				  			+		"width:1px;height:1px;font-size=1;"
 				  			+		"background-color:#ff0000\'></div>"
 				  			+	"<div style=\'position:absolute; "
-				  			+		"top:" + (screeny__MODULE_ID__ + offset__MODULE_ID__ - (minmax__MODULE_ID__(yE) + 1.0) * yf) + "px;"
-				  			+		"left:" + (i + offset__MODULE_ID__) + "px;"
+				  			+		"top:" + (screeny__MODULE_ID__ - (minmax__MODULE_ID__(yE) + 1.0) * yf) + "px;"
+				  			+		"left:" + i + "px;"
 				  			+		"width:1px;height:1px;font-size=1;"
 				  			+		"background-color:#00ff00\'></div>"
 				  			+	"<div style=\'position:absolute;"
-				  			+		"top:" + (screeny__MODULE_ID__ + offset__MODULE_ID__ - (minmax__MODULE_ID__(yI) + 1.0) * yf) + "px;"
-				  			+		"left:" + (i + offset__MODULE_ID__) + "px;"
+				  			+		"top:" + (screeny__MODULE_ID__ - (minmax__MODULE_ID__(yI) + 1.0) * yf) + "px;"
+				  			+		"left:" + i + "px;"
 				  			+		"width:1px;height:1px;font-size=1;"
 				  			+		"background-color:#0000ff\'></div>"
 				  			;
