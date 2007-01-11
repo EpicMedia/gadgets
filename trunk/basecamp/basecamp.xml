@@ -12,7 +12,7 @@
         author_email="sjwalter+GoogleGadget@gmail.com"
         author_affiliation="EpicMedia"
         author_photo="http://epicmedia-gadgets.googlecode.com/svn/trunk/photo.png"
-        author_link="http://www.epicmedia.com/"
+        author_link="http://code.google.com/p/epicmedia-gadgets/wiki/BaseCampRecentUpdates"
         >
         <Require feature="dynamic-height" />
         <Require feature="setprefs" />
