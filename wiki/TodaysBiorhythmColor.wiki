@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Biorhythms are based on the interactions of three different cycles:  
+[http://en.wikipedia.org/wiki/Biorhythm Biorhythms] are based on the interactions of three different cycles:  
 
   * Physical, a 23-day cycle
   * Emotional, a 28-day cycle
