@@ -199,6 +199,7 @@
             var t__MODULE_ID__			=   null;
             var screenx__MODULE_ID__	=	370;
             var screeny__MODULE_ID__	=	160;
+            var margin__MODULE_ID__     =   5;
 
 			function minmax__MODULE_ID__(y) {
 				return	(y > +1.0) ? +1.0 : ((y < -1.0) ? -1.0 : y);
@@ -237,21 +238,19 @@
 
                 for (var i = 0; i < screenx__MODULE_ID__; i += (screenx__MODULE_ID__ / (xmax - xmin))) {
 				  	html	+=	"<div style=\'position:absolute;"
+				  			+		"left:" + (i + margin__MODULE_ID__) + "px;"
 				  			+		"height:" + screeny__MODULE_ID__ + "px;"
-				  			+		"left:" + i + "px;"
 				  			+		"top:0px;width:1px;font-size=1;"
 				  			+		"background-color:#cccccc\'></div>"
 				  			;
                 }
 
-                for (var i = 0; i < 3; i++) {
-				  	html	+=	"<div style=\'position:absolute;"
-				  			+		"top:" + (i * yf) + "px;"
-				  			+		"width:" + screenx__MODULE_ID__ + "px;"
-				  			+		"left:0px;height:1px;font-size=1;"
-				  			+		"background-color:#cccccc\'></div>"
-				  			;
-                }
+			  	html	+=	"<div style=\'position:absolute;"
+			  			+		"top:" + (yf + margin__MODULE_ID__) + "px;"
+			  			+		"width:" + screenx__MODULE_ID__ + "px;"
+			  			+		"left:0px;height:1px;font-size=1;"
+			  			+		"background-color:#999999\'></div>"
+			  			;
 
 			  	for (var i = 0; i < screenx__MODULE_ID__; i++) {
 				   	var	x	=	xmin + i * xf;
@@ -260,18 +259,18 @@
 				   	var yI	=	Math.sin(x / 33.0 * Math.PI);
 
 				  	html	+=	"<div style=\'position:absolute;"
-				  			+		"top:" + (screeny__MODULE_ID__ - (minmax__MODULE_ID__(yP) + 1.0) * yf) + "px;"
-				  			+		"left:" + i + "px;"
+				  			+		"top:" + (screeny__MODULE_ID__ + margin__MODULE_ID__ - (minmax__MODULE_ID__(yP) + 1.0) * yf) + "px;"
+				  			+		"left:" + (i + margin__MODULE_ID__) + "px;"
 				  			+		"width:1px;height:1px;font-size=1;"
 				  			+		"background-color:#ff0000\'></div>"
 				  			+	"<div style=\'position:absolute; "
-				  			+		"top:" + (screeny__MODULE_ID__ - (minmax__MODULE_ID__(yE) + 1.0) * yf) + "px;"
-				  			+		"left:" + i + "px;"
+				  			+		"top:" + (screeny__MODULE_ID__ + margin__MODULE_ID__ - (minmax__MODULE_ID__(yE) + 1.0) * yf) + "px;"
+				  			+		"left:" + (i + margin__MODULE_ID__) + "px;"
 				  			+		"width:1px;height:1px;font-size=1;"
 				  			+		"background-color:#00ff00\'></div>"
 				  			+	"<div style=\'position:absolute;"
-				  			+		"top:" + (screeny__MODULE_ID__ - (minmax__MODULE_ID__(yI) + 1.0) * yf) + "px;"
-				  			+		"left:" + i + "px;"
+				  			+		"top:" + (screeny__MODULE_ID__ + margin__MODULE_ID__ - (minmax__MODULE_ID__(yI) + 1.0) * yf) + "px;"
+				  			+		"left:" + (i + margin__MODULE_ID__) + "px;"
 				  			+		"width:1px;height:1px;font-size=1;"
 				  			+		"background-color:#0000ff\'></div>"
 				  			;
