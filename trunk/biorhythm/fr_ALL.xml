@@ -1,6 +1,9 @@
 <messagebundle>
     <msg name="title">Aujourd'hui Biorhythm Couleur</msg>
-    <msg name="description">Supputer votre biorhythm couleur pour un jour</msg>
+    <msg name="description">
+    	Calculez votre couleur de biorhythm pour le jour, en combinant l'examen m&#233;dical (rouge), &#233;motif (vert),
+    	et cycles (bleus) intellectuels ensemble dans une valeur simple de couleur.
+    </msg>
     <msg name="birth_month">Naissance Le mois</msg>
     <msg name="birth_day">Naissance Le jour</msg>
     <msg name="birth_year">Naissance L'ann&#233;e</msg>

@@ -2,7 +2,7 @@
 <Module>
     <ModulePrefs
         title="__MSG_title__"
-        title_url="http://en.wikipedia.org/wiki/Biorhythm"
+        title_url="http://code.google.com/p/epicmedia-gadgets/wiki/TodaysBiorhythmColor"
         directory_title="__MSG_title__"
         author="Scott Walter"
         author_location="Minneapolis, MN"
