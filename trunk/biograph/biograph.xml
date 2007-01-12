@@ -194,7 +194,7 @@
         <EnumValue value="1900" display_value="1900" />
     </UserPref>
     <Content type="html"><![CDATA[
-        <div id="content__MODULE_ID__" style="width:359px;height:149px;border:1px solid #cccccc;margin:5px;"><p style='text-align:center;color:#cccccc;'><i>__MSG_computing__...</i></p></div>
+        <div id="content__MODULE_ID__" style="width:360px;height:150px;margin:5px;"><p style='text-align:center;color:#cccccc;'><i>__MSG_computing__...</i></p></div>
         <script type="text/javascript">
             var t__MODULE_ID__			=   null;
             var screenx__MODULE_ID__	=	360;
@@ -243,6 +243,16 @@
 				  			+		"top:" + margin__MODULE_ID__ + "px;"
 				  			+       "width:1px;font-size=1;"
 				  			+		"background-color:#cccccc\'></div>"
+				  			;
+                }
+
+                for (var i = 0; i < 3; i++) {
+				  	html	+=	"<div style=\'position:absolute;"
+    			  			+		"top:" + ((i * yf) + margin__MODULE_ID__) + "px;"
+    			  			+		"width:" + screenx__MODULE_ID__ + "px;"
+    			  			+		"left:" + margin__MODULE_ID__ + "px;"
+    			  			+       "height:1px;font-size=1;"
+    			  			+		"background-color:#cccccc\'></div>"
 				  			;
                 }
 
