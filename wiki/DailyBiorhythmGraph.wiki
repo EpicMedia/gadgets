@@ -1,13 +1,17 @@
-#summary One-sentence summary of this page.
+#summary A gadget that generates a graph of your current biorhythms.
 
 = Introduction =
 
-Add your content here.
+[http://en.wikipedia.org/wiki/Biorhythm Biorhythms] are based on the interactions of three different cycles:  
 
+  * Physical, a 23-day cycle
+  * Emotional, a 28-day cycle
+  * Intellectual, a 33-day cycle
 
-= Details =
+This is a simple gadget that graphs your biorhythm cycles over a 2-week period, centered around the current date.
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+= Installation =
+
+To add this to your Google personalized homepage, click here:
+
+[http://fusion.google.com/add?moduleurl=http://epicmedia-gadgets.googlecode.com/svn/trunk/biograph/biograph.xml http://buttons.googlesyndication.com/fusion/add.gif]
