@@ -237,7 +237,7 @@
                 var html			=	"";
 
                 for (var i = 0; i < screenx__MODULE_ID__; i += (screenx__MODULE_ID__ / (xmax - xmin))) {
-                    if (i != screenx__MODULE_ID / 2) {
+                    if (i != screenx__MODULE_ID__ / 2) {
     				  	html	+=	"<div style=\'position:absolute;"
     				  			+		"left:" + (i + margin__MODULE_ID__) + "px;"
     				  			+		"height:" + screeny__MODULE_ID__ + "px;"
