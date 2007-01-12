@@ -1,7 +1,8 @@
 <messagebundle>
     <msg name="title">Hoy Biorhythm Color</msg>
     <msg name="description">
-    	Calcule su color del biorhythm para el d&#237;a, combinando la comprobaci&#243;n (roja), emocional (verde), y ciclos (azules) intelectuales junto en un solo valor del color.
+    	Genera un gr&#225;fico visual de sus ciclos del biorhythm, demostr&#225;ndole su progresi&#243;n del ciclo a
+    	partir de una semana antes de una semana despu&#233;s de hoy.
     </msg>
     <msg name="birth_month">Nacimiento mes</msg>
     <msg name="birth_day">Nacimiento d&#237;a</msg>
@@ -18,9 +19,12 @@
     <msg name="october"   >Octubre</msg>
     <msg name="november"  >Noviemb</msg>
     <msg name="december"  >Diciembre</msg>
-    <msg name="computing">Calculador Hoy Color...</msg>
+    <msg name="computing">Generando el gr&#225;fico de hoy…</msg>
     <msg name="physical">F&#237;sico</msg>
     <msg name="intellectual">Intelectual</msg>
     <msg name="emotional">Emotiva</msg>
+    <msg name="p">F</msg>
+    <msg name="i">I</msg>
+    <msg name="e">E</msg>
     <msg name="overall">Global</msg>
 </messagebundle>
