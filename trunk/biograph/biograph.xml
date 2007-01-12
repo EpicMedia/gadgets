@@ -257,6 +257,12 @@
                 }
 
 			  	html	+=	"<div style=\'position:absolute;"
+			  			+		"left:" + (screenx__MODULE_ID__ + margin__MODULE_ID__) + "px;"
+			  			+		"height:" + screeny__MODULE_ID__ + "px;"
+			  			+		"top:" + margin__MODULE_ID__ + "px;"
+			  			+       "width:1px;font-size=1;"
+			  			+		"background-color:#666666\'></div>"
+				  		+   "<div style=\'position:absolute;"
 			  			+		"left:" + (screenx__MODULE_ID__ / 2.0 + margin__MODULE_ID__) + "px;"
 			  			+		"height:" + screeny__MODULE_ID__ + "px;"
 			  			+		"top:" + margin__MODULE_ID__ + "px;"
