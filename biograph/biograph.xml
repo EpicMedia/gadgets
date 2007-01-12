@@ -217,6 +217,13 @@
                 return  difference/1000/60/60/24;
             }
 
+            Date.prototype.format = function() {
+                var M   =   this.getMonth() + 1;
+                var d   =   this.getDate();
+
+                return M + "/" + d;
+            }
+
             function run__MODULE_ID__() {
                 if (t__MODULE_ID__) {
                     clearTimeout(t__MODULE_ID__);
@@ -275,7 +282,7 @@
 			  			+		"left:" + ((screenx__MODULE_ID__ / 2) + xOffset__MODULE_ID__ - 50) + "px;"
 			  			+		"top:" + (margin__MODULE_ID__ + screeny__MODULE_ID__ + 2) + "px;"
 			  			+       "width:100px;font-size:8pt;text-align:center;"
-			  			+		"color:#999999\'>" + (new Date()).toString() + "</div>"
+			  			+		"color:#999999\'>" + (new Date()).format() + "</div>"
 				  		+   "<div style=\'position:absolute;"
 			  			+		"top:" + (yf + margin__MODULE_ID__) + "px;"
 			  			+		"width:" + screenx__MODULE_ID__ + "px;"
