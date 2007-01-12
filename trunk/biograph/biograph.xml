@@ -16,6 +16,10 @@
         height="170"
         >
         <Locale             messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/biograph/ALL_ALL.xml" />
+        <Locale lang="de"   messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/biograph/de_ALL.xml" />
+        <Locale lang="fr"   messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/biograph/fr_ALL.xml" />
+        <Locale lang="es"   messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/biograph/es_ALL.xml" />
+        <Locale lang="it"   messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/biograph/it_ALL.xml" />
         <Require feature="setprefs" />
     </ModulePrefs>
     <UserPref
@@ -376,17 +380,17 @@
         			  			+		"top:" + (screeny__MODULE_ID__ + margin__MODULE_ID__ - 8 - (minmax__MODULE_ID__(yP) + 1.0) * yf) + "px;"
         			  			+		"left:" + (i + margin__MODULE_ID__) + "px;"
         			  			+		"font-weight:bold;font-size:8pt;width:10px;text-align:center;"
-        			  			+		"color:#990000\'>P</div>"
+        			  			+		"color:#990000\'>" + prefs.getString("p") + "</div>"
         			  			+	"<div style=\'position:absolute; "
         			  			+		"top:" + (screeny__MODULE_ID__ + margin__MODULE_ID__ - 8 - (minmax__MODULE_ID__(yE) + 1.0) * yf) + "px;"
         			  			+		"left:" + (i + margin__MODULE_ID__) + "px;"
         			  			+		"font-weight:bold;font-size:8pt;width:10px;text-align:center;"
-        			  			+		"color:#009900\'>E</div>"
+        			  			+		"color:#009900\'>" + prefs.getString("e") + "</div>"
         			  			+	"<div style=\'position:absolute;"
         			  			+		"top:" + (screeny__MODULE_ID__ + margin__MODULE_ID__ - 8 - (minmax__MODULE_ID__(yI) + 1.0) * yf) + "px;"
         			  			+		"left:" + (i + margin__MODULE_ID__) + "px;"
         			  			+		"font-weight:bold;font-size:8pt;width:10px;text-align:center;"
-        			  			+		"color:#000099\'>I</div>"
+        			  			+		"color:#000099\'>" + prefs.getString("i") + "</div>"
         			  			;
 				   	}
 

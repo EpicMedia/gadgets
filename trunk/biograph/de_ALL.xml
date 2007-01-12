@@ -1,9 +1,8 @@
 <messagebundle>
     <msg name="title">Heutig Biorhythm K&#246;ln</msg>
     <msg name="description">
-		Errechnen Sie Ihre biorhythm Farbe f&#252;r den Tag,
-		durch das Kombinieren des Systemtestes (rot),
-		emotional (Gr&#252;n), und intellektuelle (blaue) Zyklen zusammen in einen einzelnen Farbe Wert.
+		Erzeugt ein Sichtdiagramm Ihrer biorhythm Zyklen, Ihnen Ihre Zyklusweiterentwicklung
+		von einer Woche vor einer Woche nach heute zeigen.
    	</msg>
     <msg name="birth_month">Geburt Monat</msg>
     <msg name="birth_day">Geburt Tag</msg>
@@ -20,9 +19,12 @@
     <msg name="october"   >Oktober</msg>
     <msg name="november"  >November</msg>
     <msg name="december"  >Dezember</msg>
-    <msg name="computing">Berechnend Heutig K&#246;ln...</msg>
+    <msg name="computing">Heutiges Diagramm erzeugen…</msg>
     <msg name="physical">Physisch</msg>
     <msg name="intellectual">Durchgeistigt</msg>
     <msg name="emotional">Gef&#252;hlsm&#228;&#223;ig</msg>
+    <msg name="p">P</msg>
+    <msg name="i">D</msg>
+    <msg name="e">G</msg>
     <msg name="overall">Kittel</msg>
 </messagebundle>

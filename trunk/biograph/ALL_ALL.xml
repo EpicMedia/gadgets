@@ -1,7 +1,7 @@
 <messagebundle>
     <msg name="title">Daily Biorhythm Graph</msg>
     <msg name="description">
-    	Generates a visual graph of your biorhythm cycles, centered around today
+    	Generates a visual graph of your biorhythm cycles, showing you your cycle progression from a week prior to a week after today.
     </msg>
     <msg name="date_format">Date format</msg>
     <msg name="birth_month">Birth month</msg>
@@ -23,6 +23,9 @@
     <msg name="physical">Physical</msg>
     <msg name="intellectual">Intellectual</msg>
     <msg name="emotional">Emotional</msg>
+    <msg name="p">P</msg>
+    <msg name="i">I</msg>
+    <msg name="e">E</msg>
     <msg name="overall">Overall</msg>
 </messagebundle>
 
