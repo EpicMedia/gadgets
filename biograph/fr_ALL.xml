@@ -23,8 +23,4 @@
     <msg name="physical">Physique</msg>
     <msg name="intellectual">Intellectuelle</msg>
     <msg name="emotional">Affective</msg>
-    <msg name="p">P</msg>
-    <msg name="i">I</msg>
-    <msg name="e">A</msg>
-    <msg name="overall">Total</msg>
 </messagebundle>
