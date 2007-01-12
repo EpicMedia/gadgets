@@ -226,11 +226,18 @@
                 return  difference/1000/60/60/24;
             }
 
-            Date.prototype.format = function(format) {
+            String.prototype.right__MODULE_ID__ = function(len) {
+                var l   =   this.length;
+
+                return this.substring(l - len);
+            }
+
+            Date.prototype.format__MODULE_ID__ = function(format) {
                 var M   =   this.getMonth() + 1;
                 var d   =   this.getDate();
 
-                return format == 0 ? (M + "/" + d) : (d + "/" + M);
+                return format == 0  ?   (("0" + M).right__MODULE_ID__(2) + "/" + ("0" + d).right__MODULE_ID__(2))
+                                    :   (("0" + d).right__MODULE_ID__(2) + "/" + ("0" + M).right__MODULE_ID__(2));
             }
 
             function run__MODULE_ID__() {
@@ -291,7 +298,7 @@
 			  			+		"left:" + ((screenx__MODULE_ID__ / 2) + xOffset__MODULE_ID__ - 50) + "px;"
 			  			+		"top:" + (margin__MODULE_ID__ + screeny__MODULE_ID__ + 2) + "px;"
 			  			+       "width:100px;font-size:8pt;text-align:center;"
-			  			+		"color:#999999\'>" + (new Date()).format(prefs.getInt("date_format")) + "</div>"
+			  			+		"color:#999999\'>" + (new Date()).format__MODULE_ID__(prefs.getInt("date_format")) + "</div>"
 				  		+   "<div style=\'position:absolute;"
 			  			+		"top:" + (yf + margin__MODULE_ID__) + "px;"
 			  			+		"width:" + screenx__MODULE_ID__ + "px;"
