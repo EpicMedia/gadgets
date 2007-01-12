@@ -1,26 +1,23 @@
 <messagebundle>
-    <msg name="title">Gr&#225;fico diario de Biorhythm</msg>
-    <msg name="description">
-    	Genera un gr&#225;fico visual de sus ciclos del biorhythm, demostr&#225;ndole su progresi&#243;n del ciclo a
-    	partir de una semana antes de una semana despu&#233;s de hoy.
-    </msg>
-    <msg name="birth_month">Nacimiento mes</msg>
-    <msg name="birth_day">Nacimiento d&#237;a</msg>
-    <msg name="birth_year">Nacimiento a&#241;o</msg>
-    <msg name="january"   >Enero</msg>
-    <msg name="february"  >Febrero</msg>
-    <msg name="march"     >Marcha</msg>
-    <msg name="april"     >Abril</msg>
-    <msg name="may"       >Mayo</msg>
-    <msg name="june"      >Junio</msg>
-    <msg name="july"      >Julio</msg>
-    <msg name="august"    >Agosto</msg>
-    <msg name="september" >Septiemre</msg>
-    <msg name="october"   >Octubre</msg>
-    <msg name="november"  >Noviemb</msg>
-    <msg name="december"  >Diciembre</msg>
-    <msg name="computing">Generando el gr&#225;fico de hoy…</msg>
-    <msg name="physical">F&#237;sico</msg>
+    <msg name="title"       >Gr&#225;fico diario de Biorhythm</msg>
+    <msg name="description" >Genera un gr&#225;fico visual de sus ciclos del biorhythm, demostr&#225;ndole su progresi&#243;n del ciclo a partir de una semana antes de una semana despu&#233;s de hoy.</msg>
+    <msg name="birth_month" >Nacimiento mes</msg>
+    <msg name="birth_day"   >Nacimiento d&#237;a</msg>
+    <msg name="birth_year"  >Nacimiento a&#241;o</msg>
+    <msg name="january"     >Enero</msg>
+    <msg name="february"    >Febrero</msg>
+    <msg name="march"       >Marcha</msg>
+    <msg name="april"       >Abril</msg>
+    <msg name="may"         >Mayo</msg>
+    <msg name="june"        >Junio</msg>
+    <msg name="july"        >Julio</msg>
+    <msg name="august"      >Agosto</msg>
+    <msg name="september"   >Septiemre</msg>
+    <msg name="october"     >Octubre</msg>
+    <msg name="november"    >Noviemb</msg>
+    <msg name="december"    >Diciembre</msg>
+    <msg name="computing"   >Generando el gr&#225;fico de hoy…</msg>
+    <msg name="physical"    >F&#237;sico</msg>
     <msg name="intellectual">Intelectual</msg>
-    <msg name="emotional">Emotiva</msg>
+    <msg name="emotional"   >Emotiva</msg>
 </messagebundle>
