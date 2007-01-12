@@ -243,12 +243,12 @@
                 var t_intellectual  =   trendArrow__MODULE_ID__(a_intellectual - b_intellectual);
 
                 var html            =   "<center><table border='0' width='75%'>"
-                                    +       "<tr><td style='color:red;font-weight:bold;' width='47%'>" + prefs.getMsg('physical') + "</td><td  width='47%' style='background-color:rgb("
-                                    +           physical + ", 0, 0);'>&nbsp;</td><td style='text-align:center;' width='6%'>" + t_physical + "</td></tr>"
+                                    +       "<tr><td style='color:blue;font-weight:bold;' width='47%'>" + prefs.getMsg('physical') + "</td><td  width='47%' style='background-color:rgb("
+                                    +           "0, 0, " + physical + ");'>&nbsp;</td><td style='text-align:center;' width='6%'>" + t_physical + "</td></tr>"
                                     +       "<tr><td style='color:green;font-weight:bold;'>" + prefs.getMsg('emotional') + "</td><td style='background-color:rgb("
                                     +           "0, " + emotional + ", 0);'>&nbsp;</td><td style='text-align:center;' >" + t_emotional + "</td></tr>"
-                                    +       "<tr><td style='color:blue;font-weight:bold;'>" + prefs.getMsg('intellectual') + "</td><td style='background-color:rgb("
-                                    +           "0, 0, " + intellectual + ");'>&nbsp;</td><td style='text-align:center;' >" + t_intellectual + "</td></tr>"
+                                    +       "<tr><td style='color:red;font-weight:bold;'>" + prefs.getMsg('intellectual') + "</td><td style='background-color:rgb("
+                                    +           intellectual + ", 0, 0);'>&nbsp;</td><td style='text-align:center;' >" + t_intellectual + "</td></tr>"
                                     +       "<tr><td>&nbsp;</td></tr>"
                                     +       "<tr><td style='font-weight:bold;'>" + prefs.getMsg('overall') + "</td><td style='background-color:rgb("
                                     +       physical + "," + emotional + "," + intellectual + ");'></td><td>&nbsp;</td></tr>"
