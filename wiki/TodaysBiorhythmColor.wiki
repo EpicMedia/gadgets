@@ -52,4 +52,4 @@ http://epicmedia-gadgets.googlecode.com/svn/trunk/biorhythm/color-spectrum.png
 
 To be honest, I'm not certain.  It really depends on you and how or what you are feeling during a particular day.  One of these days, I'll do some comparative analysis of historical figures to see what their "color for the day" was during particular events in their lives.
 
-If you're looking for a more traditional biorhythm representation, check out the [http://code.google.com/p/epicmedia-gadgets/wiki/DailyBiorhythmGraph Daily Biorhythm Graph Gadget].
+If you're looking for a more traditional biorhythm representation, check out the DailyBiorhythmGraph gadget.
