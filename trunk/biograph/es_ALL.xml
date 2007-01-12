@@ -23,8 +23,4 @@
     <msg name="physical">F&#237;sico</msg>
     <msg name="intellectual">Intelectual</msg>
     <msg name="emotional">Emotiva</msg>
-    <msg name="p">F</msg>
-    <msg name="i">I</msg>
-    <msg name="e">E</msg>
-    <msg name="overall">Global</msg>
 </messagebundle>

@@ -23,8 +23,4 @@
     <msg name="physical">Physisch</msg>
     <msg name="intellectual">Durchgeistigt</msg>
     <msg name="emotional">Gef&#252;hlsm&#228;&#223;ig</msg>
-    <msg name="p">P</msg>
-    <msg name="i">D</msg>
-    <msg name="e">G</msg>
-    <msg name="overall">Kittel</msg>
 </messagebundle>
