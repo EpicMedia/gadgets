@@ -237,18 +237,20 @@
                 var html			=	"";
 
                 for (var i = 0; i < screenx__MODULE_ID__; i += (screenx__MODULE_ID__ / (xmax - xmin))) {
-				  	html	+=	"<div style=\'position:absolute;"
-				  			+		"left:" + (i + margin__MODULE_ID__) + "px;"
-				  			+		"height:" + screeny__MODULE_ID__ + "px;"
-				  			+		"top:" + margin__MODULE_ID__ + "px;"
-				  			+       "width:1px;font-size=1;"
-				  			+		"background-color:#cccccc\'></div>"
-				  			;
+                    if (i <> screenx__MODULE_ID / 2) {
+    				  	html	+=	"<div style=\'position:absolute;"
+    				  			+		"left:" + (i + margin__MODULE_ID__) + "px;"
+    				  			+		"height:" + screeny__MODULE_ID__ + "px;"
+    				  			+		"top:" + margin__MODULE_ID__ + "px;"
+    				  			+       "width:1px;font-size=1;"
+    				  			+		"background-color:#cccccc\'></div>"
+    				  			;
+		  			}
                 }
 
-                for (var i = 0; i < 3; i++) {
+                for (var i = 0; i < 2; i++) {
 				  	html	+=	"<div style=\'position:absolute;"
-    			  			+		"top:" + ((i * yf) + margin__MODULE_ID__) + "px;"
+    			  			+		"top:" + ((i * yf * 2) + margin__MODULE_ID__) + "px;"
     			  			+		"width:" + screenx__MODULE_ID__ + "px;"
     			  			+		"left:" + margin__MODULE_ID__ + "px;"
     			  			+       "height:1px;font-size=1;"
@@ -258,12 +260,12 @@
 
 			  	html	+=	"<div style=\'position:absolute;"
 			  			+		"left:" + (screenx__MODULE_ID__ + margin__MODULE_ID__) + "px;"
-			  			+		"height:" + screeny__MODULE_ID__ + "px;"
+			  			+		"height:" + (screeny__MODULE_ID__ + 1) + "px;"
 			  			+		"top:" + margin__MODULE_ID__ + "px;"
 			  			+       "width:1px;font-size=1;"
-			  			+		"background-color:#666666\'></div>"
+			  			+		"background-color:#cccccc\'></div>"
 				  		+   "<div style=\'position:absolute;"
-			  			+		"left:" + (screenx__MODULE_ID__ / 2.0 + margin__MODULE_ID__) + "px;"
+			  			+		"left:" + (screenx__MODULE_ID__ / 2 + margin__MODULE_ID__) + "px;"
 			  			+		"height:" + screeny__MODULE_ID__ + "px;"
 			  			+		"top:" + margin__MODULE_ID__ + "px;"
 			  			+       "width:1px;font-size=1;"
