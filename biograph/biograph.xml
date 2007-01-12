@@ -194,6 +194,7 @@
         <EnumValue value="1900" display_value="1900" />
     </UserPref>
     <Content type="html"><![CDATA[
+        <div><span style="color:#990000;">Physical</span><span style="color:#009900;">Emotional</span><span style="color:#000099;">Intellectual</span></div>
         <div id="content__MODULE_ID__" style="width:351px;height:141px;margin:5px;"><p style='text-align:center;color:#cccccc;'><i>__MSG_computing__...</i></p></div>
         <script type="text/javascript">
             var t__MODULE_ID__			=   null;
@@ -277,17 +278,17 @@
 			  			+       "height:1px;font-size:1;"
 			  			+		"background-color:#666666\'></div>"
 			  			+   "<div style=\'position:absolute;"
-			  			+		"left:" + (screenx__MODULE_ID__ + margin__MODULE_ID__ + 1) + "px;"
+			  			+		"left:" + (screenx__MODULE_ID__ + margin__MODULE_ID__ + 3) + "px;"
 			  			+		"top:" + margin__MODULE_ID__ + "px;"
 			  			+       "font-size:8pt;"
 			  			+		"color:#cccccc\'>+100%</div>"
 			  			+   "<div style=\'position:absolute;"
-			  			+		"left:" + (screenx__MODULE_ID__ + margin__MODULE_ID__ + 1) + "px;"
+			  			+		"left:" + (screenx__MODULE_ID__ + margin__MODULE_ID__ + 3) + "px;"
 			  			+		"top:" + (margin__MODULE_ID__ + yf - 5) + "px;"
 			  			+       "font-size:8pt;"
 			  			+		"color:#cccccc\'>0%</div>"
 			  			+   "<div style=\'position:absolute;"
-			  			+		"left:" + (screenx__MODULE_ID__ + margin__MODULE_ID__ + 1) + "px;"
+			  			+		"left:" + (screenx__MODULE_ID__ + margin__MODULE_ID__ + 3) + "px;"
 			  			+		"top:" + (margin__MODULE_ID__ + screeny__MODULE_ID__ - 10) + "px;"
 			  			+       "font-size:8pt;"
 			  			+		"color:#cccccc\'>-100%</div>"
