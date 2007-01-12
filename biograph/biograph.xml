@@ -194,13 +194,13 @@
         <EnumValue value="1900" display_value="1900" />
     </UserPref>
     <Content type="html"><![CDATA[
-        <div><span style="color:#990000;">Physical</span><span style="color:#009900;">Emotional</span><span style="color:#000099;">Intellectual</span></div>
         <div id="content__MODULE_ID__" style="width:351px;height:141px;margin:5px;"><p style='text-align:center;color:#cccccc;'><i>__MSG_computing__...</i></p></div>
         <script type="text/javascript">
             var t__MODULE_ID__			=   null;
             var screenx__MODULE_ID__	=	331;
-            var screeny__MODULE_ID__	=	141;
+            var screeny__MODULE_ID__	=	131;
             var margin__MODULE_ID__     =   5;
+            var xOffset__MODULE_ID__    =   margin__MODULE_ID__ + 10;
 
 			function minmax__MODULE_ID__(y) {
 				return	(y > 1.0) ? 1.0 : ((y < -1.0) ? -1.0 : y);
@@ -240,7 +240,7 @@
                 for (var i = 0; i < screenx__MODULE_ID__; i += (screenx__MODULE_ID__ / (xmax - xmin))) {
                     if (i != screenx__MODULE_ID__ / 2) {
     				  	html	+=	"<div style=\'position:absolute;"
-    				  			+		"left:" + (i + margin__MODULE_ID__) + "px;"
+    				  			+		"left:" + (i + xOffset__MODULE_ID__) + "px;"
     				  			+		"height:" + screeny__MODULE_ID__ + "px;"
     				  			+		"top:" + margin__MODULE_ID__ + "px;"
     				  			+       "width:1px;font-size=1;"
@@ -253,20 +253,20 @@
 				  	html	+=	"<div style=\'position:absolute;"
     			  			+		"top:" + ((i * yf * 2) + margin__MODULE_ID__) + "px;"
     			  			+		"width:" + screenx__MODULE_ID__ + "px;"
-    			  			+		"left:" + margin__MODULE_ID__ + "px;"
+    			  			+		"left:" + xOffset__MODULE_ID__ + "px;"
     			  			+       "height:1px;font-size=1;"
     			  			+		"background-color:#cccccc\'></div>"
 				  			;
                 }
 
 			  	html	+=	"<div style=\'position:absolute;"
-			  			+		"left:" + (screenx__MODULE_ID__ + margin__MODULE_ID__) + "px;"
+			  			+		"left:" + (screenx__MODULE_ID__ + xOffset__MODULE_ID__) + "px;"
 			  			+		"height:" + (screeny__MODULE_ID__ + 1) + "px;"
 			  			+		"top:" + margin__MODULE_ID__ + "px;"
 			  			+       "width:1px;font-size:1;"
 			  			+		"background-color:#cccccc\'></div>"
 				  		+   "<div style=\'position:absolute;"
-			  			+		"left:" + ((screenx__MODULE_ID__ / 2) + margin__MODULE_ID__) + "px;"
+			  			+		"left:" + ((screenx__MODULE_ID__ / 2) + xOffset__MODULE_ID__) + "px;"
 			  			+		"height:" + screeny__MODULE_ID__ + "px;"
 			  			+		"top:" + margin__MODULE_ID__ + "px;"
 			  			+       "width:1px;font-size:1;"
@@ -274,21 +274,21 @@
 				  		+   "<div style=\'position:absolute;"
 			  			+		"top:" + (yf + margin__MODULE_ID__) + "px;"
 			  			+		"width:" + screenx__MODULE_ID__ + "px;"
-			  			+		"left:" + margin__MODULE_ID__ + "px;"
+			  			+		"left:" + xOffset__MODULE_ID__ + "px;"
 			  			+       "height:1px;font-size:1;"
 			  			+		"background-color:#666666\'></div>"
 			  			+   "<div style=\'position:absolute;"
-			  			+		"left:" + (screenx__MODULE_ID__ + margin__MODULE_ID__ + 3) + "px;"
+			  			+		"left:" + (screenx__MODULE_ID__ + xOffset__MODULE_ID__ + 3) + "px;"
 			  			+		"top:" + margin__MODULE_ID__ + "px;"
 			  			+       "font-size:8pt;"
 			  			+		"color:#cccccc\'>+100%</div>"
 			  			+   "<div style=\'position:absolute;"
-			  			+		"left:" + (screenx__MODULE_ID__ + margin__MODULE_ID__ + 3) + "px;"
+			  			+		"left:" + (screenx__MODULE_ID__ + xOffset__MODULE_ID__ + 3) + "px;"
 			  			+		"top:" + (margin__MODULE_ID__ + yf - 5) + "px;"
 			  			+       "font-size:8pt;"
 			  			+		"color:#cccccc\'>0%</div>"
 			  			+   "<div style=\'position:absolute;"
-			  			+		"left:" + (screenx__MODULE_ID__ + margin__MODULE_ID__ + 3) + "px;"
+			  			+		"left:" + (screenx__MODULE_ID__ + xOffset__MODULE_ID__ + 3) + "px;"
 			  			+		"top:" + (margin__MODULE_ID__ + screeny__MODULE_ID__ - 10) + "px;"
 			  			+       "font-size:8pt;"
 			  			+		"color:#cccccc\'>-100%</div>"
@@ -302,17 +302,17 @@
 
 				  	html	+=	"<div style=\'position:absolute;"
 				  			+		"top:" + (screeny__MODULE_ID__ + margin__MODULE_ID__ - (minmax__MODULE_ID__(yP) + 1.0) * yf) + "px;"
-				  			+		"left:" + (i + margin__MODULE_ID__) + "px;"
+				  			+		"left:" + (i + xOffset__MODULE_ID__) + "px;"
 				  			+		"width:1px;height:1px;font-size=1;"
 				  			+		"background-color:#990000\'></div>"
 				  			+	"<div style=\'position:absolute; "
 				  			+		"top:" + (screeny__MODULE_ID__ + margin__MODULE_ID__ - (minmax__MODULE_ID__(yE) + 1.0) * yf) + "px;"
-				  			+		"left:" + (i + margin__MODULE_ID__) + "px;"
+				  			+		"left:" + (i + xOffset__MODULE_ID__) + "px;"
 				  			+		"width:1px;height:1px;font-size=1;"
 				  			+		"background-color:#009900\'></div>"
 				  			+	"<div style=\'position:absolute;"
 				  			+		"top:" + (screeny__MODULE_ID__ + margin__MODULE_ID__ - (minmax__MODULE_ID__(yI) + 1.0) * yf) + "px;"
-				  			+		"left:" + (i + margin__MODULE_ID__) + "px;"
+				  			+		"left:" + (i + xOffset__MODULE_ID__) + "px;"
 				  			+		"width:1px;height:1px;font-size=1;"
 				  			+		"background-color:#000099\'></div>"
 				  			;
