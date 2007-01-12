@@ -276,6 +276,11 @@
 			  			+		"left:" + margin__MODULE_ID__ + "px;"
 			  			+       "height:1px;font-size=1;"
 			  			+		"background-color:#666666\'></div>"
+			  			+   "<div style=\'position:absolute;"
+			  			+		"left:" + (screenx__MODULE_ID__ + margin__MODULE_ID__ + 1) + "px;"
+			  			+		"top:" + margin__MODULE_ID__ + "px;"
+			  			+       "font-size=1;"
+			  			+		"color:#cccccc\'>+100%</div>"
 			  			;
 
 			  	for (var i = 0; i < screenx__MODULE_ID__; i++) {
@@ -288,21 +293,21 @@
 				  			+		"top:" + (screeny__MODULE_ID__ + margin__MODULE_ID__ - (minmax__MODULE_ID__(yP) + 1.0) * yf) + "px;"
 				  			+		"left:" + (i + margin__MODULE_ID__) + "px;"
 				  			+		"width:1px;height:1px;font-size=1;"
-				  			+		"background-color:#ff0000\'></div>"
+				  			+		"background-color:#990000\'></div>"
 				  			+	"<div style=\'position:absolute; "
 				  			+		"top:" + (screeny__MODULE_ID__ + margin__MODULE_ID__ - (minmax__MODULE_ID__(yE) + 1.0) * yf) + "px;"
 				  			+		"left:" + (i + margin__MODULE_ID__) + "px;"
 				  			+		"width:1px;height:1px;font-size=1;"
-				  			+		"background-color:#00ff00\'></div>"
+				  			+		"background-color:#009900\'></div>"
 				  			+	"<div style=\'position:absolute;"
 				  			+		"top:" + (screeny__MODULE_ID__ + margin__MODULE_ID__ - (minmax__MODULE_ID__(yI) + 1.0) * yf) + "px;"
 				  			+		"left:" + (i + margin__MODULE_ID__) + "px;"
 				  			+		"width:1px;height:1px;font-size=1;"
-				  			+		"background-color:#0000ff\'></div>"
+				  			+		"background-color:#000099\'></div>"
 				  			;
 				}
 
-                _gel('content__MODULE_ID__').innerHTML = html;
+                _gel('content__MODULE_ID__').innerHTML  =   html;
             }
 
             function main__MODULE_ID__() {
