@@ -40,7 +40,7 @@ First off, this was really an experiment in gadget creation, color manipulation,
 
 So, if P, E, and I represent the scaled values for the physical, emotional, and intellectual cycles (respectively), then:
 
-Today's Color = RGB(P, E, I)
+Today's Color = RGB(I, E, P)
 
 For example, here's the previous graphic of the cycles and the corresponding combined color:
 
