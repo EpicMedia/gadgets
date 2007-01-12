@@ -279,8 +279,18 @@
 			  			+   "<div style=\'position:absolute;"
 			  			+		"left:" + (screenx__MODULE_ID__ + margin__MODULE_ID__ + 1) + "px;"
 			  			+		"top:" + margin__MODULE_ID__ + "px;"
-			  			+       "font-size=1;"
+			  			+       "font-size=8pt;"
 			  			+		"color:#cccccc\'>+100%</div>"
+			  			+   "<div style=\'position:absolute;"
+			  			+		"left:" + (screenx__MODULE_ID__ + margin__MODULE_ID__ + 1) + "px;"
+			  			+		"top:" + (margin__MODULE_ID__ + yf) + "px;"
+			  			+       "font-size=8pt;"
+			  			+		"color:#cccccc\'>0%</div>"
+			  			+   "<div style=\'position:absolute;"
+			  			+		"left:" + (screenx__MODULE_ID__ + margin__MODULE_ID__ + 1) + "px;"
+			  			+		"top:" + (margin__MODULE_ID__ + screeny__MODULE_ID__ - 10) + "px;"
+			  			+       "font-size=8pt;"
+			  			+		"color:#cccccc\'>-100%</div>"
 			  			;
 
 			  	for (var i = 0; i < screenx__MODULE_ID__; i++) {
