@@ -194,15 +194,15 @@
         <EnumValue value="1900" display_value="1900" />
     </UserPref>
     <Content type="html"><![CDATA[
-        <div id="content__MODULE_ID__" style="width:360px;height:150px;margin:5px;"><p style='text-align:center;color:#cccccc;'><i>__MSG_computing__...</i></p></div>
+        <div id="content__MODULE_ID__" style="width:351px;height:141px;margin:5px;"><p style='text-align:center;color:#cccccc;'><i>__MSG_computing__...</i></p></div>
         <script type="text/javascript">
             var t__MODULE_ID__			=   null;
-            var screenx__MODULE_ID__	=	360;
-            var screeny__MODULE_ID__	=	150;
+            var screenx__MODULE_ID__	=	351;
+            var screeny__MODULE_ID__	=	141;
             var margin__MODULE_ID__     =   5;
 
 			function minmax__MODULE_ID__(y) {
-				return	(y > +1.0) ? +1.0 : ((y < -1.0) ? -1.0 : y);
+				return	(y > 1.0) ? 1.0 : ((y < -1.0) ? -1.0 : y);
 			}
 
             function y2k__MODULE_ID__(number) {
