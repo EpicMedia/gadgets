@@ -15,3 +15,5 @@ This is a simple gadget that graphs your biorhythm cycles over a 2-week period, 
 To add this to your Google personalized homepage, click here:
 
 [http://fusion.google.com/add?moduleurl=http://epicmedia-gadgets.googlecode.com/svn/trunk/biograph/biograph.xml http://buttons.googlesyndication.com/fusion/add.gif]
+
+For a more esoteric look at biorhythms, you may want to check out the TodaysBiorhythmColor gadget.
