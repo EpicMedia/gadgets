@@ -1,6 +1,10 @@
 <messagebundle>
     <msg name="title">Grafico quotidiano di Biorhythm</msg>
-    <msg name="description">Genera un grafico visivo dei vostri cicli del biorhythm, mostrandogli la vostra progressione del ciclo da una settimana prima di una settimana dopo oggi.</msg>
+    <msg name="description">
+        Genera un grafico visivo dei vostri cicli del biorhythm, mostrandogli la vostra progressione del ciclo da una
+        settimana prima di una settimana dopo oggi.
+    </msg>
+    <msg name="date_format">Disposizione di data</msg>
     <msg name="birth_month">Nascita mese</msg>
     <msg name="birth_day">Nascita giorno</msg>
     <msg name="birth_year">Nascita anno</msg>
@@ -20,10 +24,6 @@
     <msg name="physical">Fisico</msg>
     <msg name="intellectual">Intellettuale</msg>
     <msg name="emotional">Emotivo</msg>
-    <msg name="p">F</msg>
-    <msg name="i">I</msg>
-    <msg name="e">E</msg>
-    <msg name="overall">Complessivo</msg>
 </messagebundle>
 
 
