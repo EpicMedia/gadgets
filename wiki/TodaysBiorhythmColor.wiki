@@ -34,9 +34,9 @@ First off, this was really an experiment in gadget creation, color manipulation,
   * Compute today's value for each cycle.  This results in a number between -1 and +1
   * Shift the scale of each value to between 0 and 255
   * Compute a single color by assigning:
-    ** red to the physical cycle
+    ** blue to the physical cycle
     ** green to the emotional cycle
-    ** blue to the intellectual cycle
+    ** red to the intellectual cycle
 
 So, if P, E, and I represent the scaled values for the physical, emotional, and intellectual cycles (respectively), then:
 
