@@ -18,7 +18,7 @@
     <msg name="october"   >October</msg>
     <msg name="november"  >November</msg>
     <msg name="december"  >December</msg>
-    <msg name="computing">Computing Today's Color...</msg>
+    <msg name="computing">Generating Today's Graph...</msg>
     <msg name="physical">Physical</msg>
     <msg name="intellectual">Intellectual</msg>
     <msg name="emotional">Emotional</msg>
