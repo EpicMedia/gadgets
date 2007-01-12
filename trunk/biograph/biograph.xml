@@ -250,7 +250,7 @@
 
                 for (var i = 0; i < 2; i++) {
 				  	html	+=	"<div style=\'position:absolute;"
-    			  			+		"top:" + ((i * yf * 2) + margin__MODULE_ID__) + "px;"
+    			  			+		"top:" + (i * yf * 2) + margin__MODULE_ID__) + "px;"
     			  			+		"width:" + screenx__MODULE_ID__ + "px;"
     			  			+		"left:" + margin__MODULE_ID__ + "px;"
     			  			+       "height:1px;font-size=1;"
