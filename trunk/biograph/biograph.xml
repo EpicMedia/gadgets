@@ -237,7 +237,7 @@
                 var html			=	"";
 
                 for (var i = 0; i < screenx__MODULE_ID__; i += (screenx__MODULE_ID__ / (xmax - xmin))) {
-                    if (i <> screenx__MODULE_ID / 2) {
+                    if (i != screenx__MODULE_ID / 2) {
     				  	html	+=	"<div style=\'position:absolute;"
     				  			+		"left:" + (i + margin__MODULE_ID__) + "px;"
     				  			+		"height:" + screeny__MODULE_ID__ + "px;"
@@ -250,7 +250,7 @@
 
                 for (var i = 0; i < 2; i++) {
 				  	html	+=	"<div style=\'position:absolute;"
-    			  			+		"top:" + (i * yf * 2) + margin__MODULE_ID__) + "px;"
+    			  			+		"top:" + ((i * yf * 2) + margin__MODULE_ID__) + "px;"
     			  			+		"width:" + screenx__MODULE_ID__ + "px;"
     			  			+		"left:" + margin__MODULE_ID__ + "px;"
     			  			+       "height:1px;font-size=1;"
@@ -265,7 +265,7 @@
 			  			+       "width:1px;font-size=1;"
 			  			+		"background-color:#cccccc\'></div>"
 				  		+   "<div style=\'position:absolute;"
-			  			+		"left:" + (screenx__MODULE_ID__ / 2 + margin__MODULE_ID__) + "px;"
+			  			+		"left:" + ((screenx__MODULE_ID__ / 2) + margin__MODULE_ID__) + "px;"
 			  			+		"height:" + screeny__MODULE_ID__ + "px;"
 			  			+		"top:" + margin__MODULE_ID__ + "px;"
 			  			+       "width:1px;font-size=1;"
