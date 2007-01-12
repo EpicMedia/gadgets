@@ -4,7 +4,7 @@
         title="__UP_title__"
         title_url="__UP_title_url__"
         directory_title="BaseCamp Viewer"
-        description="Displays Latest updates from your BaseCamp project."
+        description="Displays Latest updates from your BaseCamp project.  NOTE:  This gadget requires access to a webhost that supports PHP."
         screenshot="http://epicmedia-gadgets.googlecode.com/svn/trunk/basecamp/screenshot.png"
         thumbnail="http://epicmedia-gadgets.googlecode.com/svn/trunk/basecamp/thumbnail.png"
         author="Scott J. Walter"
