@@ -380,17 +380,17 @@
         			  			+		"top:" + (screeny__MODULE_ID__ + margin__MODULE_ID__ - 8 - (minmax__MODULE_ID__(yP) + 1.0) * yf) + "px;"
         			  			+		"left:" + (i + margin__MODULE_ID__) + "px;"
         			  			+		"font-weight:bold;font-size:8pt;width:10px;text-align:center;"
-        			  			+		"color:#990000\'>" + prefs.getString("physical").substring(0,1) + "</div>"
+        			  			+		"color:#990000\'>" + (prefs.getString("physical")).substr(0,1) + "</div>"
         			  			+	"<div style=\'position:absolute; "
         			  			+		"top:" + (screeny__MODULE_ID__ + margin__MODULE_ID__ - 8 - (minmax__MODULE_ID__(yE) + 1.0) * yf) + "px;"
         			  			+		"left:" + (i + margin__MODULE_ID__) + "px;"
         			  			+		"font-weight:bold;font-size:8pt;width:10px;text-align:center;"
-        			  			+		"color:#009900\'>" + prefs.getString("emotional").substring(0,1) + "</div>"
+        			  			+		"color:#009900\'>" + (prefs.getString("emotional")).substr(0,1) + "</div>"
         			  			+	"<div style=\'position:absolute;"
         			  			+		"top:" + (screeny__MODULE_ID__ + margin__MODULE_ID__ - 8 - (minmax__MODULE_ID__(yI) + 1.0) * yf) + "px;"
         			  			+		"left:" + (i + margin__MODULE_ID__) + "px;"
         			  			+		"font-weight:bold;font-size:8pt;width:10px;text-align:center;"
-        			  			+		"color:#000099\'>" + prefs.getString("intellectual").substring(0,1) + "</div>"
+        			  			+		"color:#000099\'>" + (prefs.getString("intellectual")).substr(0,1) + "</div>"
         			  			;
 				   	}
 
