@@ -366,7 +366,7 @@
 			  			+		"left:" + (screenx__MODULE_ID__ + xOffset__MODULE_ID__ + 3) + "px;"
 			  			+		"top:" + (margin__MODULE_ID__ + screeny__MODULE_ID__ - 10) + "px;"
 			  			+       "font-size:8pt;"
-			  			+		"color:#999999\'>-1.0</div>"
+			  			+		"color:#999999\'><nobr>-1.0</nobr></div>"
 			  			;
 
 			  	for (var i = 0; i < screenx__MODULE_ID__; i++) {
