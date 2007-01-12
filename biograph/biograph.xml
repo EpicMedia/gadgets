@@ -194,7 +194,7 @@
         <EnumValue value="1900" display_value="1900" />
     </UserPref>
     <Content type="html"><![CDATA[
-        <div id="content__MODULE_ID__" style="width:360px;height:150px;border:1px solid #cccccc;margin:5px;"><p style='text-align:center;color:#cccccc;'><i>__MSG_computing__...</i></p></div>
+        <div id="content__MODULE_ID__" style="width:359px;height:149px;border:1px solid #cccccc;margin:5px;"><p style='text-align:center;color:#cccccc;'><i>__MSG_computing__...</i></p></div>
         <script type="text/javascript">
             var t__MODULE_ID__			=   null;
             var screenx__MODULE_ID__	=	360;
