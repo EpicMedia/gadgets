@@ -3,6 +3,7 @@
     <msg name="description">
     	Generates a visual graph of your biorhythm cycles, centered around today
     </msg>
+    <msg name="date_format">Date format</msg>
     <msg name="birth_month">Birth month</msg>
     <msg name="birth_day">Birth day</msg>
     <msg name="birth_year">Birth year</msg>
