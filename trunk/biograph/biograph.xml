@@ -16,10 +16,6 @@
         height="170"
         >
         <Locale             messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/biograph/ALL_ALL.xml" />
-        <Locale lang="de"   messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/biograph/de_ALL.xml" />
-        <Locale lang="fr"   messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/biograph/fr_ALL.xml" />
-        <Locale lang="es"   messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/biograph/es_ALL.xml" />
-        <Locale lang="it"   messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/biograph/it_ALL.xml" />
         <Require feature="setprefs" />
     </ModulePrefs>
     <UserPref
