@@ -1,5 +1,5 @@
 <messagebundle>
-    <msg name="title">Hoy Biorhythm Color</msg>
+    <msg name="title">Gr&#225;fico diario de Biorhythm</msg>
     <msg name="description">
     	Genera un gr&#225;fico visual de sus ciclos del biorhythm, demostr&#225;ndole su progresi&#243;n del ciclo a
     	partir de una semana antes de una semana despu&#233;s de hoy.
