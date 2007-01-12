@@ -77,20 +77,20 @@
 	  	with (Math) {
 		  	for (var i = 0; i < screenx; i++) {
 			   	var	x	=	i * xf + xmin;
-			   	var yP	=	sin(x / 23.0 * PI);
-			   	var yI	=	sin(x / 33.0 * PI);
-			   	var yE	=	sin(x / 28.0 * PI);
+			   	var yP	=	sin(2.0 * PI * x / 23.0);
+			   	var yE	=	sin(2.0 * PI * x / 28.0);
+			   	var yI	=	sin(2.0 * PI * x / 33.0);
 
 			  	setColor(yP, "r", i, yf, minmax(yP, ymin, ymax), ymin, offset);
-			  	setColor(yI, "g", i, yf, minmax(yI, ymin, ymax), ymin, offset);
-			  	setColor(yE, "b", i, yf, minmax(yE, ymin, ymax), ymin, offset);
+			  	setColor(yE, "g", i, yf, minmax(yE, ymin, ymax), ymin, offset);
+			  	setColor(yI, "b", i, yf, minmax(yI, ymin, ymax), ymin, offset);
 
 		  		(document.getElementById("spec" + i)).style.backgroundColor	=	"RGB("
 		  																	+	round((yP + 1.0) * 255.0 / 2.0)
 		  																	+	","
-		  																	+	round((yI + 1.0) * 255.0 / 2.0)
+		  																	+	round((yE + 1.0) * 255.0 / 2.0)
 		  																	+	","
-		  																	+	Math.round((yE + 1.0) * 255.0 / 2.0)
+		  																	+	round((yI + 1.0) * 255.0 / 2.0)
 		  																	+	")"
 		  																	;
 			}
