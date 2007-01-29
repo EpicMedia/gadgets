@@ -55,9 +55,11 @@
                 padding: 2px;
             }
 
-            .days__MODULE_ID__ #today__MODULE_ID__ {
+            .days__MODULE_ID__ a:link,
+            .days__MODULE_ID__ a:hover,
+            .days__MODULE_ID__ a:visited  {
                 font-weight: bold;
-                color: red;
+                text-decoration: none;
             }
         </style>
         <div id="content__MODULE_ID__"><p style='text-align:center;color:#cccccc;'><i>Processing...</i></p></div>
