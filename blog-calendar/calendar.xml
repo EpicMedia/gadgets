@@ -101,7 +101,7 @@
                                     }
 
 									var today	=	new Date();
-                                    var html    =   buildCal__MODULE_ID__(	today.getmonth() + 1
+                                    var html    =   buildCal__MODULE_ID__(	today.getMonth() + 1
 		                                        						,	today.getFullYear()
 		                                        						,	"main"
 		                                        						,	"month"
