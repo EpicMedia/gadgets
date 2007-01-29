@@ -17,90 +17,90 @@
         <Require feature="dynamic-height" />
         <Require feature="setprefs" />
     </ModulePrefs>
-    <UserPref name="blog_feed"	display_name="Feed URL"     required="true" />
+    <UserPref name="blog_feed"  display_name="Feed URL"     required="true" />
     <UserPref name="title"                                                      datatype="hidden"   default_value="Blog Calendar" />
     <UserPref name="title_url"                                                  datatype="hidden"   default_value="http://code.google.com/p/epicmedia-gadgets/wiki/BlogCalendar" />
     <Content type="html"><![CDATA[
-		<style type="text/css">
-        	#content__MODULE_ID__ {
-        		font-family: arial, sans-serif;
+        <style type="text/css">
+            #content__MODULE_ID__ {
+                font-family: arial, sans-serif;
                 font-size: 12pt;
-        		padding: 0px;
-        		margin: 5px 0 0 0;
-        	}
+                padding: 0px;
+                margin: 5px 0 0 0;
+            }
 
-			.main {
-				width:200px;
-				border:1px solid black;
-			}
+            .main {
+                width:200px;
+                border:1px solid black;
+            }
 
-			.month {
-				background-color:black;
-				font:bold 12px verdana;
-				color:white;
-			}
+            .month {
+                background-color:black;
+                font:bold 12px verdana;
+                color:white;
+            }
 
-			.daysofweek {
-				background-color:gray;
-				font:bold 12px verdana;
-				color:white;
-			}
+            .daysofweek {
+                background-color:gray;
+                font:bold 12px verdana;
+                color:white;
+            }
 
-			.days {
-				font-size: 12px;
-				font-family:verdana;
-				color:black;
-				background-color: lightyellow;
-				padding: 2px;
-			}
+            .days {
+                font-size: 12px;
+                font-family:verdana;
+                color:black;
+                background-color: lightyellow;
+                padding: 2px;
+            }
 
-			.days #today{
-				font-weight: bold;
-				color: red;
-			}
+            .days #today{
+                font-weight: bold;
+                color: red;
+            }
         </style>
         <div id="content__MODULE_ID__"><p style='text-align:center;color:#cccccc;'><i>Processing...</i></p></div>
         <script type="text/javascript">
-			function buildCal__MODULE_ID__(m, y, cM, cH, cDW, cD, brdr) {
-				var	mn	=	['January','February','March','April','May','June','July','August','September','October','November','December'];
-				var	dim	=	[31,0,31,30,31,30,31,31,30,31,30,31];
-				var	oD	=	new Date(y, m - 1, 1);
+            function buildCal__MODULE_ID__(m, y, cM, cH, cDW, cD, brdr) {
+                var mn  =   ['January','February','March','April','May','June','July','August','September','October','November','December'];
+                var dim =   [31,0,31,30,31,30,31,31,30,31,30,31];
+                var oD  =   new Date(y, m - 1, 1);
 
-				oD.od	=   oD.getDay() + 1;
+                oD.od   =   oD.getDay() + 1;
 
-				dim[1]  =   (((oD.getFullYear()%100!=0)&&(oD.getFullYear()%4==0))||(oD.getFullYear()%400==0))?29:28;
+                dim[1]  =   (((oD.getFullYear()%100!=0)&&(oD.getFullYear()%4==0))||(oD.getFullYear()%400==0))?29:28;
 
-				var t	=	'<div class="'+cM+'">'
-						+		'<table class="'+cM+'" cols="7" cellpadding="0" border="'+brdr+'" cellspacing="0">'
-						+			'<tr align="center">'
-						+				'<td colspan="7" align="center" class="'+cH+'">' + mn[m-1] + ' - ' + y + '</td>'
-						+			'</tr><tr align="center">'
-						;
+                var t   =   '<div class="'+cM+'">'
+                        +       '<table class="'+cM+'" cols="7" cellpadding="0" border="'+brdr+'" cellspacing="0">'
+                        +           '<tr align="center">'
+                        +               '<td colspan="7" align="center" class="'+cH+'">' + mn[m-1] + ' - ' + y + '</td>'
+                        +           '</tr><tr align="center">'
+                        ;
 
-				for(var s = 0; s < 7; s++) {
-					t	+=	'<td class="'+cDW+'">'
-						+		"SMTWTFS".substr(s,1)
-						+	'</td>'
-						;
-				}
+                for(var s = 0; s < 7; s++) {
+                    t   +=  '<td class="'+cDW+'">'
+                        +       "SMTWTFS".substr(s,1)
+                        +   '</td>'
+                        ;
+                }
 
-				t	+=	'</tr><tr align="center">';
+                t   +=  '</tr><tr align="center">';
 
-				for(var i = 1; i <= 42; i++) {
-					if ((i-oD.od >= 0) && (i - oD.od < dim[m-1])) {
-						day	=	i - oD.od + 1;
-						t	+=	'<td id="day_' + day + '___MODULE_ID__" class="'+cD+'">'+day+'</td>';
-					} else {
-						t	+=	'<td class="'+cD+'">&nbsp;</td>';
-					}
+                for(var i = 1; i <= 42; i++) {
+                    if ((i-oD.od >= 0) && (i - oD.od < dim[m-1])) {
+                        day =   i - oD.od + 1;
+                        t   +=  '<td id="day_' + day + '___MODULE_ID__" class="'+cD+'">'+day+'</td>';
+                    } else {
+                        t   +=  '<td class="'+cD+'">&nbsp;</td>';
+                    }
 
-					if(((i)%7==0)&&(i<36)) {
-						t+='</tr><tr align="center">';
-					}
-				}
+                    if(((i)%7==0)&&(i<36)) {
+                        t+='</tr><tr align="center">';
+                    }
+                }
 
-				return t+='</tr></table></div>';
-			}
+                return t+='</tr></table></div>';
+            }
 
             var prefs__MODULE_ID__      = new _IG_Prefs(__MODULE_ID__);
 
@@ -111,29 +111,29 @@
                                         return;
                                     }
 
-									var today	=	new Date();
+                                    prefs__MODULE_ID__.set("title"      , feed.getElementsByTagName("title").item(0).firstChild.nodeValue);
+                                    prefs__MODULE_ID__.set("title_url"  , feed.getElementsByTagName("link").item(0).firstChild.nodeValue);
 
-                                    _gel("content__MODULE_ID__").innerHTML  =   buildCal__MODULE_ID__(	today.getMonth() + 1
-									                                        						,	today.getFullYear()
-									                                        						,	"main"
-									                                        						,	"month"
-									                                        						,	"daysofweek"
-									                                        						,	"days"
-									                                        						,	1
-									                                        						);
+                                    var today   =   new Date();
 
-                                    prefs__MODULE_ID__.set("title"		, feed.getElementsByTagName("title").item(0).firstChild.nodeValue);
-                                    prefs__MODULE_ID__.set("title_url"	, feed.getElementsByTagName("link").item(0).firstChild.nodeValue);
+                                    _gel("content__MODULE_ID__").innerHTML  =   buildCal__MODULE_ID__(  today.getMonth() + 1
+                                                                                                    ,   today.getFullYear()
+                                                                                                    ,   "main"
+                                                                                                    ,   "month"
+                                                                                                    ,   "daysofweek"
+                                                                                                    ,   "days"
+                                                                                                    ,   1
+                                                                                                    );
 
-                                    var nodeset	=	feed.getElementsByTagName("item");
+                                    var nodeset =   feed.getElementsByTagName("item");
 
                                     for (var i = 0; i < nodeset.length; i++) {
-                                    	var postDate	=	new Date(nodeset.item(i).getElementsByTagName("pubDate").item(0).firstChild.nodeValue);
+                                        var postDate    =   new Date(nodeset.item(i).getElementsByTagName("pubDate").item(0).firstChild.nodeValue);
 
-                                    	if ((postDate.getMonth() == today.getMonth()) && (postDate.getFullYear() == today.getFullYear())) {
-                                    		_gel("day_" + postDate.getDate() + "___MODULE_ID__").innerHTML =
-                                    			"<a href='" + nodeset.item(i).getElementsByTagName("link").item(0).firstChild.nodeValue + "'>" + postDate.getDate() + "</a>";
-                                    	}
+                                        if ((postDate.getMonth() == today.getMonth()) && (postDate.getFullYear() == today.getFullYear())) {
+                                            _gel("day_" + postDate.getDate() + "___MODULE_ID__").innerHTML =
+                                                "<a href='" + nodeset.item(i).getElementsByTagName("link").item(0).firstChild.nodeValue + "'>" + postDate.getDate() + "</a>";
+                                        }
                                     }
 
                                     _IG_AdjustIFrameHeight();
