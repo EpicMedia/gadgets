@@ -73,7 +73,7 @@
 				var t	=	'<div class="'+cM+'">'
 						+		'<table class="'+cM+'" cols="7" cellpadding="0" border="'+brdr+'" cellspacing="0">'
 						+			'<tr align="center">'
-						+				'<td colspan="7" align="center" class="'+cH+'">'+mn[m-1]+' - '+y+'</td>''
+						+				'<td colspan="7" align="center" class="'+cH+'">' + mn[m-1] + ' - ' + y + '</td>'
 						+			'</tr><tr align="center">'
 						;
 
