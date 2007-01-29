@@ -89,7 +89,7 @@
 				for(var i = 1; i <= 42; i++) {
 					if ((i-oD.od >= 0) && (i - oD.od < dim[m-1])) {
 						day	=	i - oD.od + 1;
-						t	+=	'<td id="day_' + day + '__MODULE_ID__" class="'+cD+'">'+day+'</td>';
+						t	+=	'<td id="day_' + day + '___MODULE_ID__" class="'+cD+'">'+day+'</td>';
 					} else {
 						t	+=	'<td class="'+cD+'">&nbsp;</td>';
 					}
@@ -128,7 +128,7 @@
                                     	var postDate	=	new Date(nodeset.item(i).getElementsByTagName("pubDate").item(0).firstChild.nodeValue);
 
                                     	if ((postDate.getMonth() == today.getMonth()) && (postDate.getFullYear() == today.getFullYear())) {
-                                    		_gel("day_" + (postDate.getDay() + 1) + "__MODULE_ID__").innerHTML =
+                                    		_gel("content__MODULE_ID__").item(0).firstChild.getElementsByTageName("day_" + (postDate.getDay() + 1) + "___MODULE_ID__").item(0).firstChild.nodeValue =
                                     			"<a href='" + nodeset.item(i).getElementsByTagName("link").item(0).firstChild.nodeValue + "'>" + (postDate.getDay() + 1) + "</a>";
                                     	}
                                     }
