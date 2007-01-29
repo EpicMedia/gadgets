@@ -63,14 +63,7 @@
 
             _IG_FetchXmlContent(prefs__MODULE_ID__.getString("blog_feed")
                             ,   function(feed) {
-                                    if (feed == null){
-                                        _gel("content__MODULE_ID__").innerHTML = "<p style='text-align:center;color:#999999;'><i>There is no data.</i></p>";
-                                        return;
-                                    }
-
-                                    var html = "";
-
-                                    _gel("content__MODULE_ID__").innerHTML  =   feed.xml;
+                                    _gel("content__MODULE_ID__").innerHTML  =   "shit!";
 
                                     _IG_AdjustIFrameHeight();
                                 }
