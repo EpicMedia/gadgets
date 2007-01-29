@@ -127,7 +127,7 @@
                                     	var postDate	=	new Date(nodeset.item(i).getElementsByTagName("pubDate").item(0).firstChild.nodeValue);
 
                                     	if ((postDate.getMonth() == today.getMonth()) && (postDate.getFullYear() == today.getFullYear())) {
-                                    		alert(postDate.getDay() + 1);
+                                    		alert(postDate.getDate() + 1);
                                     		_gel("day_" + (postDate.getDay() + 1) + "___MODULE_ID__").innerHTML =
                                     			"<a href='" + nodeset.item(i).getElementsByTagName("link").item(0).firstChild.nodeValue + "'>" + (postDate.getDay() + 1) + "</a>";
                                     	}
