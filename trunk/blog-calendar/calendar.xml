@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
     <ModulePrefs
-        title="Blog Calendar"
-        title_url="http://epicmedia-gadgets.googlecode.com/svn/trunk/blog-calendar/"
+        title="__UP_title__"
+        title_url="__UP_title_url__"
         directory_title="Blog Calendar"
         description="Displays a calendar of the current month, with blog-post days as clickable links"
         screenshot="http://epicmedia-gadgets.googlecode.com/svn/trunk/blog-calendar/screenshot.png"
@@ -18,6 +18,8 @@
         <Require feature="setprefs" />
     </ModulePrefs>
     <UserPref name="blog_feed"	display_name="Feed URL"     required="true" />
+    <UserPref name="title"                                                      datatype="hidden"   default_value="Blog Calendar" />
+    <UserPref name="title_url"                                                  datatype="hidden"   default_value="http://code.google.com/p/epicmedia-gadgets/wiki/BlogCalendar" />
     <Content type="html"><![CDATA[
 		<style type="text/css">
         	#content__MODULE_ID__ {
@@ -120,6 +122,8 @@
 									                                        						,	1
 									                                        						);
 
+                                    prefs__MODULE_ID__.set("title"		, feed.getElementsByTagName("title").item(0).firstChild.nodeValue);
+                                    prefs__MODULE_ID__.set("title_url"	, feed.getElementsByTagName("link").item(0).firstChild.nodeValue);
 
                                     var nodeset	=	feed.getElementsByTagName("item");
 
