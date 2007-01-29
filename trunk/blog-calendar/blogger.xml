@@ -28,7 +28,7 @@
 
                 dim[1]  =   (((oD.getFullYear()%100!=0)&&(oD.getFullYear()%4==0))||(oD.getFullYear()%400==0))?29:28;
 
-                var t   =   '<div>'
+                var t   =   '<div style="text-align:center;">'
                         +       '<table cols="7" cellpadding="0" border="1" cellspacing="0">'
                         +           '<tr align="center">'
                         +               '<td colspan="7" align="center">' + mn[m-1] + ' - ' + y + '</td>'
