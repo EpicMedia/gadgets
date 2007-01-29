@@ -129,7 +129,7 @@
 
                                     	if ((postDate.getMonth() == today.getMonth()) && (postDate.getFullYear() == today.getFullYear())) {
                                     		_gel("day_" + (postDate.getDay() + 1) + "__MODULE_ID__").innerHTML =
-                                    			"<a href='" + nodeset.item(i).getelementsByTagName("link").item(0).firstChild.nodeValue + "'>" + (postDate.getDay() + 1) + "</a>";
+                                    			"<a href='" + nodeset.item(i).getElementsByTagName("link").item(0).firstChild.nodeValue + "'>" + (postDate.getDay() + 1) + "</a>";
                                     	}
                                     }
 
