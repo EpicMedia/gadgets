@@ -70,7 +70,7 @@
 
                                     var html = "";
 
-                                    _gel("content__MODULE_ID__").innerHTML  =   feed.xml;
+                                    _gel("content__MODULE_ID__").innerHTML  =   feed.toString();
 
                                     _IG_AdjustIFrameHeight();
                                 }
