@@ -59,7 +59,7 @@
         </style>
         <div id="content__MODULE_ID__"><p style='text-align:center;color:#cccccc;'><i>Processing...</i></p></div>
         <script type="text/javascript">
-			function buildCal(m, y, cM, cH, cDW, cD, brdr) {
+			function buildCal__MODULE_ID__(m, y, cM, cH, cDW, cD, brdr) {
 				var	mn	=	['January','February','March','April','May','June','July','August','September','October','November','December'];
 				var	dim	=	[31,0,31,30,31,30,31,31,30,31,30,31];
 				var	oD	=	new Date(y, m - 1, 1);
@@ -102,14 +102,14 @@
                                         }
 
 										var today	=	new Date();
-                                        var html    =   buildCal(	today.getmonth() + 1
-                                        						,	today.getFullYear()
-                                        						,	"main"
-                                        						,	"month"
-                                        						,	"daysofweek"
-                                        						,	"days"
-                                        						,	1
-                                        						);
+                                        var html    =   buildCal__MODULE_ID__(	today.getmonth() + 1
+			                                        						,	today.getFullYear()
+			                                        						,	"main"
+			                                        						,	"month"
+			                                        						,	"daysofweek"
+			                                        						,	"days"
+			                                        						,	1
+			                                        						);
 
                                         if (feed.Entry) {
                                             for (var i = 0; i < feed.Entry.length; i++) {
