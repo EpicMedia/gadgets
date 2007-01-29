@@ -112,7 +112,7 @@
 
                                     var nodeset	=	feed.getElementsByTagName("item");
 
-                                    html = "";
+                                    html = nodeset.length + '<br />';
 
                                     for (var i = 0; i < nodeset.length; i++) {
                                     	html += nodeset.item(i).getElementsByTagName("pubDate").item(0).nodeValue + "<br />";
