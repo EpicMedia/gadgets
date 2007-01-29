@@ -128,7 +128,7 @@
                                     	var postDate	=	new Date(nodeset.item(i).getElementsByTagName("pubDate").item(0).firstChild.nodeValue);
 
                                     	if ((postDate.getMonth() == today.getMonth()) && (postDate.getFullYear() == today.getFullYear())) {
-                                    		_gel("content__MODULE_ID__").item(0).firstChild.getElementsByTageName("day_" + (postDate.getDay() + 1) + "___MODULE_ID__").item(0).firstChild.nodeValue =
+                                    		_gel("content__MODULE_ID__").getElementsByTagName("day_" + (postDate.getDay() + 1) + "___MODULE_ID__").item(0).firstChild.nodeValue =
                                     			"<a href='" + nodeset.item(i).getElementsByTagName("link").item(0).firstChild.nodeValue + "'>" + (postDate.getDay() + 1) + "</a>";
                                     	}
                                     }
