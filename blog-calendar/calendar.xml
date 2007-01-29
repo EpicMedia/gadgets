@@ -91,41 +91,38 @@
 
             var prefs__MODULE_ID__      = new _IG_Prefs(__MODULE_ID__);
 
-            if (entries__MODULE_ID__ < 1 || entries__MODULE_ID__ > 9) {
-                _gel("content__MODULE_ID__").innerHTML = "<p style='text-align:center;color:#660000;'><i>Please specify between 1 and 9 entries.</i></p>";
-            } else {
-                _IG_FetchFeedAsJSON(prefs__MODULE_ID__.getString("blog_feed")
-                                ,   function(feed) {
-                                        if (feed == null){
-                                            _gel("content__MODULE_ID__").innerHTML = "<p style='text-align:center;color:#999999;'><i>There is no data.</i></p>";
-                                            return;
-                                        }
-
-										var today	=	new Date();
-                                        var html    =   buildCal__MODULE_ID__(	today.getmonth() + 1
-			                                        						,	today.getFullYear()
-			                                        						,	"main"
-			                                        						,	"month"
-			                                        						,	"daysofweek"
-			                                        						,	"days"
-			                                        						,	1
-			                                        						);
-
-                                        if (feed.Entry) {
-                                            for (var i = 0; i < feed.Entry.length; i++) {
-                                            	var entryDate	=	new Date(feed.Entry[i].Date * 1000);
-
-                                            	html    +=  entryDate.toLocaleString() + "<br />";
-                                            }
-                                        }
-
-                                        _gel("content__MODULE_ID__").innerHTML  =   html;
-
-                                        _IG_AdjustIFrameHeight();
+            _IG_FetchFeedAsJSON(prefs__MODULE_ID__.getString("blog_feed")
+                            ,   function(feed) {
+                                    if (feed == null){
+                                        _gel("content__MODULE_ID__").innerHTML = "<p style='text-align:center;color:#999999;'><i>There is no data.</i></p>";
+                                        return;
                                     }
-                                ,   entries__MODULE_ID__
-                                ,   false
-                                );
+
+									var today	=	new Date();
+                                    var html    =   buildCal__MODULE_ID__(	today.getmonth() + 1
+		                                        						,	today.getFullYear()
+		                                        						,	"main"
+		                                        						,	"month"
+		                                        						,	"daysofweek"
+		                                        						,	"days"
+		                                        						,	1
+		                                        						);
+
+                                    if (feed.Entry) {
+                                        for (var i = 0; i < feed.Entry.length; i++) {
+                                        	var entryDate	=	new Date(feed.Entry[i].Date * 1000);
+
+                                        	html    +=  entryDate.toLocaleString() + "<br />";
+                                        }
+                                    }
+
+                                    _gel("content__MODULE_ID__").innerHTML  =   html;
+
+                                    _IG_AdjustIFrameHeight();
+                                }
+                            ,   9
+                            ,   false
+                            );
             }
         </script>
     ]]></Content>
