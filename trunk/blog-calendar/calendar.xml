@@ -59,38 +59,6 @@
         </style>
         <div id="content__MODULE_ID__"><p style='text-align:center;color:#cccccc;'><i>Processing...</i></p></div>
         <script type="text/javascript">
-			function buildCal__MODULE_ID__(m, y, cM, cH, cDW, cD, brdr) {
-				return "";
-
-				var	mn	=	['January','February','March','April','May','June','July','August','September','October','November','December'];
-				var	dim	=	[31,0,31,30,31,30,31,31,30,31,30,31];
-				var	oD	=	new Date(y, m - 1, 1);
-
-				oD.od	=   oD.getDay() + 1;
-
-				dim[1]  =   (((oD.getFullYear()%100!=0)&&(oD.getFullYear()%4==0))||(oD.getFullYear()%400==0))?29:28;
-
-				var t='<div class="'+cM+'"><table class="'+cM+'" cols="7" cellpadding="0" border="'+brdr+'" cellspacing="0"><tr align="center">';
-
-				t+='<td colspan="7" align="center" class="'+cH+'">'+mn[m-1]+' - '+y+'</td></tr><tr align="center">';
-
-				for(s=0;s<7;s++)
-					t+='<td class="'+cDW+'">'+"SMTWTFS".substr(s,1)+'</td>';
-
-				t+='</tr><tr align="center">';
-
-				for(i=1;i<=42;i++) {
-					var x=((i-oD.od>=0)&&(i-oD.od<dim[m-1]))? i-oD.od+1 : '&nbsp;';
-
-					t+='<td class="'+cD+'">'+x+'</td>';
-
-					if(((i)%7==0)&&(i<36))
-						t+='</tr><tr align="center">';
-				}
-
-				return t+='</tr></table></div>';
-			}
-
             var prefs__MODULE_ID__      = new _IG_Prefs(__MODULE_ID__);
 
             _IG_FetchFeedAsJSON(prefs__MODULE_ID__.getString("blog_feed")
@@ -100,15 +68,7 @@
                                         return;
                                     }
 
-									var today	=	new Date();
-                                    var html    =   buildCal__MODULE_ID__(	today.getmonth() + 1
-		                                        						,	today.getFullYear()
-		                                        						,	"main"
-		                                        						,	"month"
-		                                        						,	"daysofweek"
-		                                        						,	"days"
-		                                        						,	1
-		                                        						);
+                                    var html = "";
 
                                     if (feed.Entry) {
                                         for (var i = 0; i < feed.Entry.length; i++) {
