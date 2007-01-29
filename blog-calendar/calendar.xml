@@ -112,10 +112,10 @@
 
                                     var nodeset	=	feed.getElementsByTagName("item");
 
-                                    html = nodeset.length + '<br />';
+                                    html = '';
 
                                     for (var i = 0; i < nodeset.length; i++) {
-                                    	html += nodeset.item(i).getElementsByTagName("pubDate").item(0).firstChild.nodeValue + "<br />";
+                                    	html += (new Date(nodeset.item(i).getElementsByTagName("pubDate").item(0).firstChild.nodeValue)).toString() + "<br />";
                                     }
 
                                     _gel("content__MODULE_ID__").innerHTML  =   html;
