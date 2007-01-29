@@ -14,50 +14,9 @@
         author_photo="http://epicmedia-gadgets.googlecode.com/svn/trunk/photo.png"
         author_link="http://code.google.com/p/epicmedia-gadgets/wiki/BlogCalendar"
         >
-        <Require feature="setprefs" />
     </ModulePrefs>
     <UserPref name="blog_feed"  display_name="Feed URL"     required="true" />
     <Content type="html"><![CDATA[
-        <style type="text/css">
-            #content__MODULE_ID__ {
-                font-family: arial, sans-serif;
-                font-size: 12pt;
-                padding: 0px;
-                margin: 5px 0 0 0;
-                text-align: center;
-            }
-
-            .main__MODULE_ID__ {
-                width:200px;
-                border:1px solid black;
-            }
-
-            .month__MODULE_ID__ {
-                background-color:black;
-                font	: bold;
-                color	: white;
-            }
-
-            .daysofweek__MODULE_ID__ {
-                background-color:gray;
-                font:bold 12px verdana;
-                color:white;
-            }
-
-            .days__MODULE_ID__ {
-                font-weight	: normal;
-                color		:	black;
-                background-color: lightyellow;
-                padding: 2px;
-            }
-
-            .days__MODULE_ID__ a:link,
-            .days__MODULE_ID__ a:hover,
-            .days__MODULE_ID__ a:visited  {
-                font-weight		: bold;
-                text-decoration	: none;
-            }
-        </style>
         <div id="content__MODULE_ID__"><p style='text-align:center;color:#cccccc;'><i>Processing...</i></p></div>
         <script type="text/javascript">
             function buildCal__MODULE_ID__(m, y) {
@@ -69,15 +28,15 @@
 
                 dim[1]  =   (((oD.getFullYear()%100!=0)&&(oD.getFullYear()%4==0))||(oD.getFullYear()%400==0))?29:28;
 
-                var t   =   '<div class="main__MODULE_ID__">'
-                        +       '<table class="main__MODULE_ID__" cols="7" cellpadding="0" border="1" cellspacing="0">'
+                var t   =   '<div>'
+                        +       '<table cols="7" cellpadding="0" border="1" cellspacing="0">'
                         +           '<tr align="center">'
-                        +               '<td colspan="7" align="center" class="month__MODULE_ID__">' + mn[m-1] + ' - ' + y + '</td>'
+                        +               '<td colspan="7" align="center">' + mn[m-1] + ' - ' + y + '</td>'
                         +           '</tr><tr align="center">'
                         ;
 
                 for(var s = 0; s < 7; s++) {
-                    t   +=  '<td class="daysofweek__MODULE_ID__">'
+                    t   +=  '<td>'
                         +       "SMTWTFS".substr(s,1)
                         +   '</td>'
                         ;
@@ -88,9 +47,9 @@
                 for(var i = 1; i <= 42; i++) {
                     if ((i-oD.od >= 0) && (i - oD.od < dim[m-1])) {
                         day =   i - oD.od + 1;
-                        t   +=  '<td id="day_' + day + '___MODULE_ID__" class="days__MODULE_ID__">'+day+'</td>';
+                        t   +=  '<td id="day_' + day + '___MODULE_ID__">'+day+'</td>';
                     } else {
-                        t   +=  '<td class="days__MODULE_ID__">&nbsp;</td>';
+                        t   +=  '<td>&nbsp;</td>';
                     }
 
                     if(((i)%7==0)&&(i<36)) {
