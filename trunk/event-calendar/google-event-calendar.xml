@@ -13,8 +13,7 @@
 		thumbnail="http://lh3.ggpht.com/_xn2gmPb9TfM/SmdCI32oiKI/AAAAAAAAEoo/CWpjtzqMus4/s800/calendar-gadget-thumb.gif"
 		screenshot="http://lh3.ggpht.com/_xn2gmPb9TfM/SmdCI32oiKI/AAAAAAAAEoo/CWpjtzqMus4/s800/calendar-gadget-thumb.gif"
 		>
-        <Require feature="setprefs" />
-		<Require feature="dynamic-height" />
+		<Locale messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/event-calendar/ALL_ALL.xml"/> 
 		<Require feature="opensocial-0.7" />
 		<Require feature="google.blog" />
 		<Require feature="skins" />
