@@ -13,6 +13,7 @@
 		screenshot="__MSG_screenshot__"
 		>
 		<Locale messages="http://epicmedia-gadgets.googlecode.com/svn/trunk/event-calendar/ALL_ALL.xml" /> 
+		<Require feature="dynamic-height" />
 		<Require feature="opensocial-0.7" />
 		<Require feature="google.blog" />
 		<Require feature="skins" />
@@ -233,6 +234,7 @@
 		}
 		
 		events.appendChild(ul);
+		gadgets.window.adjustHeight();
 	}
 
 	/**
