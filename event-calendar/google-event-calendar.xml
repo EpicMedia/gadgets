@@ -209,7 +209,7 @@
 				entryLink.appendChild(document.createTextNode(where));
 				li.appendChild(entryLink);
 				
-				if (viewParams["__MSG_displayContent__"] == true) {
+				if (viewParams["displayContent"] == true) {
 					entryContent = document.createElement('div');
 					entryContent.appendChild(document.createTextNode(content));
 					li.appendChild(entryContent);
@@ -252,8 +252,8 @@
 		document.body.style.color = textColor;
 		var prefs = new gadgets.Prefs();
 		var viewParams = gadgets.views.getParams();
-		var theCal = viewParams["__MSG_calAddress__"];
-		var numEvents = viewParams["__MSG_calEntries__"];
+		var theCal = viewParams["calAddress"];
+		var numEvents = viewParams["calEntries"];
 		
 		var params = {};
 		params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
