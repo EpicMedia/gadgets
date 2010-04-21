@@ -1,8 +1,6 @@
 <messagebundle>
     <msg name="title">Upcoming Events</msg>
-    <msg name="description">
-    	Display Google Calendar events
-    </msg>
+    <msg name="description">Display Google Calendar events</msg>
 	<msg name="screenshot">http://lh3.ggpht.com/_xn2gmPb9TfM/SmdCI32oiKI/AAAAAAAAEoo/CWpjtzqMus4/s800/calendar-gadget-thumb.gif</msg>
 	<msg name="thumbnail">http://lh3.ggpht.com/_xn2gmPb9TfM/SmdCI32oiKI/AAAAAAAAEoo/CWpjtzqMus4/s800/calendar-gadget-thumb.gif</msg>
     <msg name="calAddress">Email address, or unique *@google.com address (where * is the unique ID for your calendar)</msg>
