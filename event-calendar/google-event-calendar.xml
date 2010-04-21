@@ -211,6 +211,11 @@
 
 			// if we have a link to the event, create an 'a' element
 			if (typeof entryLinkHref != 'undefined') {
+				entryDate = document.createElement('div');
+				entryDate.setAttribute('class', 'date');
+				entryDate.appendChild(document.createTextNode(dateString));
+				li.appendChild(entryDate);
+
 				entryLink = document.createElement('a');
 				entryLink.style.color = gadgets.skins.getProperty('CONTENT_LINK_COLOR');
 				entryLink.setAttribute('href', 'http://maps.google.com/maps?hl=en&q=' + escape(where));
@@ -223,21 +228,18 @@
 					entryContent.appendChild(document.createTextNode(content));
 					li.appendChild(entryContent);
 				}
-				
+			} else {
 				entryDate = document.createElement('div');
 				entryDate.setAttribute('class', 'date');
 				entryDate.appendChild(document.createTextNode(dateString));
 				li.appendChild(entryDate);
-			} else {
-				entryLink.appendChild(document.createTextNode(title));
+
+				entryLink.appendChild(document.createTextNode(where));
 				li.appendChild(entryLink);
+
 				entryContent = document.createElement('div');
 				entryContent.appendChild(document.createTextNode(content));
 				li.appendChild(entryContent);
-				entryDate = document.createElement('div');
-				entryDate.setAttribute('class', 'date');
-				entryDate.appendChild(document.createTextNode(dateString));
-				li.appendChild(entryDate);
 			}
 
 			// append the list item onto the unordered list
