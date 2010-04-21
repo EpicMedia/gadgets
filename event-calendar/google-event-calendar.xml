@@ -19,6 +19,7 @@
 		display_name="Email address, or unique *@google.com address (where * is the unique ID for your calendar)"
 		required="true"
 		default_value="your_email" 
+		datatype='string'
 		/>
 
 	<UserPref
@@ -26,6 +27,7 @@
 		display_name="Number of updates to display"
 		required="true"
 		default_value="5" 
+		datatype='string'
 		/>
 
 	<UserPref
@@ -258,10 +260,7 @@
 		function insertAgenda(root) {
 			listEvents(root, 'agenda');
 		}
-	//-->
-	</script>
-	<script type='text/javascript'>
-	<!--
+
 		function setHeight()
 		{   
 			gadgets.window.adjustHeight();
