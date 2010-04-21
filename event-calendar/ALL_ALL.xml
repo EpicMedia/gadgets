@@ -3,6 +3,8 @@
     <msg name="description">
     	Display Google Calendar events
     </msg>
+	<msg name="screenshot">http://lh3.ggpht.com/_xn2gmPb9TfM/SmdCI32oiKI/AAAAAAAAEoo/CWpjtzqMus4/s800/calendar-gadget-thumb.gif</msg>
+	<msg name="thumbnail">http://lh3.ggpht.com/_xn2gmPb9TfM/SmdCI32oiKI/AAAAAAAAEoo/CWpjtzqMus4/s800/calendar-gadget-thumb.gif</msg>
     <msg name="calAddress">Email address, or unique *@google.com address (where * is the unique ID for your calendar)</msg>
     <msg name="calEntries">Number of entries to display</msg>
     <msg name="displayContent">Display description for calendar entries?</msg>
