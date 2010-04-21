@@ -254,8 +254,8 @@
 	* @param {json} root is the JSON-formatted content from GData
 	*/ 
 	function insertAgenda__MODULE_ID__(obj) {
-		var root = obj.data;
-		listEvents__MODULE_ID__(root, 'agenda__MODULE_ID__');
+		listEvents__MODULE_ID__(obj.data, 'agenda__MODULE_ID__');
+		
 		gadgets.window.adjustHeight();
 	}
 
