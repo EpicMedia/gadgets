@@ -252,16 +252,14 @@
 		document.body.style.color = textColor;
 		var prefs = new gadgets.Prefs();
 		var viewParams = gadgets.views.getParams();
-		var theCal = viewParams["calAddress"];
-		var numEvents = viewParams["calEntries"];
 		
 		var params = {};
 		params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
 		// This URL returns a JSON-encoded string that represents a JavaScript object
 		var url	=	"http:\/\/www.google.com\/calendar\/feeds\/" 
-				+	theCal
+				+	viewParams["calAddress"]
 				+	"\/public\/full?alt=json&orderby=starttime&max-results=" 
-				+	numEvents
+				+	viewParams["calEntries"]
 				+	"&singleevents=true&sortorder=ascending&futureevents=true"
 				;
 				
