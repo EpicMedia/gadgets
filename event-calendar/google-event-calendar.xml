@@ -265,11 +265,7 @@
 				+	"&singleevents=true&sortorder=ascending&futureevents=true"
 				;
 				
-		alert(url);
-
 		gadgets.io.makeRequest(url, insertAgenda__MODULE_ID__, params);
-		
-		// gadgets.window.adjustHeight();
 	}
 
 	gadgets.util.registerOnLoadHandler(run__MODULE_ID__);
