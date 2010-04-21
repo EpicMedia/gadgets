@@ -2,10 +2,16 @@
 <Module>
 	<ModulePrefs
 		title="Upcoming Events"
-		author="Epic Media"
+        author="Scott Walter"
+        author_location="Minneapolis, MN"
+        author_affiliation="Epic Media"
+        author_email="sjwalter+GoogleGadget@gmail.com"
+        author_photo="http://epicmedia-gadgets.googlecode.com/svn/trunk/photo.png"
+        author_link="http://www.epicmedia.com/"
 		description="Display Google Calendar events"
 		author_email="sjwalter@epicmedia.com"
 		thumbnail="http://lh3.ggpht.com/_xn2gmPb9TfM/SmdCI32oiKI/AAAAAAAAEoo/CWpjtzqMus4/s800/calendar-gadget-thumb.gif"
+		screenshot="http://lh3.ggpht.com/_xn2gmPb9TfM/SmdCI32oiKI/AAAAAAAAEoo/CWpjtzqMus4/s800/calendar-gadget-thumb.gif"
 		>
 		<Require feature="dynamic-height" />
 		<Require feature="opensocial-0.7" />
@@ -38,255 +44,237 @@
 		/>
 
 	<Content type="html"><![CDATA[
-<html>
-<head>
-	<title>Google Event Calendar Gadget</title>
-	<style type="text/css">
-		body {
-			padding: 0 10px;
-			font-size: 80%;
+<div id="agenda__MODULE_ID__" style='padding: 0 10px;font-size: 80%;'><p style='text-align:center;color:#cccccc;'><i>Loading calendar...</i></p></div>
+<script type="text/javascript">
+<!--
+	// First off, all credit goes to the team at BloggerBuster.com for creating this gadget.
+	// I merely modified the code a bit for my needs. - SJW
+	/**
+	 * Converts an xs:date or xs:dateTime formatted string into the local timezone
+	 * and outputs a human-readable form of this date or date/time.
+	 *
+	 * @param {string} gCalTime is the xs:date or xs:dateTime formatted string
+	 * @return {string} is the human-readable date or date/time string
+	 */
+	function formatGCalTime__MODULE_ID__(gCalTime) { 
+		// text for regex matches
+		var remtxt = gCalTime;
+
+		function consume(retxt) {
+			var match = remtxt.match(new RegExp('^' + retxt));
+			if (match) {
+				remtxt = remtxt.substring(match[0].length);
+				return match[0];
+			}
+
+			return '';
 		}
-		.date {font-style: italic;}
-	</style>
-	<script type="text/javascript">
-	<!--
-		// First off, all credit goes to the team at BloggerBuster.com for creating this gadget.
-		// I merely modified the code a bit for my needs. - SJW
-		/**
-		 * Converts an xs:date or xs:dateTime formatted string into the local timezone
-		 * and outputs a human-readable form of this date or date/time.
-		 *
-		 * @param {string} gCalTime is the xs:date or xs:dateTime formatted string
-		 * @return {string} is the human-readable date or date/time string
-		 */
-		function formatGCalTime(gCalTime) { 
-			// text for regex matches
-			var remtxt = gCalTime;
 
-			function consume(retxt) {
-				var match = remtxt.match(new RegExp('^' + retxt));
-				if (match) {
-					remtxt = remtxt.substring(match[0].length);
-					return match[0];
-				}
+		// minutes of correction between gCalTime and GMT
+		var totalCorrMins = 0;
 
-				return '';
-			}
-
-			// minutes of correction between gCalTime and GMT
-			var totalCorrMins = 0;
-
-			var year = consume('\\d{4}');
-			if (year < 1000)
-				year+=1900;
-				
-			consume('-?');
-			var month = consume('\\d{2}');
-			consume('-?');
-			var dateMonth = consume('\\d{2}');
-			var timeOrNot = consume('T');
-
-			// if a DATE-TIME was matched in the regex 
-			if (timeOrNot == 'T') {
-				var hours = consume('\\d{2}');
-				consume(':?');
-				
-				var mins = consume('\\d{2}');
-				consume('(:\\d{2})?(\\.\\d{3})?');
-				
-				var zuluOrNot = consume('Z');
-
-				// if time from server is not already in GMT, calculate offset
-				if (zuluOrNot != 'Z') {
-					var corrPlusMinus = consume('[\\+\\-]');
-					if (corrPlusMinus != '') {
-						var corrHours = consume('\\d{2}');
-						consume(':?');
-						var corrMins = consume('\\d{2}');
-						totalCorrMins	=	(corrPlusMinus=='-' ? 1 : -1) 
-										*	(Number(corrHours) * 60 
-												+ (corrMins=='' ? 0 : Number(corrMins))
-											)
-										;
-					}
-				} 
-
-				// get time since epoch and apply correction, if necessary
-				// relies upon Date object to convert the GMT time to the local
-				// timezone
-				var originalDateEpoch = Date.UTC(year, month - 1, dateMonth, hours, mins);
-				var gmtDateEpoch = originalDateEpoch + totalCorrMins * 1000 * 60;
-				var ld = new Date(gmtDateEpoch);
-				var theMonth = (ld.getMonth() + 1);
-	
-				var theMonthNames = new Array();
-				theMonthNames[1] = "Jan";
-				theMonthNames[2] = "February";
-				theMonthNames[3] = "March";
-				theMonthNames[4] = "April";
-				theMonthNames[5] = "May";
-				theMonthNames[6] = "June";
-				theMonthNames[7] = "July";
-				theMonthNames[8] = "August";
-				theMonthNames[9] = "September";
-				theMonthNames[10] = "October";
-				theMonthNames[11] = "November";
-				theMonthNames[12] = "December";
-	
-				// date is originally in YYYY-MM-DD format
-				// time is originally in a 24-hour format
-				// this converts it to MM/DD hh:mm (AM|PM) 
-				dateString	=	theMonthNames[theMonth] + ' ' + ld.getDate() + ', ' + (ld.getYear() + 1900) + ' ' 
-							+	' - '
-							+ 	(
-									(ld.getHours()>12)	?	(ld.getHours()-12) 
-														:	(ld.getHours()===0	? 12
-																				: ld.getHours()
-															)
-								) 
-							+	':' 
-							+	(
-									(ld.getMinutes()<10)	?	('0' + ld.getMinutes())
-															:	(ld.getMinutes())
-								)
-							+	' ' + ((ld.getHours()>=12) ? 'PM' : 'AM')
-							;
-			} else {
-				// if only a DATE was matched
-	
-				var monthnames = new Array();
-				monthnames[1] = "Jan";
-				monthnames[2] = "Feb";
-				monthnames[3] = "Mar";
-				monthnames[4] = "Apr";
-				monthnames[5] = "May";
-				monthnames[6] = "Jun";
-				monthnames[7] = "Jul";
-				monthnames[8] = "Aug";
-				monthnames[9] = "Sep";
-				monthnames[10] = "Oct";
-				monthnames[11] = "Nov";
-				monthnames[12] = "Dec";
-	
-				var monthnum = parseInt(month, 10);
-	
-				dateString =  monthnames[monthnum] + ' ' + parseInt(dateMonth, 10) + ', ' + parseInt(year, 10);
-			}
+		var year = consume('\\d{4}');
+		if (year < 1000)
+			year+=1900;
 			
-			return dateString;
-		}
+		consume('-?');
+		var month = consume('\\d{2}');
+		consume('-?');
+		var dateMonth = consume('\\d{2}');
+		var timeOrNot = consume('T');
 
-		/**
-		 * Creates an unordered list of events in a human-readable form
-		 *
-		 * @param {json} root is the root JSON-formatted content from GData
-		 * @param {string} divId is the div in which the events are added
-		 */ 
-		function listEvents(root, divId) {
-			var feed = root.feed;
-			var events = document.getElementById(divId);
+		// if a DATE-TIME was matched in the regex 
+		if (timeOrNot == 'T') {
+			var hours = consume('\\d{2}');
+			consume(':?');
+			
+			var mins = consume('\\d{2}');
+			consume('(:\\d{2})?(\\.\\d{3})?');
+			
+			var zuluOrNot = consume('Z');
 
-			if (events.childNodes.length > 0) {
-				events.removeChild(events.childNodes[0]);
-			}	  
-
-			// create a new unordered list
-			var ul = document.createElement('div');
-
-			// loop through each event in the feed
-			for (var i = 0; i < feed.entry.length; i++) {
-				var entry = feed.entry[i];
-				var title = entry.title.$t;
-				var where = entry['gd$where'][0].valueString;
-				var content = entry.content.$t;
-				var start = entry['gd$when'][0].startTime;
-
-				// get the URL to link to the event
-				for (var linki = 0; linki < entry['link'].length; linki++) {
-					if (entry['link'][linki]['type'] == 'text/html' && entry['link'][linki]['rel'] == 'alternate') {
-						var entryLinkHref = entry['link'][linki]['href'];
-					}
+			// if time from server is not already in GMT, calculate offset
+			if (zuluOrNot != 'Z') {
+				var corrPlusMinus = consume('[\\+\\-]');
+				if (corrPlusMinus != '') {
+					var corrHours = consume('\\d{2}');
+					consume(':?');
+					var corrMins = consume('\\d{2}');
+					totalCorrMins	=	(corrPlusMinus=='-' ? 1 : -1) 
+									*	(Number(corrHours) * 60 
+											+ (corrMins=='' ? 0 : Number(corrMins))
+										)
+									;
 				}
+			} 
 
-				var dateString = formatGCalTime(start);
-				var li = document.createElement('div');
-				li.style.margin = '0 0 20px 0';
-				var viewParams = gadgets.views.getParams();
+			// get time since epoch and apply correction, if necessary
+			// relies upon Date object to convert the GMT time to the local
+			// timezone
+			var originalDateEpoch = Date.UTC(year, month - 1, dateMonth, hours, mins);
+			var gmtDateEpoch = originalDateEpoch + totalCorrMins * 1000 * 60;
+			var ld = new Date(gmtDateEpoch);
+			var theMonth = (ld.getMonth() + 1);
 
-				// if we have a link to the event, create an 'a' element
-				if (typeof entryLinkHref != 'undefined') {
-					entryLink = document.createElement('a');
-					entryLink.style.color = gadgets.skins.getProperty('CONTENT_LINK_COLOR');
-					entryLink.setAttribute('href', 'http://maps.google.com/maps?hl=en&q=' + escape(where));
-					entryLink.setAttribute('target','_blank');
-					entryLink.appendChild(document.createTextNode(where));
-					li.appendChild(entryLink);
-					
-					if (viewParams["displayContent"] == true) {
-						entryContent = document.createElement('div');
-						entryContent.appendChild(document.createTextNode(content));
-						li.appendChild(entryContent);
-					}
-					
-					entryDate = document.createElement('div');
-					entryDate.setAttribute('class', 'date');
-					entryDate.appendChild(document.createTextNode(dateString));
-					li.appendChild(entryDate);
-				} else {
-					entryLink.appendChild(document.createTextNode(title));
-					li.appendChild(entryLink);
+			var theMonthNames = new Array();
+			theMonthNames[1] = "Jan";
+			theMonthNames[2] = "February";
+			theMonthNames[3] = "March";
+			theMonthNames[4] = "April";
+			theMonthNames[5] = "May";
+			theMonthNames[6] = "June";
+			theMonthNames[7] = "July";
+			theMonthNames[8] = "August";
+			theMonthNames[9] = "September";
+			theMonthNames[10] = "October";
+			theMonthNames[11] = "November";
+			theMonthNames[12] = "December";
+
+			// date is originally in YYYY-MM-DD format
+			// time is originally in a 24-hour format
+			// this converts it to MM/DD hh:mm (AM|PM) 
+			dateString	=	theMonthNames[theMonth] + ' ' + ld.getDate() + ', ' + (ld.getYear() + 1900) + ' ' 
+						+	' - '
+						+ 	(
+								(ld.getHours()>12)	?	(ld.getHours()-12) 
+													:	(ld.getHours()===0	? 12
+																			: ld.getHours()
+														)
+							) 
+						+	':' 
+						+	(
+								(ld.getMinutes()<10)	?	('0' + ld.getMinutes())
+														:	(ld.getMinutes())
+							)
+						+	' ' + ((ld.getHours()>=12) ? 'PM' : 'AM')
+						;
+		} else {
+			// if only a DATE was matched
+
+			var monthnames = new Array();
+			monthnames[1] = "Jan";
+			monthnames[2] = "Feb";
+			monthnames[3] = "Mar";
+			monthnames[4] = "Apr";
+			monthnames[5] = "May";
+			monthnames[6] = "Jun";
+			monthnames[7] = "Jul";
+			monthnames[8] = "Aug";
+			monthnames[9] = "Sep";
+			monthnames[10] = "Oct";
+			monthnames[11] = "Nov";
+			monthnames[12] = "Dec";
+
+			var monthnum = parseInt(month, 10);
+
+			dateString =  monthnames[monthnum] + ' ' + parseInt(dateMonth, 10) + ', ' + parseInt(year, 10);
+		}
+		
+		return dateString;
+	}
+
+	/**
+	 * Creates an unordered list of events in a human-readable form
+	 *
+	 * @param {json} root is the root JSON-formatted content from GData
+	 * @param {string} divId is the div in which the events are added
+	 */ 
+	function listEvents__MODULE_ID__(root, divId) {
+		var feed = root.feed;
+		var events = document.getElementById(divId);
+
+		if (events.childNodes.length > 0) {
+			events.removeChild(events.childNodes[0]);
+		}	  
+
+		// create a new unordered list
+		var ul = document.createElement('div');
+
+		// loop through each event in the feed
+		for (var i = 0; i < feed.entry.length; i++) {
+			var entry = feed.entry[i];
+			var title = entry.title.$t;
+			var where = entry['gd$where'][0].valueString;
+			var content = entry.content.$t;
+			var start = entry['gd$when'][0].startTime;
+
+			// get the URL to link to the event
+			for (var linki = 0; linki < entry['link'].length; linki++) {
+				if (entry['link'][linki]['type'] == 'text/html' && entry['link'][linki]['rel'] == 'alternate') {
+					var entryLinkHref = entry['link'][linki]['href'];
+				}
+			}
+
+			var dateString = formatGCalTime__MODULE_ID__(start);
+			var li = document.createElement('div');
+			li.style.margin = '0 0 20px 0';
+			var viewParams = gadgets.views.getParams();
+
+			// if we have a link to the event, create an 'a' element
+			if (typeof entryLinkHref != 'undefined') {
+				entryLink = document.createElement('a');
+				entryLink.style.color = gadgets.skins.getProperty('CONTENT_LINK_COLOR');
+				entryLink.setAttribute('href', 'http://maps.google.com/maps?hl=en&q=' + escape(where));
+				entryLink.setAttribute('target','_blank');
+				entryLink.appendChild(document.createTextNode(where));
+				li.appendChild(entryLink);
+				
+				if (viewParams["displayContent"] == true) {
 					entryContent = document.createElement('div');
 					entryContent.appendChild(document.createTextNode(content));
 					li.appendChild(entryContent);
-					entryDate = document.createElement('div');
-					entryDate.setAttribute('class', 'date');
-					entryDate.appendChild(document.createTextNode(dateString));
-					li.appendChild(entryDate);
 				}
-
-				// append the list item onto the unordered list
-				ul.appendChild(li);
+				
+				entryDate = document.createElement('div');
+				entryDate.setAttribute('class', 'date');
+				entryDate.appendChild(document.createTextNode(dateString));
+				li.appendChild(entryDate);
+			} else {
+				entryLink.appendChild(document.createTextNode(title));
+				li.appendChild(entryLink);
+				entryContent = document.createElement('div');
+				entryContent.appendChild(document.createTextNode(content));
+				li.appendChild(entryContent);
+				entryDate = document.createElement('div');
+				entryDate.setAttribute('class', 'date');
+				entryDate.appendChild(document.createTextNode(dateString));
+				li.appendChild(entryDate);
 			}
-			
-			events.appendChild(ul);
-		}
 
-		/**
-		* Callback function for the GData json-in-script call
-		* Inserts the supplied list of events into a div of a pre-defined name
-		* 
-		* @param {json} root is the JSON-formatted content from GData
-		*/ 
-		function insertAgenda(root) {
-			listEvents(root, 'agenda');
+			// append the list item onto the unordered list
+			ul.appendChild(li);
 		}
+		
+		events.appendChild(ul);
+	}
 
-		function setHeight()
-		{   
-			gadgets.window.adjustHeight();
-			setTimeout("setHeight()", 3000);
-		}
-	//-->
-	</script>
-</head>
-<body onload='setHeight()'>
-<div id="agenda"><p>Loading calendar...</p></div>
-<script type="text/javascript">
-<!--
-	var backgroundColor = gadgets.skins.getProperty('CONTENT_BG_COLOR');
-	document.body.style.backgroundColor = 'transparent';
-	textColor = gadgets.skins.getProperty('CONTENT_TEXT_COLOR');
-	document.body.style.color = textColor;
-	var prefs = new gadgets.Prefs();
-	var viewParams = gadgets.views.getParams();
-	var myUsername = viewParams["myUsername"];
-	var myUpdates = viewParams["myUpdates"];
+	/**
+	* Callback function for the GData json-in-script call
+	* Inserts the supplied list of events into a div of a pre-defined name
+	* 
+	* @param {json} root is the JSON-formatted content from GData
+	*/ 
+	function insertAgenda__MODULE_ID__(root) {
+		listEvents__MODULE_ID__(root, 'agenda__MODULE_ID__');
+		gadgets.window.adjustHeight();
+	}
 
-	document.write("<script type='text\/javascript' src='http:\/\/www.google.com\/calendar\/feeds\/" + myUsername + "\/public\/full?alt=json-in-script&callback=insertAgenda&orderby=starttime&max-results=" + myUpdates + "&singleevents=true&sortorder=ascending&futureevents=true'><\/script>");
+	function run__MODULE_ID__() {
+		var backgroundColor = gadgets.skins.getProperty('CONTENT_BG_COLOR');
+		document.body.style.backgroundColor = 'transparent';
+		textColor = gadgets.skins.getProperty('CONTENT_TEXT_COLOR');
+		document.body.style.color = textColor;
+		var prefs = new gadgets.Prefs();
+		var viewParams = gadgets.views.getParams();
+		var myUsername = viewParams["myUsername"];
+		var myUpdates = viewParams["myUpdates"];
+
+		document.write("<script type='text\/javascript' src='http:\/\/www.google.com\/calendar\/feeds\/" + myUsername + "\/public\/full?alt=json-in-script&callback=insertAgenda__MODULE_ID__&orderby=starttime&max-results=" + myUpdates + "&singleevents=true&sortorder=ascending&futureevents=true'><\/script>");
+	}
+
+	_IG_RegisterOnloadHandler(run__MODULE_ID__);
 //-->
 </script>
-</body>
-</html>
 ]]>
 	</Content>
 </Module>
