@@ -2,7 +2,7 @@
 <Module>
 	<ModulePrefs
         title="__MSG_title__"
-        directory_title="__MSG_title__"
+        directory_title="__MSG_description__"
         author="Scott Walter"
         author_location="Minneapolis, MN"
         author_affiliation="Epic Media"
@@ -60,6 +60,20 @@
 		// text for regex matches
 		var remtxt = gCalTime;
 
+		var theMonthNames = new Array();
+		theMonthNames[1] = "__MSG_january__";
+		theMonthNames[2] = "__MSG_february__";
+		theMonthNames[3] = "__MSG_march__";
+		theMonthNames[4] = "__MSG_april__";
+		theMonthNames[5] = "__MSG_may__";
+		theMonthNames[6] = "__MSG_june__";
+		theMonthNames[7] = "__MSG_july__";
+		theMonthNames[8] = "__MSG_august__";
+		theMonthNames[9] = "__MSG_september__";
+		theMonthNames[10] = "__MSG_october__";
+		theMonthNames[11] = "__MSG_november__";
+		theMonthNames[12] = "__MSG_december__";
+
 		function consume(retxt) {
 			var match = remtxt.match(new RegExp('^' + retxt));
 			if (match) {
@@ -116,20 +130,6 @@
 			var ld = new Date(gmtDateEpoch);
 			var theMonth = (ld.getMonth() + 1);
 
-			var theMonthNames = new Array();
-			theMonthNames[1] = "Jan";
-			theMonthNames[2] = "February";
-			theMonthNames[3] = "March";
-			theMonthNames[4] = "April";
-			theMonthNames[5] = "May";
-			theMonthNames[6] = "June";
-			theMonthNames[7] = "July";
-			theMonthNames[8] = "August";
-			theMonthNames[9] = "September";
-			theMonthNames[10] = "October";
-			theMonthNames[11] = "November";
-			theMonthNames[12] = "December";
-
 			// date is originally in YYYY-MM-DD format
 			// time is originally in a 24-hour format
 			// this converts it to MM/DD hh:mm (AM|PM) 
@@ -151,23 +151,9 @@
 		} else {
 			// if only a DATE was matched
 
-			var monthnames = new Array();
-			monthnames[1] = "Jan";
-			monthnames[2] = "Feb";
-			monthnames[3] = "Mar";
-			monthnames[4] = "Apr";
-			monthnames[5] = "May";
-			monthnames[6] = "Jun";
-			monthnames[7] = "Jul";
-			monthnames[8] = "Aug";
-			monthnames[9] = "Sep";
-			monthnames[10] = "Oct";
-			monthnames[11] = "Nov";
-			monthnames[12] = "Dec";
-
 			var monthnum = parseInt(month, 10);
 
-			dateString =  monthnames[monthnum] + ' ' + parseInt(dateMonth, 10) + ', ' + parseInt(year, 10);
+			dateString =  theMonthNames[monthnum] + ' ' + parseInt(dateMonth, 10) + ', ' + parseInt(year, 10);
 		}
 		
 		return dateString;
