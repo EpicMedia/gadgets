@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
 	<ModulePrefs
-		title="Upcoming Events"
+        title="__MSG_title__"
+        directory_title="__MSG_title__"
         author="Scott Walter"
         author_location="Minneapolis, MN"
         author_affiliation="Epic Media"
@@ -12,6 +13,7 @@
 		thumbnail="http://lh3.ggpht.com/_xn2gmPb9TfM/SmdCI32oiKI/AAAAAAAAEoo/CWpjtzqMus4/s800/calendar-gadget-thumb.gif"
 		screenshot="http://lh3.ggpht.com/_xn2gmPb9TfM/SmdCI32oiKI/AAAAAAAAEoo/CWpjtzqMus4/s800/calendar-gadget-thumb.gif"
 		>
+        <Require feature="setprefs" />
 		<Require feature="dynamic-height" />
 		<Require feature="opensocial-0.7" />
 		<Require feature="google.blog" />
@@ -20,16 +22,16 @@
 	</ModulePrefs>
 
 	<UserPref
-		name="myUsername"
-		display_name="Email address, or unique *@google.com address (where * is the unique ID for your calendar)"
+		name="calAddress"
+		display_name="__MSG_calAddress__"
 		required="true"
-		default_value="your_email" 
+		default_value="" 
 		datatype="string"
 		/>
 
 	<UserPref
-		name="myUpdates"
-		display_name="Number of updates to display"
+		name="calEntries"
+		display_name="__MSG_calEntries__"
 		required="true"
 		default_value="5" 
 		datatype='string'
@@ -37,13 +39,13 @@
 
 	<UserPref
 		name="displayContent"
-		display_name="Display description for calendar entries?"
+		display_name="__MSG_displayContent__"
 		datatype="bool"
 		default_value="false" 
 		/>
 
 	<Content type="html"><![CDATA[
-<div id="agenda__MODULE_ID__" style='padding: 0 10px;font-size: 80%;'><p><i>Loading calendar...</i></p></div>
+<div id="agenda__MODULE_ID__" style='padding: 0 10px;font-size: 80%;'><p><i>__MSG_loading__</i></p></div>
 <script type="text/javascript">
 <!--
 	// First off, all credit goes to the team at BloggerBuster.com for creating this gadget.
@@ -223,7 +225,7 @@
 				entryLink.appendChild(document.createTextNode(where));
 				li.appendChild(entryLink);
 				
-				if (viewParams["displayContent"] == true) {
+				if (viewParams["__MSG_displayContent__"] == true) {
 					entryContent = document.createElement('div');
 					entryContent.appendChild(document.createTextNode(content));
 					li.appendChild(entryContent);
@@ -257,8 +259,6 @@
 	*/ 
 	function insertAgenda__MODULE_ID__(obj) {
 		listEvents__MODULE_ID__(obj.data, 'agenda__MODULE_ID__');
-		
-		gadgets.window.adjustHeight();
 	}
 
 	function run__MODULE_ID__() {
@@ -268,20 +268,22 @@
 		document.body.style.color = textColor;
 		var prefs = new gadgets.Prefs();
 		var viewParams = gadgets.views.getParams();
-		var myUsername = viewParams["myUsername"];
-		var myUpdates = viewParams["myUpdates"];
+		var theCal = viewParams["__MSG_calAddress__"];
+		var numEvents = viewParams["__MSG_calEntries__"];
 		
 		var params = {};
 		params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
 		// This URL returns a JSON-encoded string that represents a JavaScript object
 		var url	=	"http:\/\/www.google.com\/calendar\/feeds\/" 
-				+	myUsername 
+				+	theCal
 				+	"\/public\/full?alt=json&orderby=starttime&max-results=" 
-				+	myUpdates 
+				+	numEvents
 				+	"&singleevents=true&sortorder=ascending&futureevents=true"
 				;
 
 		gadgets.io.makeRequest(url, insertAgenda__MODULE_ID__, params);
+		
+		gadgets.window.adjustHeight();
 	}
 
 	gadgets.util.registerOnLoadHandler(run__MODULE_ID__);
