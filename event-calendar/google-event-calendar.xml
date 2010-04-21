@@ -24,7 +24,7 @@
 		display_name="Email address, or unique *@google.com address (where * is the unique ID for your calendar)"
 		required="true"
 		default_value="your_email" 
-		datatype='string'
+		datatype="string"
 		/>
 
 	<UserPref
@@ -43,7 +43,7 @@
 		/>
 
 	<Content type="html"><![CDATA[
-<div id="agenda__MODULE_ID__" style='padding: 0 10px;font-size: 80%;'><p style='text-align:center;color:#cccccc;'><i>Loading calendar...</i></p></div>
+<div id="agenda__MODULE_ID__" style='padding: 0 10px;font-size: 80%;'><p><i>Loading calendar...</i></p></div>
 <script type="text/javascript">
 <!--
 	// First off, all credit goes to the team at BloggerBuster.com for creating this gadget.
@@ -253,7 +253,8 @@
 	* 
 	* @param {json} root is the JSON-formatted content from GData
 	*/ 
-	function insertAgenda__MODULE_ID__(root) {
+	function insertAgenda__MODULE_ID__(obj) {
+		var root = obj.data;
 		listEvents__MODULE_ID__(root, 'agenda__MODULE_ID__');
 		gadgets.window.adjustHeight();
 	}
@@ -267,11 +268,21 @@
 		var viewParams = gadgets.views.getParams();
 		var myUsername = viewParams["myUsername"];
 		var myUpdates = viewParams["myUpdates"];
+		
+		var params = {};
+		params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
+		// This URL returns a JSON-encoded string that represents a JavaScript object
+		var url	=	"http:\/\/www.google.com\/calendar\/feeds\/" 
+				+	myUsername 
+				+	"\/public\/full?alt=json&orderby=starttime&max-results=" 
+				+	myUpdates 
+				+	"&singleevents=true&sortorder=ascending&futureevents=true"
+				;
 
-		document.write("<script type='text\/javascript' src='http:\/\/www.google.com\/calendar\/feeds\/" + myUsername + "\/public\/full?alt=json-in-script&callback=insertAgenda__MODULE_ID__&orderby=starttime&max-results=" + myUpdates + "&singleevents=true&sortorder=ascending&futureevents=true'><\/script>");
+		gadgets.io.makeRequest(url, insertAgenda__MODULE_ID__, params);
 	}
 
-	_IG_RegisterOnloadHandler(run__MODULE_ID__);
+	gadgets.util.registerOnLoadHandler(run__MODULE_ID__);
 //-->
 </script>
 ]]>
