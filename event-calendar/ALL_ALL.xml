@@ -1,0 +1,29 @@
+<messagebundle>
+    <msg name="title">Upcoming Events</msg>
+    <msg name="description">
+    	Display Google Calendar events
+    </msg>
+    <msg name="__MSG_calAddress__">Email address, or unique *@google.com address (where * is the unique ID for your calendar)</msg>
+    <msg name="__MSG_calEntries__">Number of entries to display</msg>
+    <msg name="__MSG_displayContent__">Display description for calendar entries?</msg>
+    <msg name="__MSG_loading__">Loading calendar...</msg>
+    <msg name="january"   >January</msg>
+    <msg name="february"  >February</msg>
+    <msg name="march"     >March</msg>
+    <msg name="april"     >April</msg>
+    <msg name="may"       >May</msg>
+    <msg name="june"      >June</msg>
+    <msg name="july"      >July</msg>
+    <msg name="august"    >August</msg>
+    <msg name="september" >September</msg>
+    <msg name="october"   >October</msg>
+    <msg name="november"  >November</msg>
+    <msg name="december"  >December</msg>
+    <msg name="computing">Computing Today's Color...</msg>
+    <msg name="physical">Physical</msg>
+    <msg name="intellectual">Intellectual</msg>
+    <msg name="emotional">Emotional</msg>
+    <msg name="overall">Overall</msg>
+</messagebundle>
+
+
