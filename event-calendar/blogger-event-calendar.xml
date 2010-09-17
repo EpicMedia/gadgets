@@ -220,7 +220,7 @@
 				entryDate.appendChild(document.createTextNode(dateString));
 				li.appendChild(entryDate);
 
-				entryLink.appendChild(document.createTextNode(where));
+				entryLink.appendChild(document.createTextNode(title));
 				li.appendChild(entryLink);
 
 				entryContent = document.createElement('div');
