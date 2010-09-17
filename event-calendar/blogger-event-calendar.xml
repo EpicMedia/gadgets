@@ -184,9 +184,11 @@
 			var start = entry['gd$when'][0].startTime;
 
 			// get the URL to link to the event
-			for (var linki = 0; linki < entry['link'].length; linki++) {
-				if (entry['link'][linki]['type'] == 'text/html' && entry['link'][linki]['rel'] == 'alternate') {
-					var entryLinkHref = entry['link'][linki]['href'];
+			if (title != 'Private Event') {
+				for (var linki = 0; linki < entry['link'].length; linki++) {
+					if (entry['link'][linki]['type'] == 'text/html' && entry['link'][linki]['rel'] == 'alternate') {
+						var entryLinkHref = entry['link'][linki]['href'];
+					}
 				}
 			}
 
@@ -220,7 +222,7 @@
 				entryDate.appendChild(document.createTextNode(dateString));
 				li.appendChild(entryDate);
 
-				entryLink.appendChild(document.createTextNode(title));
+				entryLink.appendChild(document.createTextNode(where));
 				li.appendChild(entryLink);
 
 				entryContent = document.createElement('div');
