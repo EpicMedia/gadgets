@@ -1,0 +1,33 @@
+# Introduction #
+
+This gadget is (yet another) experiment, this time with accessing an RSS stream that's password protected.  The security model of browsers today make authentication to 3rd party domains a bit tricky, and not all sites are accessible using the tricks in the Gadgets API Reference.  BaseCamp appears to be one of them.
+
+To get around this limitation, I cooked up a two-part gadget:
+
+  1. A PHP page that actually connects to the BaseCamp RSS feed and handles authentication
+  1. A Google gadget that connects to the PHP page, passing the authentication information as part of the URL.
+
+Yes, I know:  not incredibly secure, though if the PHP page were loaded on a server that had SSL enabled, you'd at least be connecting to it via secure HTTP.
+
+# Installation #
+
+To add this to your Google personalized homepage, click here:
+
+[![](http://buttons.googlesyndication.com/fusion/add.gif)](http://fusion.google.com/add?moduleurl=http://epicmedia-gadgets.googlecode.com/svn/trunk/basecamp/basecamp.xml)
+
+You'll also need to find a web host that supports PHP, create an account, and load the following page:
+
+http://epicmedia-gadgets.googlecode.com/svn/trunk/basecamp/HTTPProxyGet.php
+
+On to it.  Make sure that the host either has CURL installed or allows you to install it.  If not, you can always rewrite the PHP page to use some other HTTP requestor process.
+
+# Configuration #
+
+Once all that's done, configure the gadget to include:
+
+  * The URL of your BaseCamp RSS feed
+  * The URL of the !HTTPProxyGet page you uploaded (above)
+  * Your BaseCamp credentials (username/password)
+  * The number of entries you wish to see (cannot exceed 9)
+
+That's it!
